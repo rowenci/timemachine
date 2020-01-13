@@ -4,3 +4,5 @@ spring:
     username: rowenci
     password: bb3960519
     driver-class-name: com.mysql.cj.jdbc.Driver
+  logging:
+    config: classpath:log4j2.yml
