@@ -50,7 +50,7 @@ public class CodeGenerator {
         dsc.setUrl("jdbc:mysql://cdb-eco3wrph.gz.tencentcdb.com:10023/timemachine?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=true");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
-        dsc.setUsername("rowenci");
+        dsc.setUsername("root");
         dsc.setPassword("bb3960519");
         mpg.setDataSource(dsc);
 
