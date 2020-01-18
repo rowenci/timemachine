@@ -23,7 +23,7 @@ Configuration:
     RollingFile:
       - name: ROLLING_FILE
         fileName: ${log.path}/${project.name}.log
-        filePattern: "${log.path}/historyRunLog/$${date:yyyy-MM}/${project.name}-%d{yyyy-MM-dd}-%i.log.gz"
+        filePattern: "${log.path}/historyRunLog/$${date:yyyy-MM}/${project.name}-%d{yyyy-MM-dd}-%i.log.txt"
         PatternLayout:
           pattern: ${log.pattern}
         Filters:
@@ -45,7 +45,7 @@ Configuration:
       - name: PLATFORM_ROLLING_FILE
         ignoreExceptions: false
         fileName: ${log.path}/platform/${project.name}_platform.log
-        filePattern: "${log.path}/platform/$${date:yyyy-MM}/${project.name}-%d{yyyy-MM-dd}-%i.log.gz"
+        filePattern: "${log.path}/platform/$${date:yyyy-MM}/${project.name}-%d{yyyy-MM-dd}-%i.log.txt"
         PatternLayout:
           pattern: ${log.pattern}
         Policies:
@@ -58,7 +58,7 @@ Configuration:
       - name: BUSSINESS_ROLLING_FILE
         ignoreExceptions: false
         fileName: ${log.path}/bussiness/${project.name}_bussiness.log
-        filePattern: "${log.path}/bussiness/$${date:yyyy-MM}/${project.name}-%d{yyyy-MM-dd}-%i.log.gz"
+        filePattern: "${log.path}/bussiness/$${date:yyyy-MM}/${project.name}-%d{yyyy-MM-dd}-%i.log.txt"
         PatternLayout:
           pattern: ${log.pattern}
         Policies:
@@ -71,7 +71,7 @@ Configuration:
       - name: EXCEPTION_ROLLING_FILE
         ignoreExceptions: false
         fileName: ${log.path}/exception/${project.name}_exception.log
-        filePattern: "${log.path}/exception/$${date:yyyy-MM}/${project.name}-%d{yyyy-MM-dd}-%i.log.gz"
+        filePattern: "${log.path}/exception/$${date:yyyy-MM}/${project.name}-%d{yyyy-MM-dd}-%i.log.txt"
         ThresholdFilter:
           level: error
           onMatch: ACCEPT
@@ -88,7 +88,7 @@ Configuration:
       - name: DB_ROLLING_FILE
         ignoreExceptions: false
         fileName: ${log.path}/db/${project.name}_db.log
-        filePattern: "${log.path}/db/$${date:yyyy-MM}/${project.name}-%d{yyyy-MM-dd}-%i.log.gz"
+        filePattern: "${log.path}/db/$${date:yyyy-MM}/${project.name}-%d{yyyy-MM-dd}-%i.log.txt"
         PatternLayout:
           pattern: ${log.pattern}
         Policies:

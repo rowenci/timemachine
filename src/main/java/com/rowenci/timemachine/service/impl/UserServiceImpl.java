@@ -6,7 +6,7 @@ import com.rowenci.timemachine.entity.User;
 import com.rowenci.timemachine.mapper.UserMapper;
 import com.rowenci.timemachine.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.rowenci.timemachine.util.CodeInfo.CodeInfo;
+import com.rowenci.timemachine.util.CodeInfo.CRUDCodeInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -27,17 +27,17 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     private UserMapper userMapper;
 
     @Resource
-    private CodeInfo codeInfo;
+    private CRUDCodeInfo CRUDCodeInfo;
 
     @Override
     public int logUp(User user) {
         QueryWrapper qw = new QueryWrapper();
         qw.eq("account", user.getAccount());
-        if (userMapper.selectOne(qw) == null){
-            return codeInfo.ENTITY_EXISTS;
+        if (userMapper.selectOne(qw) != null){
+            return CRUDCodeInfo.ENTITY_EXISTS;
         }
         userMapper.insert(user);
-        return codeInfo.INSERT_SUCCESS;
+        return CRUDCodeInfo.INSERT_SUCCESS;
     }
 
     @Override
@@ -45,9 +45,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         QueryWrapper qw = new QueryWrapper();
         qw.allEq(loginMap);
         if (userMapper.selectOne(qw) == null){
-            return codeInfo.ENTITY_NOT_EXISTS;
+            return CRUDCodeInfo.ENTITY_NOT_EXISTS;
         }else {
-            return codeInfo.SELECT_SUCCESS;
+            return CRUDCodeInfo.SELECT_SUCCESS;
         }
     }
 
@@ -64,12 +64,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         qw.eq("user_id", user.getUserId());
         UpdateWrapper uw = new UpdateWrapper();
         uw.eq("user_id", user.getUserId());
-        uw.setEntity(user);
         if (userMapper.selectOne(qw) == null){
-            return codeInfo.UPDATE_ERROR;
+            return CRUDCodeInfo.UPDATE_ERROR;
         }else {
             userMapper.update(user, uw);
-            return codeInfo.UPDATE_SUCCESS;
+            return CRUDCodeInfo.UPDATE_SUCCESS;
         }
     }
 }

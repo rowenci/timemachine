@@ -1,5 +1,7 @@
 package com.rowenci.timemachine.util.CodeInfo;
 
+import org.springframework.stereotype.Component;
+
 /**
  * <p>
  *  code list
@@ -8,7 +10,8 @@ package com.rowenci.timemachine.util.CodeInfo;
  * @author rowenci
  * @since 2020/1/17 21:15
  */
-public class CodeInfo {
+@Component
+public class CRUDCodeInfo {
 
     /* success code */
 
@@ -69,14 +72,5 @@ public class CodeInfo {
      * login error
      */
     public static final int LOGIN_ERROR = -1;
-
-    public String getCodeInfo(int code){
-        switch (code){
-            case -1 : return "insert error";
-            case -2 : return "update error";
-            case -3 : return "delete error";
-            default : return "unknown code";
-        }
-    }
 
 }
