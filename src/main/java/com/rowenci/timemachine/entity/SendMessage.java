@@ -25,4 +25,13 @@ public class SendMessage implements Serializable {
 
     private String description;
 
+    public SendMessage initMessage(int code, Object data,String result, String description){
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setCode(code);
+        sendMessage.setResult(result);
+        sendMessage.setData(data);
+        sendMessage.setDescription(description);
+        return sendMessage;
+    }
+
 }

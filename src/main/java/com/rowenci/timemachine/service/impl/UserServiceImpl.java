@@ -71,4 +71,30 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             return CRUDCodeInfo.UPDATE_SUCCESS;
         }
     }
+
+    @Override
+    public User getUserById(int user_id) {
+        QueryWrapper qw = new QueryWrapper();
+        qw.eq("user_id", user_id);
+        User user = userMapper.selectOne(qw);
+        return user;
+    }
+
+    @Override
+    public int changePWD(String account, String password) {
+        QueryWrapper qw = new QueryWrapper();
+        qw.eq("account", account);
+        User user = userMapper.selectOne(qw);
+
+        UpdateWrapper uw = new UpdateWrapper();
+        uw.eq("account", account);
+        if (user == null){
+            return CRUDCodeInfo.UPDATE_ERROR;
+        }
+        else {
+            user.setPassword(password);
+            userMapper.update(user,uw);
+            return CRUDCodeInfo.UPDATE_SUCCESS;
+        }
+    }
 }

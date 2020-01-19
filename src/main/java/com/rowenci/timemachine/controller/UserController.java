@@ -30,6 +30,11 @@ public class UserController {
     @Resource
     private ServiceCodeInfo serviceCodeInfo;
 
+    /**
+     * 注册
+     * @param user
+     * @return
+     */
     @PostMapping("/")
     public String logUp(@RequestBody User user){            /* do not forget the @RequestBody */
         int logup_code = iUserService.logUp(user);          /* it's necessary for receiving json objects */
@@ -44,6 +49,12 @@ public class UserController {
         return JSON.toJSONString(sendMessage);
     }
 
+    /**
+     * 登陆
+     * @param account
+     * @param password
+     * @return
+     */
     @GetMapping("/")
     public String logIn(String account, String password){
         SendMessage sendMessage = new SendMessage();
@@ -63,6 +74,32 @@ public class UserController {
         }
     }
 
+    /**
+     * 根据user_id查找用户信息
+     * @param user_id
+     * @return
+     */
+    @GetMapping("/{user_id}")
+    public String getUserById(@PathVariable("user_id") int user_id){
+        SendMessage sendMessage = new SendMessage();
+        User user = iUserService.getUserById(user_id);
+        if (user == null){
+            sendMessage.setCode(ServiceCodeInfo.NO_USER);
+            sendMessage.setResult("error");
+        }
+        else {
+            sendMessage.setCode(ServiceCodeInfo.SUCCESS);
+            sendMessage.setData(user);
+            sendMessage.setResult("success");
+        }
+        return JSON.toJSONString(sendMessage);
+    }
+
+    /**
+     * 修改个人信息
+     * @param user
+     * @return
+     */
     @PutMapping("/")
     public String changeInfo(@RequestBody User user){
         SendMessage sendMessage = new SendMessage();
@@ -75,6 +112,27 @@ public class UserController {
         }
         iUserService.getUserByAccount(user.getAccount());
         sendMessage.setData(user);
+        return JSON.toJSONString(sendMessage);
+    }
+
+    /**
+     * 修改密码
+     * @param account
+     * @param password
+     * @return
+     */
+    @PutMapping("/password")
+    public String changePWD(String account, String password){
+        SendMessage sendMessage = new SendMessage();
+        int changePWD_code = iUserService.changePWD(account, password);
+        if (changePWD_code > 0){
+            sendMessage.setResult("success");
+            sendMessage.setCode(changePWD_code);
+        }
+        else {
+            sendMessage.setResult("error");
+            sendMessage.setCode(changePWD_code);
+        }
         return JSON.toJSONString(sendMessage);
     }
 

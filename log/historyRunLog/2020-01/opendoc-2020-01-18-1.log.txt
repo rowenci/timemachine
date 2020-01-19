@@ -1,0 +1,515 @@
+2020-01-18 14:08:51.089 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 140 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:08:51.144 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:08:52.553 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:08:52.562 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:08:52.564 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:08:52.565 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:08:52.685 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:08:52.686 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1485 ms
+2020-01-18 14:08:55.345 - WARN  [           main] c.s.AbstractApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.rowenci.timemachine.util.CodeInfo.CRUDCodeInfo' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+2020-01-18 14:08:55.348 - INFO  [           main] o.a.j.l.DirectJDKLog           : Stopping service [Tomcat]
+2020-01-18 14:08:55.358 - INFO  [           main] valuationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-01-18 14:10:02.342 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 12928 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:10:02.352 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:10:03.534 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:10:03.543 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:10:03.544 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:10:03.545 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:10:03.665 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:10:03.666 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1258 ms
+2020-01-18 14:10:06.069 - WARN  [           main] c.s.AbstractApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.rowenci.timemachine.entity.SendMessage' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+2020-01-18 14:10:06.073 - INFO  [           main] o.a.j.l.DirectJDKLog           : Stopping service [Tomcat]
+2020-01-18 14:10:06.084 - INFO  [           main] valuationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-01-18 14:10:40.709 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 11776 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:10:40.718 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:10:41.802 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:10:41.810 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:10:41.811 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:10:41.812 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:10:41.907 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:10:41.908 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1152 ms
+2020-01-18 14:10:44.338 - WARN  [           main] c.s.AbstractApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.rowenci.timemachine.util.CodeInfo.CRUDCodeInfo' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@javax.annotation.Resource(shareable=true, lookup=, name=, description=, authenticationType=CONTAINER, type=class java.lang.Object, mappedName=)}
+2020-01-18 14:10:44.341 - INFO  [           main] o.a.j.l.DirectJDKLog           : Stopping service [Tomcat]
+2020-01-18 14:10:44.352 - INFO  [           main] valuationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-01-18 14:11:00.329 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 11116 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:11:00.342 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:11:01.640 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:11:01.648 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:11:01.650 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:11:01.651 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:11:01.755 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:11:01.755 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1369 ms
+2020-01-18 14:11:04.938 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:11:05.238 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:11:05.275 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 14:11:05.280 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.37 seconds (JVM running for 9.3)
+2020-01-18 14:15:31.064 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 14:15:31.065 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 14:15:31.073 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 7 ms
+2020-01-18 14:15:31.220 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-01-18 14:15:31.779 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-01-18 14:17:33.315 - INFO  [nio-8080-exec-3] o.a.j.l.DirectJDKLog           : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:468) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:260) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_211]
+2020-01-18 14:19:50.171 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 12796 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:19:50.184 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:19:51.312 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:19:51.321 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:19:51.322 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:19:51.322 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:19:51.426 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:19:51.426 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1187 ms
+2020-01-18 14:19:54.020 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:19:54.268 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:19:54.308 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 14:19:54.311 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 4.575 seconds (JVM running for 7.921)
+2020-01-18 14:20:06.749 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:468) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:260) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_211]
+2020-01-18 14:26:19.710 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 12044 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:26:19.719 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:26:20.698 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:26:20.707 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:26:20.708 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:26:20.708 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:26:20.803 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:26:20.803 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1046 ms
+2020-01-18 14:26:23.273 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:26:23.469 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:26:23.499 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 14:26:23.501 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 4.163 seconds (JVM running for 7.041)
+2020-01-18 14:26:41.073 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 14:26:41.073 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 14:26:41.080 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 6 ms
+2020-01-18 14:26:41.560 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-01-18 14:26:42.123 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-01-18 14:29:19.966 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 7876 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:29:19.983 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:29:21.342 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:29:21.354 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:29:21.355 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:29:21.355 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:29:21.471 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:29:21.471 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1422 ms
+2020-01-18 14:29:24.384 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:29:24.697 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:29:24.744 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 14:29:24.749 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.402 seconds (JVM running for 9.324)
+2020-01-18 14:29:34.962 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 14:29:34.962 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 14:29:34.972 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 10 ms
+2020-01-18 14:29:35.128 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-01-18 14:29:35.696 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-01-18 14:31:31.707 - WARN  [l-1 housekeeper] c.z.h.p.HikariPool$HouseKeeper : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m55s908ms929µs300ns).
+2020-01-18 14:33:44.936 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:33:44.936 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-01-18 14:33:44.952 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-01-18 14:33:53.572 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 1612 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:33:53.587 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:33:55.066 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:33:55.079 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:33:55.080 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:33:55.081 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:33:55.207 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:33:55.207 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1568 ms
+2020-01-18 14:33:58.103 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:33:58.404 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:33:58.448 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 14:33:58.453 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.394 seconds (JVM running for 8.766)
+2020-01-18 14:34:02.035 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 14:34:02.036 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 14:34:02.045 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 9 ms
+2020-01-18 14:34:02.145 - WARN  [nio-8080-exec-1] stractHandlerExceptionResolver : Resolved [org.springframework.web.bind.MissingPathVariableException: Missing URI template variable 'user' for method parameter of type User]
+2020-01-18 14:34:19.864 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:34:29.115 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 3372 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:34:29.130 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:34:30.819 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:34:30.834 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:34:30.835 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:34:30.837 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:34:30.960 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:34:30.961 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1776 ms
+2020-01-18 14:34:33.874 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:34:34.145 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:34:34.191 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 14:34:34.195 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.675 seconds (JVM running for 9.389)
+2020-01-18 14:34:54.093 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 14:34:54.094 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 14:34:54.104 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 10 ms
+2020-01-18 14:35:16.871 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-01-18 14:35:17.602 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-01-18 14:37:24.881 - WARN  [l-1 housekeeper] c.z.h.p.HikariPool$HouseKeeper : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m7s176ms568µs300ns).
+2020-01-18 14:37:25.144 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:37:25.145 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-01-18 14:37:25.339 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-01-18 14:37:34.856 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 12572 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:37:34.869 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:37:36.096 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:37:36.106 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:37:36.108 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:37:36.108 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:37:36.221 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:37:36.222 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1298 ms
+2020-01-18 14:37:39.162 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:37:39.398 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:37:39.434 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 14:37:39.439 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.132 seconds (JVM running for 9.017)
+2020-01-18 14:37:42.174 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 14:37:42.175 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 14:37:42.183 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 8 ms
+2020-01-18 14:37:48.697 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-01-18 14:37:49.275 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-01-18 14:38:17.856 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:38:17.857 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-01-18 14:38:17.871 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-01-18 14:38:28.081 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 1732 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:38:28.096 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:38:29.573 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:38:29.585 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:38:29.586 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:38:29.587 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:38:29.730 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:38:29.730 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1574 ms
+2020-01-18 14:38:32.855 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:38:33.094 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:38:33.131 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 14:38:33.135 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.661 seconds (JVM running for 9.479)
+2020-01-18 14:38:35.126 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 14:38:35.126 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 14:38:35.137 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 11 ms
+2020-01-18 14:39:18.224 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-01-18 14:39:18.803 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-01-18 14:41:18.287 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:41:18.288 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-01-18 14:41:18.304 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-01-18 14:41:27.053 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 5704 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:41:27.071 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:41:28.383 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:41:28.398 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:41:28.399 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:41:28.399 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:41:28.527 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:41:28.528 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1403 ms
+2020-01-18 14:41:31.527 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:41:31.610 - WARN  [           main] c.s.AbstractApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'userController' method 
+com.rowenci.timemachine.controller.UserController#logUp(User)
+to {POST /timemachine/user/}: There is already 'userController' bean method
+com.rowenci.timemachine.controller.UserController#logIn(String, String) mapped.
+2020-01-18 14:41:31.610 - INFO  [           main] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:41:31.616 - INFO  [           main] o.a.j.l.DirectJDKLog           : Stopping service [Tomcat]
+2020-01-18 14:41:31.628 - INFO  [           main] valuationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-01-18 14:42:09.716 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 1384 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:42:09.730 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:42:10.967 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:42:10.978 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:42:10.979 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:42:10.979 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:42:11.099 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:42:11.100 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1318 ms
+2020-01-18 14:42:13.991 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:42:14.214 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:42:14.250 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 14:42:14.254 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.028 seconds (JVM running for 8.299)
+2020-01-18 14:42:33.460 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 14:42:33.460 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 14:42:33.469 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 8 ms
+2020-01-18 14:42:50.356 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:45:35.310 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 8000 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:45:35.324 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:45:36.572 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:45:36.583 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:45:36.585 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:45:36.586 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:45:36.701 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:45:36.702 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1316 ms
+2020-01-18 14:45:39.211 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:45:39.432 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:45:39.469 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 14:45:39.472 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 4.709 seconds (JVM running for 8.27)
+2020-01-18 14:45:46.197 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 14:45:46.197 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 14:45:46.206 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 9 ms
+2020-01-18 14:45:49.063 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-01-18 14:45:49.645 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-01-18 14:46:39.586 - WARN  [nio-8080-exec-2] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2020-01-18 14:46:50.647 - WARN  [nio-8080-exec-3] stractHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentConversionNotSupportedException: Failed to convert value of type 'java.lang.String' to required type 'com.rowenci.timemachine.entity.User'; nested exception is java.lang.IllegalStateException: Cannot convert value of type 'java.lang.String' to required type 'com.rowenci.timemachine.entity.User': no matching editors or conversion strategy found]
+2020-01-18 14:47:15.520 - WARN  [nio-8080-exec-4] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2020-01-18 14:47:40.029 - WARN  [nio-8080-exec-5] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2020-01-18 14:48:04.893 - WARN  [nio-8080-exec-6] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+2020-01-18 14:48:17.752 - INFO  [nio-8080-exec-7] o.a.j.l.DirectJDKLog           : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:468) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:260) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_211]
+2020-01-18 14:49:04.073 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:49:04.074 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-01-18 14:49:04.088 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-01-18 14:49:13.052 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 13556 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:49:13.066 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:49:14.463 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:49:14.482 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:49:14.485 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:49:14.487 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:49:14.633 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:49:14.634 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1510 ms
+2020-01-18 14:49:17.344 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:49:17.625 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:49:17.666 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 14:49:17.671 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.129 seconds (JVM running for 8.843)
+2020-01-18 14:49:43.492 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:468) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:260) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_211]
+2020-01-18 14:50:01.059 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:50:07.580 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 13984 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:50:07.596 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:50:08.893 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:50:08.905 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:50:08.907 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:50:08.908 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:50:09.024 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:50:09.024 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1368 ms
+2020-01-18 14:50:11.637 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:50:11.862 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:50:11.900 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 14:50:11.904 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 4.844 seconds (JVM running for 8.213)
+2020-01-18 14:50:27.061 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 14:50:27.062 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 14:50:27.072 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 9 ms
+2020-01-18 14:50:29.756 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-01-18 14:50:30.339 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-01-18 14:50:43.819 - INFO  [nio-8080-exec-4] o.a.j.l.DirectJDKLog           : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+java.lang.IllegalArgumentException: Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:468) ~[tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:260) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1591) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_211]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_211]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.29.jar:9.0.29]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_211]
+2020-01-18 14:59:41.193 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:59:41.194 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-01-18 14:59:41.207 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-01-18 14:59:51.475 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 13440 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 14:59:51.487 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 14:59:52.804 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 14:59:52.818 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:59:52.819 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 14:59:52.820 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 14:59:52.941 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 14:59:52.941 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1393 ms
+2020-01-18 14:59:55.610 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 14:59:55.846 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 14:59:55.886 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 14:59:55.890 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 4.924 seconds (JVM running for 8.92)
+2020-01-18 14:59:59.116 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 14:59:59.116 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 14:59:59.126 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 10 ms
+2020-01-18 15:00:28.964 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:00:42.507 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 7536 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 15:00:42.528 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 15:00:44.654 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 15:00:44.668 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 15:00:44.670 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 15:00:44.671 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 15:00:44.827 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 15:00:44.827 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2204 ms
+2020-01-18 15:00:48.216 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:00:48.509 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 15:00:48.568 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 15:00:48.573 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 6.819 seconds (JVM running for 11.385)
+2020-01-18 15:02:13.238 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:02:24.249 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 7596 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 15:02:24.267 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 15:02:26.040 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 15:02:26.056 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 15:02:26.057 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 15:02:26.058 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 15:02:26.213 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 15:02:26.214 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1865 ms
+2020-01-18 15:02:29.652 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:02:29.955 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 15:02:29.999 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 15:02:30.002 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 6.49 seconds (JVM running for 10.802)
+2020-01-18 15:03:07.935 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 15:03:07.936 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 15:03:07.945 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 9 ms
+2020-01-18 15:03:11.813 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-01-18 15:03:12.440 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-01-18 15:06:27.163 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:06:27.165 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-01-18 15:06:27.179 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-01-18 15:06:36.800 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 13368 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 15:06:36.814 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 15:06:38.103 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 15:06:38.115 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 15:06:38.116 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 15:06:38.117 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 15:06:38.248 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 15:06:38.249 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1383 ms
+2020-01-18 15:06:40.969 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:06:41.189 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 15:06:41.224 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 15:06:41.229 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 4.951 seconds (JVM running for 8.616)
+2020-01-18 15:06:57.635 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 15:06:57.636 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 15:06:57.648 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 12 ms
+2020-01-18 15:07:00.463 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-01-18 15:07:01.007 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-01-18 15:07:56.733 - WARN  [l-1 housekeeper] c.z.h.p.HikariPool$HouseKeeper : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53s963ms506µs300ns).
+2020-01-18 15:08:45.199 - WARN  [l-1 housekeeper] c.z.h.p.HikariPool$HouseKeeper : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50s129ms264µs900ns).
+2020-01-18 15:09:35.271 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:09:35.272 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-01-18 15:09:35.288 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-01-18 15:09:44.391 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 3672 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 15:09:44.407 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 15:09:45.945 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 15:09:45.964 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 15:09:45.966 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 15:09:45.968 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 15:09:46.129 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 15:09:46.130 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1660 ms
+2020-01-18 15:09:48.951 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:09:49.175 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 15:09:49.213 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 15:09:49.217 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.406 seconds (JVM running for 9.068)
+2020-01-18 15:09:53.168 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 15:09:53.168 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 15:09:53.178 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 10 ms
+2020-01-18 15:09:59.373 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-01-18 15:09:59.949 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-01-18 15:14:49.086 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:14:49.087 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-01-18 15:14:49.101 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-01-18 15:15:21.544 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 4188 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 15:15:21.558 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 15:15:23.039 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 15:15:23.055 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 15:15:23.056 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 15:15:23.058 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 15:15:23.212 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 15:15:23.213 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1591 ms
+2020-01-18 15:15:26.086 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:15:26.404 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 15:15:26.456 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 15:15:26.464 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.506 seconds (JVM running for 9.185)
+2020-01-18 15:16:01.580 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 15:16:01.581 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 15:16:01.591 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 10 ms
+2020-01-18 15:16:01.753 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-01-18 15:16:02.350 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-01-18 15:16:09.696 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:16:09.697 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-01-18 15:16:09.712 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-01-18 15:16:18.754 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 13324 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 15:16:18.768 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 15:16:20.226 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 15:16:20.240 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 15:16:20.242 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 15:16:20.243 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 15:16:20.368 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 15:16:20.368 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1542 ms
+2020-01-18 15:16:23.156 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:16:23.388 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 15:16:23.424 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 15:16:23.428 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.198 seconds (JVM running for 8.556)
+2020-01-18 15:16:43.030 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 15:16:43.030 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 15:16:43.040 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 9 ms
+2020-01-18 15:16:43.245 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-01-18 15:16:43.853 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-01-18 15:18:32.265 - WARN  [l-1 housekeeper] c.z.h.p.HikariPool$HouseKeeper : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=48s306ms557µs600ns).
+2020-01-18 15:20:52.526 - WARN  [l-1 housekeeper] c.z.h.p.HikariPool$HouseKeeper : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50s256ms781µs500ns).
+2020-01-18 15:24:23.212 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:24:23.213 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-01-18 15:24:23.226 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-01-18 15:24:32.823 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 14380 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 15:24:32.836 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 15:24:34.315 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 15:24:34.335 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 15:24:34.337 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 15:24:34.338 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 15:24:34.497 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 15:24:34.497 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1603 ms
+2020-01-18 15:24:37.509 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:24:37.801 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 15:24:37.846 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 15:24:37.853 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.601 seconds (JVM running for 9.502)
+2020-01-18 15:24:41.539 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 15:24:41.539 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 15:24:41.546 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 7 ms
+2020-01-18 15:24:44.668 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-01-18 15:24:45.227 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-01-18 15:26:10.235 - WARN  [l-1 housekeeper] c.z.h.p.HikariPool$HouseKeeper : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=54s905ms724µs400ns).
+2020-01-18 15:26:18.681 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:26:18.682 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-01-18 15:26:18.694 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-01-18 15:26:27.538 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 9640 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-01-18 15:26:27.553 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-01-18 15:26:28.807 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-01-18 15:26:28.818 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-01-18 15:26:28.820 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-01-18 15:26:28.821 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-01-18 15:26:28.936 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-01-18 15:26:28.937 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1332 ms
+2020-01-18 15:26:31.525 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:26:31.759 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-01-18 15:26:31.796 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-01-18 15:26:31.801 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 4.741 seconds (JVM running for 7.992)
+2020-01-18 15:26:34.355 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-18 15:26:34.356 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-01-18 15:26:34.369 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 13 ms
+2020-01-18 15:26:34.632 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-01-18 15:26:35.265 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-01-18 15:26:46.927 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-18 15:26:46.929 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-01-18 15:26:46.942 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.

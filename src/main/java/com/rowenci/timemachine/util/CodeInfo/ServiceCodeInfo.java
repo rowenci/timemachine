@@ -14,7 +14,10 @@ import org.springframework.stereotype.Component;
 public class ServiceCodeInfo {
 
     /* success code */
-
+    /**
+     * success
+     */
+    public static final int SUCCESS = 1;
 
 
     /* error code */
@@ -28,6 +31,11 @@ public class ServiceCodeInfo {
      * login error
      */
     public static final int LOGIN_ERROR = -1;
+
+    /**
+     * no user error
+     */
+    public static final int NO_USER = -1;
 
     public String getCodeInfo(int code){
         switch (code){

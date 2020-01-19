@@ -23,4 +23,8 @@ public interface IUserService extends IService<User> {
 
     int changeInfo(User user);
 
+    User getUserById(int user_id);
+
+    int changePWD(String account, String password);
+
 }
