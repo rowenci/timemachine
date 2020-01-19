@@ -2,6 +2,7 @@ package com.rowenci.timemachine.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import java.time.LocalDateTime;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -13,7 +14,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author rowenci
- * @since 2020-01-15
+ * @since 2020-01-19
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -30,6 +31,8 @@ public class GoodList implements Serializable {
     private Integer goodUserId;
 
     private Integer messageId;
+
+    private LocalDateTime time;
 
 
 }

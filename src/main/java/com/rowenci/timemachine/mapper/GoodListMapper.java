@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author rowenci
- * @since 2020-01-15
+ * @since 2020-01-19
  */
 public interface GoodListMapper extends BaseMapper<GoodList> {
 

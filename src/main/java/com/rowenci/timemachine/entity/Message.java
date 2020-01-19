@@ -14,7 +14,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author rowenci
- * @since 2020-01-15
+ * @since 2020-01-19
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -29,6 +29,11 @@ public class Message implements Serializable {
     private Integer messageId;
 
     private Integer userId;
+
+    /**
+     * default : 给未来的一封信
+     */
+    private String title;
 
     private String context;
 

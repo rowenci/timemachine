@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author rowenci
- * @since 2020-01-15
+ * @since 2020-01-19
  */
 @Service
 public class FavoriteListServiceImpl extends ServiceImpl<FavoriteListMapper, FavoriteList> implements IFavoriteListService {
