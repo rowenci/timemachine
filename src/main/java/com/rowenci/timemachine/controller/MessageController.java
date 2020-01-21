@@ -49,6 +49,14 @@ public class MessageController {
         return JSON.toJSONString(sendMessage);
     }
 
+    @GetMapping("/public")
+    public String getPublicMessage(int user_id){
+        SendMessage sendMessage = new SendMessage();
+        List<Integer> list = iMessageService.getPublicMessage(user_id);
+        sendMessage.initMessage(serviceCodeInfo.SUCCESS, list, "success", "");
+        return JSON.toJSONString(sendMessage);
+    }
+
     @GetMapping("/delete")
     public String deleteMessage(int message_id){
         SendMessage sendMessage = new SendMessage();

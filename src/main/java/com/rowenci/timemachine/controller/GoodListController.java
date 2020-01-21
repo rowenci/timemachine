@@ -7,8 +7,12 @@ import com.rowenci.timemachine.entity.SendMessage;
 import com.rowenci.timemachine.service.IGoodListService;
 import com.rowenci.timemachine.util.CodeInfo.ServiceCodeInfo;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * <p>
@@ -47,12 +51,8 @@ public class GoodListController {
     @GetMapping("/")
     public String getGoodList(int user_id) {
         SendMessage sendMessage = new SendMessage();
-
-        /**
-         * not finished
-         */
-
-
+        List<GoodList> list = iGoodListService.getGoodList(user_id);
+        sendMessage.initMessage(serviceCodeInfo.SUCCESS, list, "success", "");
         return JSON.toJSONString(sendMessage);
     }
 

@@ -9,7 +9,10 @@ import com.rowenci.timemachine.util.CodeInfo.CRUDCodeInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -42,6 +45,21 @@ public class MessageServiceImpl extends ServiceImpl<MessageMapper, Message> impl
         qw.eq("message_id", message_id);
         Message message = messageMapper.selectOne(qw);
         return message;
+    }
+
+    @Override
+    public List<Integer> getPublicMessage(int user_id) {
+        QueryWrapper qw = new QueryWrapper();
+        Map map = new HashMap();
+        map.put("user_id", user_id);
+        map.put("is_public", 1);
+        qw.allEq(map);
+        List<Message> messages = messageMapper.selectList(qw);
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < messages.size(); i++){
+            list.set(i, messages.get(i).getMessageId());
+        }
+        return list;
     }
 
     @Override

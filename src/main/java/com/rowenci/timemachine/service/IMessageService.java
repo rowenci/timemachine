@@ -19,6 +19,8 @@ public interface IMessageService extends IService<Message> {
 
     Message getMessageByMessageId(int message_id);
 
+    List<Integer> getPublicMessage(int user_id);
+
     int deleteMessage(int message_id);
 
 }
