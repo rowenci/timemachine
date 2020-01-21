@@ -6,11 +6,7 @@ import com.rowenci.timemachine.entity.Message;
 import com.rowenci.timemachine.entity.SendMessage;
 import com.rowenci.timemachine.service.IMessageService;
 import com.rowenci.timemachine.util.CodeInfo.ServiceCodeInfo;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -54,6 +50,18 @@ public class MessageController {
         SendMessage sendMessage = new SendMessage();
         List<Integer> list = iMessageService.getPublicMessage(user_id);
         sendMessage.initMessage(serviceCodeInfo.SUCCESS, list, "success", "");
+        return JSON.toJSONString(sendMessage);
+    }
+
+    @PutMapping("/")
+    public String setPublicMessage(int message_id){
+        SendMessage sendMessage = new SendMessage();
+        int code = iMessageService.setPublicMessage(message_id);
+        if (code > 0){
+            sendMessage.initMessage(serviceCodeInfo.SUCCESS, "", "success", "");
+        }else {
+            sendMessage.initMessage(code, "", "error", "");
+        }
         return JSON.toJSONString(sendMessage);
     }
 

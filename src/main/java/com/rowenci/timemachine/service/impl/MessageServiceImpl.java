@@ -1,6 +1,7 @@
 package com.rowenci.timemachine.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.rowenci.timemachine.entity.Message;
 import com.rowenci.timemachine.mapper.MessageMapper;
 import com.rowenci.timemachine.service.IMessageService;
@@ -60,6 +61,21 @@ public class MessageServiceImpl extends ServiceImpl<MessageMapper, Message> impl
             list.set(i, messages.get(i).getMessageId());
         }
         return list;
+    }
+
+    @Override
+    public int setPublicMessage(int message_id) {
+        UpdateWrapper uw = new UpdateWrapper();
+        uw.eq("message_id", message_id);
+        Message message = messageMapper.selectOne(uw);
+        if (message != null){
+            return crudCodeInfo.UPDATE_ERROR;
+        }
+        else {
+            message.setIsPublic(1);
+            messageMapper.update(message, uw);
+            return crudCodeInfo.UPDATE_SUCCESS;
+        }
     }
 
     @Override
