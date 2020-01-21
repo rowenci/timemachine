@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * <p>
@@ -37,13 +38,14 @@ public class UserController {
      */
     @PostMapping("/")
     public String logUp(@RequestBody User user){            /* do not forget the @RequestBody */
-        int logup_code = iUserService.logUp(user);          /* it's necessary for receiving json objects */
+        UUID uuid = UUID.randomUUID();                      /* it's necessary for receiving json objects */
+        user.setUserId(Integer.parseInt(uuid.toString()));
+        int logup_code = iUserService.logUp(user);
         SendMessage sendMessage = new SendMessage();
-        sendMessage.setCode(logup_code);
         if (logup_code == 2){
-            sendMessage.setResult("success");
+            sendMessage.initMessage(logup_code, "", "success", "");
         }else {
-            sendMessage.setResult("error");
+            sendMessage.initMessage(logup_code, "", "error", "");
         }
         sendMessage.setDescription(serviceCodeInfo.getCodeInfo(logup_code));
         return JSON.toJSONString(sendMessage);
@@ -63,15 +65,11 @@ public class UserController {
         loginMap.put("password", password);
         int login_code = iUserService.logIn(loginMap);
         if (login_code > 0){
-            sendMessage.setCode(login_code);
-            sendMessage.setData(iUserService.getUserByAccount(account));
-            sendMessage.setResult("success");
-            return JSON.toJSONString(sendMessage);
+            sendMessage.initMessage(login_code, iUserService.getUserByAccount(account), "success", "");
         }else {
-            sendMessage.setCode(login_code);
-            sendMessage.setResult("error");
-            return JSON.toJSONString(sendMessage);
+            sendMessage.initMessage(login_code, "", "error", "");
         }
+        return JSON.toJSONString(sendMessage);
     }
 
     /**
@@ -84,13 +82,10 @@ public class UserController {
         SendMessage sendMessage = new SendMessage();
         User user = iUserService.getUserById(user_id);
         if (user == null){
-            sendMessage.setCode(ServiceCodeInfo.NO_USER);
-            sendMessage.setResult("error");
+            sendMessage.initMessage(ServiceCodeInfo.NO_USER, "", "error", "");
         }
         else {
-            sendMessage.setCode(ServiceCodeInfo.SUCCESS);
-            sendMessage.setData(user);
-            sendMessage.setResult("success");
+            sendMessage.initMessage(ServiceCodeInfo.SUCCESS, user, "success", "");
         }
         return JSON.toJSONString(sendMessage);
     }
@@ -105,13 +100,12 @@ public class UserController {
         SendMessage sendMessage = new SendMessage();
         int changeInfo_code = iUserService.changeInfo(user);
         sendMessage.setCode(changeInfo_code);
-        if (changeInfo_code == 3){
-            sendMessage.setResult("success");
+        if (changeInfo_code < 0){
+            sendMessage.initMessage(changeInfo_code, "", "error", "");
         }else {
-            sendMessage.setResult("error");
+            User selectUser = iUserService.getUserByAccount(user.getAccount());
+            sendMessage.initMessage(changeInfo_code, selectUser, "success", "");
         }
-        iUserService.getUserByAccount(user.getAccount());
-        sendMessage.setData(user);
         return JSON.toJSONString(sendMessage);
     }
 
@@ -126,12 +120,10 @@ public class UserController {
         SendMessage sendMessage = new SendMessage();
         int changePWD_code = iUserService.changePWD(account, password);
         if (changePWD_code > 0){
-            sendMessage.setResult("success");
-            sendMessage.setCode(changePWD_code);
+            sendMessage.initMessage(changePWD_code, "", "success", "");
         }
         else {
-            sendMessage.setResult("error");
-            sendMessage.setCode(changePWD_code);
+            sendMessage.initMessage(changePWD_code, "", "error", "");
         }
         return JSON.toJSONString(sendMessage);
     }
