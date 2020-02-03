@@ -37,6 +37,11 @@ public class ServiceCodeInfo {
      */
     public static final int NO_USER = -1;
 
+    /**
+     *
+     */
+    public static final int LOGOUT_ERROR = -1;
+
     public String getCodeInfo(int code){
         switch (code){
             case -1 : return "insert error";

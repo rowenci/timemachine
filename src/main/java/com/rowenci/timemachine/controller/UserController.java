@@ -7,6 +7,7 @@ import com.rowenci.timemachine.entity.User;
 import com.rowenci.timemachine.service.IUserService;
 import com.rowenci.timemachine.util.CodeInfo.ServiceCodeInfo;
 import com.rowenci.timemachine.util.TokenUtil.TokenUtil;
+import com.rowenci.timemachine.util.redis.RedisUtil;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -31,6 +32,9 @@ public class UserController {
 
     @Resource
     private ServiceCodeInfo serviceCodeInfo;
+
+    @Resource
+    private RedisUtil redisUtil;
 
     /**
      * 注册
@@ -69,6 +73,8 @@ public class UserController {
             if (user.getPassword().equals(password)){
                 //登陆成功
                 String token = TokenUtil.createToken();
+                //放入缓存<token, 用户id>并设置失效时间3600秒
+                redisUtil.set(token, user.getUserId(), 3600);
                 Map infoMap = new HashMap();
                 infoMap.put("user", user);
                 infoMap.put("token", token);
@@ -85,9 +91,14 @@ public class UserController {
     public String logOut(String token){
         SendMessage sendMessage = new SendMessage();
         //消除token缓存
+        if (!redisUtil.hasKey(token)){
+            sendMessage.initMessage(sendMessage, ServiceCodeInfo.UNKNOWN_ERROR, "", "error", "token不存在");
+        }else {
+            redisUtil.del(token);
+            sendMessage.initMessage(sendMessage, ServiceCodeInfo.LOGOUT_ERROR, "", "success", "退出成功");
+        }
 
 
-        sendMessage.initMessage(sendMessage, ServiceCodeInfo.SUCCESS, "", "success", "登陆成功");
         return JSON.toJSONString(sendMessage);
     }
 

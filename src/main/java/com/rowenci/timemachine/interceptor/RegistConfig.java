@@ -22,7 +22,7 @@ public class RegistConfig implements WebMvcConfigurer {
             public void addInterceptors(InterceptorRegistry registry) {
                 registry.addInterceptor(new UserHandlerInterceptor())
                         .addPathPatterns("/**")
-                        .excludePathPatterns("/timemachine/user");
+                        .excludePathPatterns("/timemachine/user/*");
             }
         };
     }

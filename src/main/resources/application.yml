@@ -6,3 +6,6 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   logging:
     config: classpath:log4j2.yml
+  redis:
+    host: 47.107.32.4
+    port: 6379
