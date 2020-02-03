@@ -25,8 +25,7 @@ public class SendMessage implements Serializable {
 
     private String description;
 
-    public SendMessage initMessage(int code, Object data,String result, String description){
-        SendMessage sendMessage = new SendMessage();
+    public SendMessage initMessage(SendMessage sendMessage, int code, Object data,String result, String description){
         sendMessage.setCode(code);
         sendMessage.setResult(result);
         sendMessage.setData(data);

@@ -34,10 +34,10 @@ public class PublicMessageController {
         SendMessage sendMessage = new SendMessage();
         int code = iPublicMessageService.addPublicMessage(publicMessage);
         if (code > 0){
-            sendMessage.initMessage(serviceCodeInfo.SUCCESS, "", "success", "");
+            sendMessage.initMessage(sendMessage, serviceCodeInfo.SUCCESS, "", "success", "");
         }
         else {
-            sendMessage.initMessage(code, "", "error", "");
+            sendMessage.initMessage(sendMessage, code, "", "error", "");
         }
         return JSON.toJSONString(sendMessage);
     }
@@ -46,7 +46,7 @@ public class PublicMessageController {
     public String getAllPublicMessage(int message_id){
         SendMessage sendMessage = new SendMessage();
         List<PublicMessage> list = iPublicMessageService.getAllPublicMessage(message_id);
-        sendMessage.initMessage(serviceCodeInfo.SUCCESS, list, "success", "");
+        sendMessage.initMessage(sendMessage, serviceCodeInfo.SUCCESS, list, "success", "");
         return JSON.toJSONString(sendMessage);
     }
 
@@ -55,10 +55,10 @@ public class PublicMessageController {
         SendMessage sendMessage = new SendMessage();
         int code = iPublicMessageService.banPublicMessage(public_message_id);
         if (code > 0){
-            sendMessage.initMessage(serviceCodeInfo.SUCCESS, "", "success", "");
+            sendMessage.initMessage(sendMessage, serviceCodeInfo.SUCCESS, "", "success", "");
         }
         else {
-            sendMessage.initMessage(code, "", "error", "");
+            sendMessage.initMessage(sendMessage, code, "", "error", "");
         }
         return JSON.toJSONString(sendMessage);
     }

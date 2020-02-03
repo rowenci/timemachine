@@ -36,7 +36,7 @@ public class GoodListController {
     public String addGood(@RequestBody GoodList goodList) {
         SendMessage sendMessage = new SendMessage();
         iGoodListService.addGood(goodList);
-        sendMessage.initMessage(serviceCodeInfo.SUCCESS, "", "success", "");
+        sendMessage.initMessage(sendMessage, serviceCodeInfo.SUCCESS, "", "success", "");
         return JSON.toJSONString(sendMessage);
     }
 
@@ -44,7 +44,7 @@ public class GoodListController {
     public String deleteGood(@RequestBody GoodList goodList) {
         SendMessage sendMessage = new SendMessage();
         iGoodListService.deleteGood(goodList);
-        sendMessage.initMessage(serviceCodeInfo.SUCCESS, "", "success", "");
+        sendMessage.initMessage(sendMessage, serviceCodeInfo.SUCCESS, "", "success", "");
         return JSON.toJSONString(sendMessage);
     }
 
@@ -52,7 +52,7 @@ public class GoodListController {
     public String getGoodList(int user_id) {
         SendMessage sendMessage = new SendMessage();
         List<GoodList> list = iGoodListService.getGoodList(user_id);
-        sendMessage.initMessage(serviceCodeInfo.SUCCESS, list, "success", "");
+        sendMessage.initMessage(sendMessage, serviceCodeInfo.SUCCESS, list, "success", "");
         return JSON.toJSONString(sendMessage);
     }
 

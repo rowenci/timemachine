@@ -33,7 +33,7 @@ public class MessageController {
     public String getAllMessages(int user_id){
         SendMessage sendMessage = new SendMessage();
         List<Message> list = iMessageService.getMessageByUserId(user_id);
-        sendMessage.initMessage(serviceCodeInfo.SUCCESS, list, "success", "");
+        sendMessage.initMessage(sendMessage, serviceCodeInfo.SUCCESS, list, "success", "");
         return JSON.toJSONString(sendMessage);
     }
 
@@ -41,7 +41,7 @@ public class MessageController {
     public String getMessageByMessageId(@PathVariable("message_id") int message_id){
         SendMessage sendMessage = new SendMessage();
         Message message = iMessageService.getMessageByMessageId(message_id);
-        sendMessage.initMessage(serviceCodeInfo.SUCCESS, message, "success", "");
+        sendMessage.initMessage(sendMessage, serviceCodeInfo.SUCCESS, message, "success", "");
         return JSON.toJSONString(sendMessage);
     }
 
@@ -49,7 +49,7 @@ public class MessageController {
     public String getPublicMessage(int user_id){
         SendMessage sendMessage = new SendMessage();
         List<Integer> list = iMessageService.getPublicMessage(user_id);
-        sendMessage.initMessage(serviceCodeInfo.SUCCESS, list, "success", "");
+        sendMessage.initMessage(sendMessage, serviceCodeInfo.SUCCESS, list, "success", "");
         return JSON.toJSONString(sendMessage);
     }
 
@@ -58,9 +58,9 @@ public class MessageController {
         SendMessage sendMessage = new SendMessage();
         int code = iMessageService.setPublicMessage(message_id);
         if (code > 0){
-            sendMessage.initMessage(serviceCodeInfo.SUCCESS, "", "success", "");
+            sendMessage.initMessage(sendMessage, serviceCodeInfo.SUCCESS, "", "success", "");
         }else {
-            sendMessage.initMessage(code, "", "error", "");
+            sendMessage.initMessage(sendMessage, code, "", "error", "");
         }
         return JSON.toJSONString(sendMessage);
     }
@@ -70,10 +70,10 @@ public class MessageController {
         SendMessage sendMessage = new SendMessage();
         int code = iMessageService.deleteMessage(message_id);
         if (code > 0){
-            sendMessage.initMessage(code, "", "success", "");
+            sendMessage.initMessage(sendMessage, code, "", "success", "");
         }
         else {
-            sendMessage.initMessage(code, "", "error", "");
+            sendMessage.initMessage(sendMessage, code, "", "error", "");
         }
         return JSON.toJSONString(sendMessage);
     }

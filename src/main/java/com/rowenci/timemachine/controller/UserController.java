@@ -6,6 +6,7 @@ import com.rowenci.timemachine.entity.SendMessage;
 import com.rowenci.timemachine.entity.User;
 import com.rowenci.timemachine.service.IUserService;
 import com.rowenci.timemachine.util.CodeInfo.ServiceCodeInfo;
+import com.rowenci.timemachine.util.TokenUtil.TokenUtil;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -43,9 +44,9 @@ public class UserController {
         int logup_code = iUserService.logUp(user);
         SendMessage sendMessage = new SendMessage();
         if (logup_code == 2){
-            sendMessage.initMessage(logup_code, "", "success", "");
+            sendMessage.initMessage(sendMessage, logup_code, "", "success", "");
         }else {
-            sendMessage.initMessage(logup_code, "", "error", "");
+            sendMessage.initMessage(sendMessage, logup_code, "", "error", "");
         }
         sendMessage.setDescription(serviceCodeInfo.getCodeInfo(logup_code));
         return JSON.toJSONString(sendMessage);
@@ -60,15 +61,33 @@ public class UserController {
     @GetMapping("/")
     public String logIn(String account, String password){
         SendMessage sendMessage = new SendMessage();
-        Map<String, String> loginMap = new HashMap<>();
-        loginMap.put("account", account);
-        loginMap.put("password", password);
-        int login_code = iUserService.logIn(loginMap);
-        if (login_code > 0){
-            sendMessage.initMessage(login_code, iUserService.getUserByAccount(account), "success", "");
+        User user = iUserService.getUserByAccount(account);
+        if (user == null){
+            //用户不存在
+            sendMessage.initMessage(sendMessage, ServiceCodeInfo.LOGIN_ERROR,"", "error", "账号错误");
         }else {
-            sendMessage.initMessage(login_code, "", "error", "");
+            if (user.getPassword().equals(password)){
+                //登陆成功
+                String token = TokenUtil.createToken();
+                Map infoMap = new HashMap();
+                infoMap.put("user", user);
+                infoMap.put("token", token);
+                sendMessage.initMessage(sendMessage, ServiceCodeInfo.SUCCESS, infoMap, "success", "登陆成功");
+            }else {
+                //密码错误
+                sendMessage.initMessage(sendMessage, ServiceCodeInfo.LOGIN_ERROR,"", "error", "密码错误");
+            }
         }
+        return JSON.toJSONString(sendMessage);
+    }
+
+    @GetMapping("/logOut")
+    public String logOut(String token){
+        SendMessage sendMessage = new SendMessage();
+        //消除token缓存
+
+
+        sendMessage.initMessage(sendMessage, ServiceCodeInfo.SUCCESS, "", "success", "登陆成功");
         return JSON.toJSONString(sendMessage);
     }
 
@@ -82,10 +101,10 @@ public class UserController {
         SendMessage sendMessage = new SendMessage();
         User user = iUserService.getUserById(user_id);
         if (user == null){
-            sendMessage.initMessage(ServiceCodeInfo.NO_USER, "", "error", "");
+            sendMessage.initMessage(sendMessage, ServiceCodeInfo.NO_USER, "", "error", "");
         }
         else {
-            sendMessage.initMessage(ServiceCodeInfo.SUCCESS, user, "success", "");
+            sendMessage.initMessage(sendMessage, ServiceCodeInfo.SUCCESS, user, "success", "");
         }
         return JSON.toJSONString(sendMessage);
     }
@@ -101,10 +120,10 @@ public class UserController {
         int changeInfo_code = iUserService.changeInfo(user);
         sendMessage.setCode(changeInfo_code);
         if (changeInfo_code < 0){
-            sendMessage.initMessage(changeInfo_code, "", "error", "");
+            sendMessage.initMessage(sendMessage, changeInfo_code, "", "error", "");
         }else {
             User selectUser = iUserService.getUserByAccount(user.getAccount());
-            sendMessage.initMessage(changeInfo_code, selectUser, "success", "");
+            sendMessage.initMessage(sendMessage, changeInfo_code, selectUser, "success", "");
         }
         return JSON.toJSONString(sendMessage);
     }
@@ -120,10 +139,10 @@ public class UserController {
         SendMessage sendMessage = new SendMessage();
         int changePWD_code = iUserService.changePWD(account, password);
         if (changePWD_code > 0){
-            sendMessage.initMessage(changePWD_code, "", "success", "");
+            sendMessage.initMessage(sendMessage, changePWD_code, "", "success", "");
         }
         else {
-            sendMessage.initMessage(changePWD_code, "", "error", "");
+            sendMessage.initMessage(sendMessage, changePWD_code, "", "error", "");
         }
         return JSON.toJSONString(sendMessage);
     }
