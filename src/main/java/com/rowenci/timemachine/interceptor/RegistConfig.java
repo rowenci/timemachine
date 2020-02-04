@@ -21,7 +21,8 @@ public class RegistConfig implements WebMvcConfigurer {
             @Override
             public void addInterceptors(InterceptorRegistry registry) {
                 registry.addInterceptor(new UserHandlerInterceptor())
-                        .addPathPatterns("/**")
+                        //暂时关闭 方便其他功能进行测试
+                        //.addPathPatterns("/**")
                         .excludePathPatterns("/timemachine/user/*");
             }
         };

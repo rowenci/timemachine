@@ -29,6 +29,11 @@ public class PublicMessageController {
     @Resource
     private ServiceCodeInfo serviceCodeInfo;
 
+    /**
+     * 添加公共信件
+     * @param publicMessage
+     * @return
+     */
     @PostMapping("/")
     public String addPublicMessage(@RequestBody PublicMessage publicMessage){
         SendMessage sendMessage = new SendMessage();
@@ -42,6 +47,11 @@ public class PublicMessageController {
         return JSON.toJSONString(sendMessage);
     }
 
+    /**
+     * 根据信件id获取公共信件
+     * @param message_id
+     * @return
+     */
     @GetMapping("/")
     public String getAllPublicMessage(int message_id){
         SendMessage sendMessage = new SendMessage();
@@ -50,6 +60,11 @@ public class PublicMessageController {
         return JSON.toJSONString(sendMessage);
     }
 
+    /**
+     * 将公共信件加入黑名单
+     * @param public_message_id
+     * @return
+     */
     @PutMapping("/")
     public String banPublicMessage(int public_message_id){
         SendMessage sendMessage = new SendMessage();

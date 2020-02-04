@@ -29,6 +29,11 @@ public class MessageController {
     @Resource
     ServiceCodeInfo serviceCodeInfo;
 
+    /**
+     * 根据用户id获取全部信件
+     * @param user_id
+     * @return
+     */
     @GetMapping("/")
     public String getAllMessages(int user_id){
         SendMessage sendMessage = new SendMessage();
@@ -37,6 +42,11 @@ public class MessageController {
         return JSON.toJSONString(sendMessage);
     }
 
+    /**
+     * 根据信件id获取信件信息
+     * @param message_id
+     * @return
+     */
     @GetMapping("/{message_id}")
     public String getMessageByMessageId(@PathVariable("message_id") int message_id){
         SendMessage sendMessage = new SendMessage();
@@ -45,6 +55,11 @@ public class MessageController {
         return JSON.toJSONString(sendMessage);
     }
 
+    /**
+     * 获取用户公开的信件
+     * @param user_id
+     * @return
+     */
     @GetMapping("/public")
     public String getPublicMessage(int user_id){
         SendMessage sendMessage = new SendMessage();
@@ -53,6 +68,11 @@ public class MessageController {
         return JSON.toJSONString(sendMessage);
     }
 
+    /**
+     * 将信件设置为公开信件
+     * @param message_id
+     * @return
+     */
     @PutMapping("/")
     public String setPublicMessage(int message_id){
         SendMessage sendMessage = new SendMessage();
@@ -65,6 +85,11 @@ public class MessageController {
         return JSON.toJSONString(sendMessage);
     }
 
+    /**
+     * 删除信件
+     * @param message_id
+     * @return
+     */
     @GetMapping("/delete")
     public String deleteMessage(int message_id){
         SendMessage sendMessage = new SendMessage();
