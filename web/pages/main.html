@@ -39,7 +39,7 @@
                         <dd><a href="">安全设置</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item"><a href="">退了</a></li>
+                <li class="layui-nav-item"><a href="" onclick="logout()">退出</a></li>
             </ul>
         </div>
 
@@ -82,12 +82,15 @@
         </div>
     </div>
     <script src="js/layui/layui.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.4.0.js"></script>
     <script>
         //JavaScript代码区域
         layui.use('element', function () {
             var element = layui.element;
-
         });
+        function logout() {
+            
+        }
     </script>
 </body>
 

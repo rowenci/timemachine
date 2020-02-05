@@ -38,9 +38,19 @@ public class ServiceCodeInfo {
     public static final int NO_USER = -1;
 
     /**
-     *
+     * change password error
+     */
+    public static final int CHANGE_PASSWORD_ERROR = -1;
+
+    /**
+     * logout error
      */
     public static final int LOGOUT_ERROR = -1;
+
+    /**
+     * logup error
+     */
+    public static final int LOGUP_ERROR = -1;
 
     public String getCodeInfo(int code){
         switch (code){

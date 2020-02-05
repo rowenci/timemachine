@@ -14,31 +14,32 @@
       <label class="layui-form-label">账号</label>
       <div class="layui-input-inline">
         <input type="text" name="username" lay-verify="required" placeholder="请输入账号" autocomplete="off"
-          class="layui-input">
+          class="layui-input" id="account">
       </div>
     </div>
     <div class="layui-form-item">
       <label class="layui-form-label">密码</label>
       <div class="layui-input-inline">
         <input type="password" name="password" lay-verify="required" placeholder="请输入密码" autocomplete="off"
-          class="layui-input">
+          class="layui-input" id="password">
       </div>
     </div>
     <div class="layui-form-item">
       <label class="layui-form-label">手机号码</label>
       <div class="layui-input-inline">
         <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off"
-          class="layui-input">
+          class="layui-input" id="phonenumber">
       </div>
     </div>
     <div class="layui-form-item">
       <label class="layui-form-label">安全问题</label>
       <div class="layui-input-block">
-        <select name="city" lay-verify="" style="display: block; height: 40px; width: 190px; border: 1px solid gray;">
+        <select name="city" lay-verify="" style="display: block; height: 40px; width: 190px; border: 1px solid gray;"
+          id="question">
           <option value="">请选择一个问题</option>
-          <option value="010">北京</option>
-          <option value="021">上海</option>
-          <option value="0571">杭州</option>
+          <option value="1">母亲的名字</option>
+          <option value="2">父亲的名字</option>
+          <option value="3">小学的名字</option>
         </select>
       </div>
     </div>
@@ -46,22 +47,23 @@
       <label class="layui-form-label">安全答案</label>
       <div class="layui-input-inline">
         <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off"
-          class="layui-input">
+          class="layui-input" id="answer">
       </div>
     </div>
     <div class="layui-form-item">
       <label class="layui-form-label">邮箱</label>
       <div class="layui-input-inline">
         <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off"
-          class="layui-input">
+          class="layui-input" id="email">
       </div>
     </div>
     <div class="layui-form-item">
       <label class="layui-form-label">性别</label>
       <div class="layui-input-block">
-        <select name="city" lay-verify="" style="display: block; height: 40px; width: 190px; border: 1px solid gray;">
-          <option value="010">男</option>
-          <option value="021">女</option>
+        <select name="city" lay-verify="" style="display: block; height: 40px; width: 190px; border: 1px solid gray;"
+          id="sex">
+          <option value="1">男</option>
+          <option value="0">女</option>
         </select>
       </div>
     </div>
@@ -69,7 +71,7 @@
       <div class="layui-inline">
         <label class="layui-form-label">出生年月</label>
         <div class="layui-input-inline">
-          <input type="text" class="layui-input" id="test11" placeholder="yyyy年MM月dd日">
+          <input type="text" class="layui-input" id="birthday" placeholder="yyyy年MM月dd日">
         </div>
       </div>
     </div>
@@ -77,28 +79,30 @@
       <label class="layui-form-label">注册地址</label>
       <div class="layui-input-inline">
         <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off"
-          class="layui-input">
+          class="layui-input" id="location">
       </div>
     </div>
     <div class="layui-form-item">
       <label class="layui-form-label">头像</label>
       <div class="layui-upload">
         <div class="layui-upload-list">
-          <img class="layui-upload-img" id="demo1" style="width: 100px; height: 100px;">
-          <button type="button" class="layui-btn" id="test1">上传图片</button>
+          <img class="layui-upload-img" id="image_show" style="width: 100px; height: 100px;">
+          <button type="button" class="layui-btn" id="image_btn">上传图片</button>
+          <input style="display: none;" id="image"></input>
         </div>
       </div>
     </div>
-    <button type="button" class="layui-btn layui-btn-lg" style="margin-left: 110px;">提交</button>
+    <button type="button" class="layui-btn layui-btn-lg" style="margin-left: 110px;" onclick="regist()">提交</button>
   </div>
 
   <script src="../js/layui/layui.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../js/jquery-3.4.0.js"></script>
   <script>
     layui.use('laydate', function () {
       var laydate = layui.laydate;
       laydate.render({
-        elem: '#test11'
-        , format: 'yyyy年MM月dd日'
+        elem: '#birthday'
+        , format: 'yyyy-MM-dd'
       });
     })
     layui.use('upload', function () {
@@ -106,12 +110,12 @@
         , upload = layui.upload;
 
       var uploadInst = upload.render({
-        elem: '#test1'
+        elem: '#image_btn'
         , url: 'https://httpbin.org/post' //改成您自己的上传接口
         , before: function (obj) {
           //预读本地文件示例，不支持ie8
           obj.preview(function (index, file, result) {
-            $('#demo1').attr('src', result); //图片链接（base64）
+            $('#image_show').attr('src', result); //图片链接（base64）
           });
         }
         , done: function (res) {
@@ -120,6 +124,7 @@
             return layer.msg('上传失败');
           }
           //上传成功
+          $("#image").val() = res;
         }
         , error: function () {
           //演示失败状态，并实现重传
@@ -131,6 +136,53 @@
         }
       });
     })
+    function regist() {
+      var user = new Object();
+      user.account = $("#account").val();
+      user.password = $("#password").val();
+      user.phonenumber = $("#phonenumber").val();
+      user.question_id = $("#question option:selected").val();
+      user.answer = $("#answer").val();
+      user.email = $("#email").val();
+      user.sex = $("#sex option:selected").val();
+      user.birthday = layui.$("#birthday").val();
+      user.location = $("#location").val();
+      user.image = $("#image").val();
+      if (user.account == "" || user.password == "" || user.birthday == "" || user.sex == "" || user.question_id == "" || user.phonenumber == "") {
+        alert("请填写完整信息");
+      } else {
+        console.log(user);
+        $.ajax({
+          type: "POST",
+          url: "http://localhost:8080/timemachine/user/",
+          data: {
+            "account": user.account,
+            "password": user.password,
+            "phoneNumber": user.phonenumber,
+            "questionId": user.question_id,
+            "answer": user.answer,
+            "email": user.email,
+            "sex": user.sex,
+            "birthday": user.birthday,
+            "location": user.location,
+            "image": user.image
+          },
+          async: false,
+          cache: false,
+          success: function (data) {
+            if (JSON.parse(data).result == "success") {
+              alert("注册成功");
+              //返回到登录
+            } else {
+              alert("注册失败");
+            }
+          },
+          error: function () {
+            alert("系统错误");
+          }
+        });
+      }
+    }
   </script>
 </body>
 

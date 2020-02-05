@@ -1,0 +1,171 @@
+2020-02-03 17:49:57.915 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 16360 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-03 17:49:57.937 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-03 17:49:59.018 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.rowenci.timemachine.config.ShiroConfig$$EnhancerBySpringCGLIB$$cea8ddde] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:49:59.025 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:00.190 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:00.235 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:00.243 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$14c47526] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:00.245 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:00.252 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:00.277 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:00.285 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:02.674 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:02.679 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:02.681 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:02.683 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy80] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:02.685 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'CRUDCodeInfo' of type [com.rowenci.timemachine.util.CodeInfo.CRUDCodeInfo] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:02.687 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.rowenci.timemachine.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:02.715 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'myShiroRealm' of type [com.rowenci.timemachine.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:02.723 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'redisSessionDAO' of type [org.crazycake.shiro.RedisSessionDAO] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:02.727 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'sessionManager' of type [com.rowenci.timemachine.config.MySessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:02.730 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'cacheManager' of type [org.crazycake.shiro.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:02.733 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:50:03.049 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-03 17:50:03.062 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-03 17:50:03.062 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-03 17:50:03.063 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-03 17:50:03.200 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-03 17:50:03.201 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5210 ms
+2020-02-03 17:50:03.510 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-03 17:50:03.779 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-03 17:50:03.804 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-03 17:50:03.807 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 6.455 seconds (JVM running for 10.49)
+2020-02-03 17:52:58.815 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-03 17:52:58.815 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-03 17:52:58.824 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 9 ms
+2020-02-03 17:52:58.842 - INFO  [nio-8080-exec-1] stractValidatingSessionManager : Enabling session validation scheduler...
+2020-02-03 17:54:38.002 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 11352 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-03 17:54:38.016 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-03 17:54:39.235 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'shiroConfig' of type [com.rowenci.timemachine.config.ShiroConfig$$EnhancerBySpringCGLIB$$630ef1fc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:39.246 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:40.503 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'hashedCredentialsMatcher' of type [org.apache.shiro.authc.credential.HashedCredentialsMatcher] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:40.558 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'mybatis-plus-com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:40.566 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration' of type [com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration$$EnhancerBySpringCGLIB$$a92a8944] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:40.568 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Hikari] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:40.582 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:40.620 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'dataSource' of type [com.zaxxer.hikari.HikariDataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:40.639 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker' of type [org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:43.461 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'sqlSessionFactory' of type [org.apache.ibatis.session.defaults.DefaultSqlSessionFactory] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:43.468 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'sqlSessionTemplate' of type [org.mybatis.spring.SqlSessionTemplate] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:43.470 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'userMapper' of type [org.mybatis.spring.mapper.MapperFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:43.473 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'userMapper' of type [com.sun.proxy.$Proxy80] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:43.474 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'CRUDCodeInfo' of type [com.rowenci.timemachine.util.CodeInfo.CRUDCodeInfo] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:43.477 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'userServiceImpl' of type [com.rowenci.timemachine.service.impl.UserServiceImpl] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:43.510 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'myShiroRealm' of type [com.rowenci.timemachine.config.MyShiroRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:43.526 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'redisSessionDAO' of type [org.crazycake.shiro.RedisSessionDAO] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:43.531 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'sessionManager' of type [com.rowenci.timemachine.config.MySessionManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:43.535 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'cacheManager' of type [org.crazycake.shiro.RedisCacheManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:43.541 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 17:54:43.892 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-03 17:54:43.905 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-03 17:54:43.906 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-03 17:54:43.907 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-03 17:54:44.030 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-03 17:54:44.030 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5954 ms
+2020-02-03 17:54:44.367 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-03 17:54:44.598 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-03 17:54:44.630 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-03 17:54:44.634 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 7.184 seconds (JVM running for 12.424)
+2020-02-03 17:54:50.409 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-03 17:54:50.409 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-03 17:54:50.419 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 10 ms
+2020-02-03 17:54:50.440 - INFO  [nio-8080-exec-1] stractValidatingSessionManager : Enabling session validation scheduler...
+2020-02-03 18:02:58.081 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-03 18:22:06.238 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 15052 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-03 18:22:06.252 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-03 18:22:07.545 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-03 18:22:07.558 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-03 18:22:07.559 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-03 18:22:07.560 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-03 18:22:07.676 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-03 18:22:07.677 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1367 ms
+2020-02-03 18:22:10.583 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-03 18:22:10.811 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-03 18:22:10.840 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-03 18:22:10.844 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.112 seconds (JVM running for 8.718)
+2020-02-03 18:22:16.931 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-03 18:22:16.931 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-03 18:22:16.941 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 10 ms
+2020-02-03 18:23:26.549 - INFO  [nio-8080-exec-4] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-03 18:23:27.204 - INFO  [nio-8080-exec-4] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-03 18:39:07.495 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-03 18:39:07.497 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-03 18:39:07.509 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-03 19:02:54.951 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 17992 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-03 19:02:54.961 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-03 19:02:55.670 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-03 19:02:55.674 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-03 19:02:55.724 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 34ms. Found 0 Redis repository interfaces.
+2020-02-03 19:02:56.036 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 19:02:56.291 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-03 19:02:56.301 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-03 19:02:56.302 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-03 19:02:56.302 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-03 19:02:56.413 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-03 19:02:56.413 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1413 ms
+2020-02-03 19:02:59.384 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-03 19:02:59.875 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-03 19:02:59.891 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-03 19:02:59.892 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-03 19:02:59.893 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-03 19:02:59.894 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-03 19:02:59.894 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-03 19:02:59.894 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-03 19:02:59.895 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@65bb6275
+2020-02-03 19:02:59.938 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-03 19:02:59.938 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-03 19:02:59.947 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-03 19:02:59.972 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-03 19:02:59.976 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.412 seconds (JVM running for 8.715)
+2020-02-03 19:03:51.485 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-03 19:03:51.485 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-03 19:03:51.494 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 9 ms
+2020-02-03 19:04:39.910 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 4288 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-03 19:04:39.920 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-03 19:04:40.558 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-03 19:04:40.562 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-03 19:04:40.610 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 32ms. Found 0 Redis repository interfaces.
+2020-02-03 19:04:40.900 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-03 19:04:41.154 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-03 19:04:41.165 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-03 19:04:41.166 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-03 19:04:41.166 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-03 19:04:41.278 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-03 19:04:41.279 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1320 ms
+2020-02-03 19:04:44.334 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-03 19:04:44.731 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-03 19:04:44.746 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-03 19:04:44.746 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-03 19:04:44.747 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-03 19:04:44.748 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-03 19:04:44.748 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-03 19:04:44.748 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-03 19:04:44.749 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@568750b7
+2020-02-03 19:04:44.793 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-03 19:04:44.793 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-03 19:04:44.802 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-03 19:04:44.842 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-03 19:04:44.845 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.317 seconds (JVM running for 8.633)
+2020-02-03 19:04:47.129 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-03 19:04:47.129 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-03 19:04:47.138 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 9 ms
+2020-02-03 19:04:47.246 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-03 19:04:47.733 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-03 19:04:48.003 - INFO  [nio-8080-exec-1] i.l.c.EpollProvider            : Starting without optional epoll library
+2020-02-03 19:04:48.005 - INFO  [nio-8080-exec-1] i.l.c.KqueueProvider           : Starting without optional kqueue library
+2020-02-03 19:10:09.261 - INFO  [xecutorLoop-1-3] n.u.i.l.AbstractInternalLogger : Reconnecting, last destination was /47.107.32.4:6379
+2020-02-03 19:10:09.317 - INFO  [ioEventLoop-4-2] i.l.c.p.ReconnectionHandler    : Reconnected to 47.107.32.4:6379

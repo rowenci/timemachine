@@ -16,18 +16,25 @@ import javax.servlet.http.HttpServletResponse;
  * @author rowenci
  * @since 2020/2/3 18:32
  */
-@Component
+//@Component
 public class UserHandlerInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String token = request.getSession().getAttribute("token").toString();
-        if (TokenUtil.judegToken(token)){
-            //token对比失败
-            return false;
-        }else {
-            //token对比成功
-            return true;
+        if (request != null) {
+            String token = request.getParameter("token");
+            if (token == null) {
+                return false;
+            } else {
+                if (TokenUtil.judegToken(token)) {
+                    //token对比失败
+                    return false;
+                } else {
+                    //token对比成功
+                    return true;
+                }
+            }
         }
+        return true;
     }
 
     @Override

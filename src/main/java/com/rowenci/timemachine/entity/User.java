@@ -2,7 +2,6 @@ package com.rowenci.timemachine.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,7 +13,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author rowenci
- * @since 2020-01-15
+ * @since 2020-02-05
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -26,15 +25,13 @@ public class User implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    private Integer userId;
-
-    private String username;
+    private String userId;
 
     private String account;
 
     private String password;
 
-    private Integer phoneNumber;
+    private String phoneNumber;
 
     private Integer questionId;
 
@@ -42,7 +39,7 @@ public class User implements Serializable {
 
     private String email;
 
-    private LocalDateTime birthday;
+    private String birthday;
 
     /**
      * 1 male / 0 female
