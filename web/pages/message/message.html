@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>TimeMachine - Rowenci</title>
+    <link rel="stylesheet" href="../../js/layui/css/layui.css">
+</head>
+
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+
+
+        <div class="layui-header">
+            <div class="layui-logo">TimeMachine</div>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        贤心
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="">基本资料</a></dd>
+                        <dd><a href="">安全设置</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="" onclick="logout()">退出</a></li>
+            </ul>
+        </div>
+
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <li class="layui-nav-item"><a href="../public_area.html">公共区域</a></li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="" href="javascript:;">我的信件</a>
+                        <dl class="layui-nav-child">
+                            <dd class="layui-this"><a href="javascript:;">写信件</a></dd>
+                            <dd><a href="./list.html">信件列表</a></dd>
+                            <dd><a href="./public_list.html">公开信件</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">我的喜欢</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">点赞信件</a></dd>
+                            <dd><a href="javascript:;">收藏信件</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item"><a href="">点击赞助</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <div class="layui-form-item" style="margin-top: 15px;">
+                <label class="layui-form-label">信件标题：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
+                        class="layui-input">
+                </div>
+            </div>
+            <textarea id="message" style="display: none;"></textarea>
+            <div id="options">
+                <fieldset class="layui-elem-field site-demo-button" style="margin-top: 30px; height: 250px;">
+                    <legend>信件选项</legend>
+                    <div class="layui-form">
+                        <div style="margin: 10px 0 0 25px;">
+                            发送至 ：
+                            <input type="radio" name="sex" value="nan" title="一周后" checked>
+                            <input type="radio" name="sex" value="nv" title="一月后">
+                            <input type="radio" name="sex" value="nv" title="三月后">
+                            <input type="radio" name="sex" value="nv" title="半年后">
+                            <input type="radio" name="sex" value="nv" title="一年后">
+                        </div>
+                        </br>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">邮箱地址：</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="email" lay-verify="email" autocomplete="off"
+                                    class="layui-input">
+                            </div>
+                        </div>
+                        </br>
+                        </br>
+                        <div style="margin-left: 25px;">
+                            <input type="checkbox" name="" title="公开信件" checked>
+                            </br>
+                            </br>
+                            <button onclick="send()" type="button" class="layui-btn layui-btn-lg">发送信件</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            © Rowenci.com
+        </div>
+
+        <script src="../../js/layui/layui.js"></script>
+        <script type="text/javascript" src="../../js/jquery-3.4.0.js"></script>
+        <script>
+            var editor;
+            var layedit;
+            //富文本编辑器
+            layui.use('layedit', function () {
+                layedit = layui.layedit;
+                layedit.set({
+                    uploadImage: {
+                        url: 'http://localhost:8080/timemachine/message/uploadImage' //接口url
+                        , type: 'post' //默认post
+                    }
+                });
+                editor = layedit.build('message', {
+                    height: 500
+                }); //建立编辑器
+            });
+
+            //获取token  根据token向服务器请求数据
+            var storage = window.sessionStorage;
+            var token = storage.getItem("token");
+
+            //JavaScript代码区域
+            layui.use('element', function () {
+                var element = layui.element;
+            });
+            function logout() {
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8080/timemachine/user/logOut/",
+                    data: {
+                        "token": token
+                    },
+                    async: false,
+                    cache: false,
+                    success: function (data) {
+                        if (JSON.parse(data).result == "success") {
+                            storage.clear();
+                            window.location.href = "../index.html";
+                        } else {
+                            alert(JSON.parse(data).description);
+                        }
+                    },
+                    error: function () {
+                        alert("系统错误");
+                    }
+                });
+            }
+
+            function send(){
+                //富文本编辑器出来的是html
+                console.log(layedit.getContent(editor));
+            }
+        </script>
+</body>
+
+</html>

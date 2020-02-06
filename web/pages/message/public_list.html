@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>TimeMachine - Rowenci</title>
+    <link rel="stylesheet" href="../../js/layui/css/layui.css">
+</head>
+
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+
+
+        <div class="layui-header">
+            <div class="layui-logo">TimeMachine</div>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        贤心
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="">基本资料</a></dd>
+                        <dd><a href="">安全设置</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="" onclick="logout()">退出</a></li>
+            </ul>
+        </div>
+
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <li class="layui-nav-item"><a href="../public_area.html">公共区域</a></li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="" href="javascript:;">我的信件</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="./message.html">写信件</a></dd>
+                            <dd><a href="./list.html">信件列表</a></dd class="layui-this">
+                            <dd class="layui-this"><a href="javascript:;">公开信件</a></dd class="layui-this">
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">我的喜欢</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">点赞信件</a></dd>
+                            <dd><a href="javascript:;">收藏信件</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item"><a href="">点击赞助</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <table class="layui-hide" id="test"></table>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            © Rowenci.com
+        </div>
+
+        <script src="../../js/layui/layui.js"></script>
+        <script type="text/javascript" src="../../js/jquery-3.4.0.js"></script>
+        <script>
+            layui.use('table', function () {
+                var table = layui.table;
+
+                table.render({
+                    elem: '#test'
+                    , url: '/demo/table/user/'
+                    , page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+                        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+                        //,curr: 5 //设定初始在第 5 页
+                        , groups: 1 //只显示 1 个连续页码
+                        , first: true //不显示首页
+                        , last: true //不显示尾页
+
+                    }
+                    , cols: [[
+                        { field: 'id', width: 80, title: 'ID'}
+                        , { field: 'username', minWidth: 150, title: '信件标题' }
+                        , { field: 'sex', width: 135, title: '编写时间'}
+                        , { field: 'city', width: 135, title: '发送时间' }
+                        , { field: 'city', width: 135, title: '发送方式' }
+                        , { field: 'experience', width: 135, title: '发送地址'}
+                        , { field: 'sex', width: 135, title: '是否公开'}
+                    ]]
+
+                });
+            });
+
+
+            //获取token  根据token向服务器请求数据
+            var storage = window.sessionStorage;
+            var token = storage.getItem("token");
+
+            //JavaScript代码区域
+            layui.use('element', function () {
+                var element = layui.element;
+            });
+            function logout() {
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8080/timemachine/user/logOut/",
+                    data: {
+                        "token": token
+                    },
+                    async: false,
+                    cache: false,
+                    success: function (data) {
+                        if (JSON.parse(data).result == "success") {
+                            storage.clear();
+                            window.location.href = "../index.html";
+                        } else {
+                            alert(JSON.parse(data).description);
+                        }
+                    },
+                    error: function () {
+                        alert("系统错误");
+                    }
+                });
+            }
+        </script>
+</body>
+
+</html>

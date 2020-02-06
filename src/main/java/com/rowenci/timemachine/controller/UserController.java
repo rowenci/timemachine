@@ -8,6 +8,7 @@ import com.rowenci.timemachine.entity.SendMessage;
 import com.rowenci.timemachine.entity.User;
 import com.rowenci.timemachine.service.IUserService;
 import com.rowenci.timemachine.util.CodeInfo.ServiceCodeInfo;
+import com.rowenci.timemachine.util.CreateUUID;
 import com.rowenci.timemachine.util.TokenUtil.TokenUtil;
 import com.rowenci.timemachine.util.redis.RedisUtil;
 import org.springframework.ui.ModelMap;
@@ -62,16 +63,8 @@ public class UserController {
         }
 
         //获取uuid
-        UUID uuid = UUID.randomUUID();
-        String uid = uuid.toString();
-        String userId = "";
-        if (uid != null && !"".equals(uid)) {
-            for (int i = 0; i < uid.length(); i++) {
-                if (uid.charAt(i) >= 48 && uid.charAt(i) <= 57) {
-                    userId += uid.charAt(i);
-                }
-            }
-        }
+        CreateUUID createUUID = new CreateUUID();
+        String userId = createUUID.create();
         user.setUserId(userId);
 
         //添加用户
@@ -117,12 +110,9 @@ public class UserController {
 
                 //放入缓存<token, 用户id>并设置失效时间3600秒
                 redisUtil.set(token, user.getUserId(), 3600);
-                Map infoMap = new HashMap();
-                infoMap.put("user", user);
-                infoMap.put("token", token);
 
                 model.addAttribute("code", serviceCodeInfo.SUCCESS);
-                model.addAttribute("data", infoMap);
+                model.addAttribute("data", token);
                 model.addAttribute("result", "success");
                 model.addAttribute("description", "登陆成功");
             } else {

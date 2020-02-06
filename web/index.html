@@ -65,6 +65,14 @@
                     cache: false,
                     success: function (data) {
                         if (JSON.parse(data).result == "success") {
+                            //localstorage保存token
+                            if(! window.localStorage){
+                                alert("浏览器不支持localstorage");
+                                return false;
+                            }else{
+                                var storage = window.sessionStorage;
+                                storage.setItem("token", JSON.parse(data).data);
+                            }
                             window.location.href = "./pages/main.html";
                         } else {
                             alert("账号密码错误");

@@ -19,6 +19,11 @@ public class ServiceCodeInfo {
      */
     public static final int SUCCESS = 1;
 
+    /**
+     * upload message image success
+     */
+    public static final int UPLOAD_MESSAGE_PIC_SUCCESS = 0;
+
 
     /* error code */
 
@@ -51,6 +56,16 @@ public class ServiceCodeInfo {
      * logup error
      */
     public static final int LOGUP_ERROR = -1;
+
+    /**
+     * upload error
+     */
+    public static final int UPLOAD_ERROR = -1;
+
+    /**
+     * add message error
+     */
+    public static final int ADD_MESSAGE_ERROR = -1;
 
     public String getCodeInfo(int code){
         switch (code){

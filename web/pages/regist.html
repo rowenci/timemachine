@@ -111,20 +111,14 @@
 
       var uploadInst = upload.render({
         elem: '#image_btn'
-        , url: 'https://httpbin.org/post' //改成您自己的上传接口
-        , before: function (obj) {
-          //预读本地文件示例，不支持ie8
-          obj.preview(function (index, file, result) {
-            $('#image_show').attr('src', result); //图片链接（base64）
-          });
-        }
+        , url: 'http://localhost:8080/timemachine/message/uploadImage' //改成您自己的上传接口
         , done: function (res) {
           //如果上传失败
           if (res.code < 0) {
             return layer.msg('上传失败');
           }
           //上传成功
-          $("#image").val() = res;
+          $('#image_show').attr('src', res.data.src)
         }
         , error: function () {
           //演示失败状态，并实现重传
@@ -147,7 +141,7 @@
       user.sex = $("#sex option:selected").val();
       user.birthday = layui.$("#birthday").val();
       user.location = $("#location").val();
-      user.image = $("#image").val();
+      user.image = $("#image").attr("src");
       if (user.account == "" || user.password == "" || user.birthday == "" || user.sex == "" || user.question_id == "" || user.phonenumber == "") {
         alert("请填写完整信息");
       } else {
