@@ -110,9 +110,12 @@ public class UserController {
 
                 //放入缓存<token, 用户id>并设置失效时间3600秒
                 redisUtil.set(token, user.getUserId(), 3600);
+                Map<String, String> infoMap = new HashMap<>();
+                infoMap.put("token", token);
+                infoMap.put("userId", user.getUserId());
 
                 model.addAttribute("code", serviceCodeInfo.SUCCESS);
-                model.addAttribute("data", token);
+                model.addAttribute("data", infoMap);
                 model.addAttribute("result", "success");
                 model.addAttribute("description", "登陆成功");
             } else {

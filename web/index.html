@@ -71,7 +71,8 @@
                                 return false;
                             }else{
                                 var storage = window.sessionStorage;
-                                storage.setItem("token", JSON.parse(data).data);
+                                storage.setItem("token", JSON.parse(data).data.token);
+                                storage.setItem("token", JSON.parse(data).data.userId);
                             }
                             window.location.href = "./pages/main.html";
                         } else {

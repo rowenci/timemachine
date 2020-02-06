@@ -2,6 +2,9 @@ package com.rowenci.timemachine.controller;
 
 
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.rowenci.timemachine.entity.Message;
 import com.rowenci.timemachine.service.IMessageService;
 import com.rowenci.timemachine.util.CodeInfo.ServiceCodeInfo;
@@ -12,11 +15,8 @@ import io.minio.errors.MinioException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -95,18 +95,25 @@ public class MessageController {
 
         ModelMap modelMap = new ModelMap();
         CreateUUID createUUID = new CreateUUID();
+
+        //判断文件后缀 不在下面列表中的无法上传
         List<String> imageType = new ArrayList<>();
         imageType.add("jpg");
         imageType.add("jpeg");
         imageType.add("png");
         imageType.add("bmp");
         imageType.add("gif");
+        //原始文件名称
         String originalFilename = file.getOriginalFilename();
+        //文件后缀
         String fileSuffix = originalFilename.substring(originalFilename.lastIndexOf(".") + 1).toLowerCase();
+        //新文件名称（UUID）
         String newFileName = createUUID.create() + "." + fileSuffix;
+        //文件地址
         String dirPath = System.getProperty("user.dir");
         String path = File.separator + "uploadImg" + File.separator + newFileName;
         if (imageType.contains(fileSuffix)) {
+            //文件类型符合要修
             File destFile = new File(dirPath + path);
             if (!destFile.getParentFile().exists()) {
                 destFile.getParentFile().mkdirs();
@@ -116,12 +123,22 @@ public class MessageController {
             } catch (IOException e) {
                 System.out.println(e);
             }
+        }else {
+            //文件类型不符合要求
+            modelMap.addAttribute("code", serviceCodeInfo.UPLOAD_ERROR);
+            modelMap.addAttribute("data", "");
+            modelMap.addAttribute("result", "error");
+            modelMap.addAttribute("description", "上传文件失败");
+            return JSON.toJSONString(modelMap);
         }
+
+        //上传文件至服务器作为临时文件
         log.info("文件名----" + newFileName);
         log.info("文件路径----" + dirPath);
         log.info("文件路径----" + path);
         log.info("打开inputstream");
         FileInputStream inputStream = new FileInputStream(new File(dirPath + path));
+        //上传文件至Minio
         try {
             // 使用MinIO服务的URL，端口，Access key和Secret key创建一个MinioClient对象
             MinioClient minioClient = new MinioClient("http://192.168.1.21:9001", "minio", "minio123");
@@ -159,7 +176,7 @@ public class MessageController {
 
         } catch (MinioException e) {
 
-            //上传文件失败
+            //上传文件到Minio失败
             System.out.println("Error occurred: " + e);
             inputStream.close();
 
@@ -171,8 +188,8 @@ public class MessageController {
             return JSON.toJSONString(modelMap);
         }
 
-        log.info("上传文件成功");
-        //上传文件成功
+        log.info("上传文件到Minio成功");
+        //上传文件到Minio成功
         //删除临时文件
         File tempFile = new File(dirPath + path);
         tempFile.delete();
@@ -185,6 +202,27 @@ public class MessageController {
         modelMap.addAttribute("data", infoMap);
         return JSON.toJSONString(modelMap);
 
+    }
+
+    /**
+     * 根据用户id查找用户拥有的所有信件
+     * @param userId
+     * @return
+     */
+    @GetMapping("/")
+    public String getMessageListByUserId(String userId, int limit, int page){
+        ModelMap modelMap = new ModelMap();
+        QueryWrapper qw = new QueryWrapper();
+        qw.eq("user_id", userId);
+        IPage<Message> messageIPage = new Page<>(page, limit);
+        int count = iMessageService.count(qw);
+        List<Message> messageList = iMessageService.page(messageIPage, qw).getRecords();
+
+        modelMap.addAttribute("code", serviceCodeInfo.LAYUI_SUCCESS);
+        modelMap.addAttribute("msg", "查找成功");
+        modelMap.addAttribute("count", count);
+        modelMap.addAttribute("data", messageList);
+        return JSON.toJSONString(modelMap);
     }
 
 }

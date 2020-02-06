@@ -68,6 +68,12 @@
         <script src="../../js/layui/layui.js"></script>
         <script type="text/javascript" src="../../js/jquery-3.4.0.js"></script>
         <script>
+            
+            //获取token  根据token向服务器请求数据
+            var storage = window.sessionStorage;
+            var token = storage.getItem("token");
+            var userId = storage.getItem("userId");
+
             layui.use('table', function () {
                 var table = layui.table;
 
@@ -94,11 +100,6 @@
 
                 });
             });
-
-
-            //获取token  根据token向服务器请求数据
-            var storage = window.sessionStorage;
-            var token = storage.getItem("token");
 
             //JavaScript代码区域
             layui.use('element', function () {

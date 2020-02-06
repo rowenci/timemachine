@@ -24,6 +24,11 @@ public class ServiceCodeInfo {
      */
     public static final int UPLOAD_MESSAGE_PIC_SUCCESS = 0;
 
+    /**
+     * layui success
+     */
+    public static final int LAYUI_SUCCESS = 0;
+
 
     /* error code */
 

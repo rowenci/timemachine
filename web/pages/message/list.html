@@ -57,7 +57,7 @@
 
         <div class="layui-body">
             <!-- 内容主体区域 -->
-            <table class="layui-hide" id="test"></table>
+            <table class="layui-hide" id="message_list"></table>
         </div>
 
         <div class="layui-footer">
@@ -68,37 +68,60 @@
         <script src="../../js/layui/layui.js"></script>
         <script type="text/javascript" src="../../js/jquery-3.4.0.js"></script>
         <script>
+
+            //获取token  根据token向服务器请求数据
+            var storage = window.sessionStorage;
+            var token = storage.getItem("token");
+            var userId = storage.getItem("userId");
+
             layui.use('table', function () {
                 var table = layui.table;
-
+                console.log("begin");
                 table.render({
-                    elem: '#test'
-                    , url: '/demo/table/user/'
+                    elem: '#message_list'
+                    , url: 'http://localhost:8080/timemachine/message/'
                     , page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
                         layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
                         //,curr: 5 //设定初始在第 5 页
                         , groups: 1 //只显示 1 个连续页码
                         , first: true //不显示首页
                         , last: true //不显示尾页
-
                     }
                     , cols: [[
-                        { field: 'id', width: 80, title: 'ID'}
-                        , { field: 'username', minWidth: 150, title: '信件标题' }
-                        , { field: 'sex', width: 135, title: '编写时间'}
-                        , { field: 'city', width: 135, title: '发送时间' }
-                        , { field: 'city', width: 135, title: '发送方式' }
-                        , { field: 'experience', width: 135, title: '发送地址'}
-                        , { field: 'sex', width: 135, title: '是否公开'}
+                        { field: 'id', width: 80, title: 'ID' }
+                        , { field: 'title', minWidth: 150, title: '信件标题' }
+                        , { field: 'writeTime', width: 135, title: '编写时间' }
+                        , { field: 'sendTime', width: 135, title: '发送时间' }
+                        , { field: 'means', width: 135, title: '发送方式' }
+                        , { field: 'target', width: 135, title: '发送地址' }
+                        , { field: 'isPublic', width: 135, title: '是否公开' }
                     ]]
+                    , where: {
+                        token: token,
+                        userId: 1
+                    }, parseData: function (res) {
+                            console.log(res);
+                        for(var i = 0; i < res.data.length; i ++){
+                            //发送方式
+                            switch(res.data[i].means){
+                                case 1 :
+                                 res.data[i].means = '邮箱'
+                                 break;
+                                default:
+                                 res.data[i].means = '未知方式'
+                                 break;
+                            }
+                            //是否公开
+                            if(res.data[i].isPublic == 0){
+                                res.data[i].isPublic = '否'
+                            }else{
+                                res.data[i].isPublic = '是'
+                            }
+                        }
+                    }
 
                 });
             });
-
-
-            //获取token  根据token向服务器请求数据
-            var storage = window.sessionStorage;
-            var token = storage.getItem("token");
 
             //JavaScript代码区域
             layui.use('element', function () {
