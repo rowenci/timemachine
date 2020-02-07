@@ -46,8 +46,8 @@
                     <li class="layui-nav-item">
                         <a href="javascript:;">我的喜欢</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">点赞信件</a></dd>
-                            <dd><a href="javascript:;">收藏信件</a></dd>
+                            <dd><a href="../myfavorite/good_list.html">点赞列表</a></dd>
+                            <dd><a href="../myfavorite/favorite_list.html">收藏列表</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item"><a href="">点击赞助</a></li>
@@ -118,9 +118,9 @@
                             }
                             res.data[i].context.substr(0, 20)
                             //是否已经发送
-                            if(res.data[i].isSend == 0){
+                            if (res.data[i].isSend == 0) {
                                 res.data[i].isSend = '否'
-                            }else{
+                            } else {
                                 res.data[i].isSend = '是'
                             }
                         }
@@ -130,14 +130,16 @@
                     var data = obj.data;
                     window.localStorage.setItem("messageId", data.messageId);
 
-                    layer.open({
-                        type: 2,
-                        content: 'context.html', //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
-                        title: [data.title, 'font-size:18px;'],
-                        area: ['800px', '700px']
-                    });
-                    //标注选中样式
-                    obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
+                    if (obj.event === "detail") {
+                        layer.open({
+                            type: 2,
+                            content: 'context.html', //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+                            title: [data.title, 'font-size:18px;'],
+                            area: ['800px', '700px']
+                        });
+                        //标注选中样式
+                        obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
+                    }
 
                 });
             });

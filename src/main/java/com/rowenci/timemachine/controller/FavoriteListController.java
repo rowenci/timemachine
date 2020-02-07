@@ -3,14 +3,20 @@ package com.rowenci.timemachine.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.rowenci.timemachine.entity.FavoriteList;
 import com.rowenci.timemachine.entity.GoodList;
+import com.rowenci.timemachine.entity.Message;
 import com.rowenci.timemachine.service.IFavoriteListService;
+import com.rowenci.timemachine.service.IMessageService;
 import com.rowenci.timemachine.util.CodeInfo.ServiceCodeInfo;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>
@@ -30,6 +36,9 @@ public class FavoriteListController {
     @Resource
     private IFavoriteListService iFavoriteListService;
 
+    @Resource
+    private IMessageService iMessageService;
+
     @PostMapping("/")
     public String addFavoriteList(FavoriteList favoriteList){
         ModelMap modelMap = new ModelMap();
@@ -45,6 +54,32 @@ public class FavoriteListController {
             modelMap.addAttribute("result", "error");
             modelMap.addAttribute("description", "添加失败");
         }
+        return JSON.toJSONString(modelMap);
+    }
+
+    @GetMapping("/")
+    public String getFavoriteList(String userId, int page, int limit){
+        ModelMap modelMap = new ModelMap();
+        QueryWrapper qw = new QueryWrapper();
+        qw.eq("user_id", userId);
+        IPage<FavoriteList> favoriteListIPage = new Page<>(page, limit);
+        int count = iFavoriteListService.count(qw);
+        List<FavoriteList> favoriteLists = iFavoriteListService.page(favoriteListIPage, qw).getRecords();
+
+        List<Message> messageList = new ArrayList<>();
+
+        for(int i = 0; i < favoriteLists.size(); i ++){
+            String messageId = favoriteLists.get(i).getMessageId();
+            QueryWrapper qwm = new QueryWrapper();
+            qwm.eq("message_id", messageId);
+            Message message = iMessageService.getOne(qwm);
+            messageList.add(message);
+        }
+
+        modelMap.addAttribute("code", serviceCodeInfo.LAYUI_SUCCESS);
+        modelMap.addAttribute("msg", "查找成功");
+        modelMap.addAttribute("count", count);
+        modelMap.addAttribute("data", messageList);
         return JSON.toJSONString(modelMap);
     }
 
@@ -70,7 +105,7 @@ public class FavoriteListController {
     }
 
     @DeleteMapping("/")
-    public String delGoodList(String userId, String messageId){
+    public String delFavoriteList(String userId, String messageId){
         ModelMap modelMap = new ModelMap();
         QueryWrapper qw = new QueryWrapper();
         qw.eq("user_id", userId);
