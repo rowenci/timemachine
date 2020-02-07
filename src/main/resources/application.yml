@@ -4,6 +4,8 @@ spring:
     username: root
     password: bb3960519
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      max-lifetime: 30000
   logging:
     config: classpath:log4j2.yml
   redis:

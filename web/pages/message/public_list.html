@@ -57,7 +57,7 @@
 
         <div class="layui-body">
             <!-- 内容主体区域 -->
-            <table class="layui-hide" id="test"></table>
+            <table class="layui-hide" id="public_message" lay-filter="public_message"></table>
         </div>
 
         <div class="layui-footer">
@@ -68,18 +68,19 @@
         <script src="../../js/layui/layui.js"></script>
         <script type="text/javascript" src="../../js/jquery-3.4.0.js"></script>
         <script>
-            
+
             //获取token  根据token向服务器请求数据
             var storage = window.sessionStorage;
             var token = storage.getItem("token");
-            var userId = storage.getItem("userId");
+            var userId = 1;
+            //var userId = storage.getItem("userId");
 
             layui.use('table', function () {
                 var table = layui.table;
 
                 table.render({
-                    elem: '#test'
-                    , url: '/demo/table/user/'
+                    elem: '#public_message'
+                    , url: 'http://localhost:8080/timemachine/public-message/'
                     , page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
                         layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
                         //,curr: 5 //设定初始在第 5 页
@@ -89,14 +90,43 @@
 
                     }
                     , cols: [[
-                        { field: 'id', width: 80, title: 'ID'}
-                        , { field: 'username', minWidth: 150, title: '信件标题' }
-                        , { field: 'sex', width: 135, title: '编写时间'}
-                        , { field: 'city', width: 135, title: '发送时间' }
-                        , { field: 'city', width: 135, title: '发送方式' }
-                        , { field: 'experience', width: 135, title: '发送地址'}
-                        , { field: 'sex', width: 135, title: '是否公开'}
-                    ]]
+                        { field: 'id', width: 80, title: 'ID' }
+                        , { field: 'title', width: 135, title: '信件标题' }
+                        , { field: 'context', minWidth: 150, title: '信件摘要' }
+                        , { field: 'writeTime', width: 135, title: '编写时间' }
+                        , { field: 'sendTime', width: 135, title: '发送时间' }
+                        , { field: 'means', width: 135, title: '发送方式' }
+                        , { field: 'target', width: 135, title: '发送地址' }
+                    ]], where: {
+                        token: token,
+                        userId: userId
+                    }, parseData: function (res) {
+                        for (var i = 0; i < res.data.length; i++) {
+                            //发送方式
+                            switch (res.data[i].means) {
+                                case 1:
+                                    res.data[i].means = '邮箱'
+                                    break;
+                                default:
+                                    res.data[i].means = '未知方式'
+                                    break;
+                            }
+                            res.data[i].context.substr(0, 20)
+                        }
+                    }
+                });
+                table.on('rowDouble(public_message)', function (obj) {
+                    var data = obj.data;
+                    window.localStorage.setItem("messageId", data.messageId);
+
+                    layer.open({
+                        type: 2,
+                        content: 'context.html', //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+                        title: [data.title, 'font-size:18px;'],
+                        area: ['800px', '700px']
+                    });
+                    //标注选中样式
+                    obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
 
                 });
             });

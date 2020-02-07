@@ -60,8 +60,8 @@
             <div class="layui-form-item" style="margin-top: 15px;">
                 <label class="layui-form-label">信件标题：</label>
                 <div class="layui-input-block">
-                    <input type="text" name="title" lay-verify="title" autocomplete="off" placeholder="请输入标题"
-                        class="layui-input">
+                    <input id="title" type="text" name="title" lay-verify="title" autocomplete="off"
+                        placeholder="给未来的一封信" class="layui-input">
                 </div>
             </div>
             <textarea id="message" style="display: none;"></textarea>
@@ -69,26 +69,26 @@
                 <fieldset class="layui-elem-field site-demo-button" style="margin-top: 30px; height: 250px;">
                     <legend>信件选项</legend>
                     <div class="layui-form">
-                        <div style="margin: 10px 0 0 25px;">
+                        <div id="time" style="margin: 10px 0 0 25px;">
                             发送至 ：
-                            <input type="radio" name="sex" value="nan" title="一周后" checked>
-                            <input type="radio" name="sex" value="nv" title="一月后">
-                            <input type="radio" name="sex" value="nv" title="三月后">
-                            <input type="radio" name="sex" value="nv" title="半年后">
-                            <input type="radio" name="sex" value="nv" title="一年后">
+                            <input id="week" type="radio" name="time" value="week" title="一周后" checked>
+                            <input id="month" type="radio" name="time" value="month" title="一月后">
+                            <input id="three_month" type="radio" name="time" value="three_month" title="三月后">
+                            <input id="half_year" type="radio" name="time" value="half_year" title="半年后">
+                            <input id="year" type="radio" name="time" value="year" title="一年后">
                         </div>
                         </br>
                         <div class="layui-inline">
                             <label class="layui-form-label">邮箱地址：</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="email" lay-verify="email" autocomplete="off"
+                                <input id="email" type="text" name="email" lay-verify="email" autocomplete="off"
                                     class="layui-input">
                             </div>
                         </div>
                         </br>
                         </br>
-                        <div style="margin-left: 25px;">
-                            <input type="checkbox" name="" title="公开信件" checked>
+                        <div id="is_public" style="margin-left: 25px;">
+                            <input type="checkbox" name="is_public" title="公开信件" value="1" checked>
                             </br>
                             </br>
                             <button onclick="send()" type="button" class="layui-btn layui-btn-lg">发送信件</button>
@@ -110,9 +110,10 @@
             //获取token  根据token向服务器请求数据
             var storage = window.sessionStorage;
             var token = storage.getItem("token");
-            var userId = storage.getItem("userId");
+            var userId = 1;
+            //var userId = storage.getItem("userId");
 
-            
+
             var editor;
             var layedit;
             //富文本编辑器
@@ -156,9 +157,89 @@
                 });
             }
 
-            function send(){
+            function send() {
                 //富文本编辑器出来的是html
                 console.log(layedit.getContent(editor));
+
+                var message = new Object();
+                message.userId = userId;
+                if ($("#title").val() == "") {
+                    message.title = "给未来的一封信"
+                } else {
+                    message.title = $("#title").val();
+                }
+                message.context = layedit.getContent(editor);
+                message.means = 1;
+                message.target = $("#email").val();
+                message.sendTime = $("#time input[name='time']:checked").val();
+                var date = new Date();
+                message.writeTime = date.toLocaleDateString();
+                if($("#is_public  input[name='is_public']:checked").val() == undefined){
+                    message.isPublic = 0;
+                }else{
+                    message.isPublic = 1;
+                }
+
+                console.log(message);
+
+                var messageId;
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:8080/timemachine/message/",
+                    data: {
+                        "token": token,
+                        "userId": message.userId,
+                        "title": message.title,
+                        "context": message.context,
+                        "means": message.means,
+                        "target": message.target,
+                        "sendTime": message.sendTime,
+                        "writeTime": message.writeTime,
+                        "isPublic": message.isPublic
+                    },
+                    async: false,
+                    cache: false,
+                    success: function (data) {
+                        if (JSON.parse(data).result == "success") {
+                            console.log(data);
+                            messageId = JSON.parse(data).data.messageId;
+                            console.log("添加信件成功，请前往信件列表查看");
+                        } else {
+                            console.log(JSON.parse(data).description);
+                        }
+                    },
+                    error: function () {
+                        alert("系统错误");
+                    }
+                });
+                if (message.isPublic == 1) {
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost:8080/timemachine/public-message/",
+                        data: {
+                            "userId": userId,
+                            "messageId": messageId
+                        },
+                        async: false,
+                        cache: false,
+                        success: function (data) {
+                            if (JSON.parse(data).result == "success") {
+                                console.log(data);
+                                alert("添加信件成功，请前往信件列表查看");
+                                location.reload();
+                            } else {
+                                alert(JSON.parse(data).description);
+                            }
+                        },
+                        error: function () {
+                            alert("系统错误");
+                        }
+                    });
+                } else {
+                    alert("添加信件成功，请前往信件列表查看");
+                    location.reload();
+                }
+
             }
         </script>
 </body>

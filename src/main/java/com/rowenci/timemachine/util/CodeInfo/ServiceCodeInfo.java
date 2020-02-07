@@ -72,6 +72,11 @@ public class ServiceCodeInfo {
      */
     public static final int ADD_MESSAGE_ERROR = -1;
 
+    /**
+     * add publicMessage error
+     */
+    public static final int ADD_PUBLIC_MESSAGE_ERROR = -1;
+
     public String getCodeInfo(int code){
         switch (code){
             case -1 : return "insert error";

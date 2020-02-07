@@ -68,7 +68,9 @@ public class MessageController {
 
         if (res){
             model.addAttribute("code", serviceCodeInfo.SUCCESS);
-            model.addAttribute("data", "");
+            Map<String, String> infoMap = new HashMap<>();
+            infoMap.put("messageId", messageId);
+            model.addAttribute("data", infoMap);
             model.addAttribute("result", "success");
             model.addAttribute("description", "添加信件成功");
         }else {
@@ -81,7 +83,7 @@ public class MessageController {
         return JSON.toJSONString(model);
     }
 
-    /**-
+    /**
      * 上传图片
      * @param file
      * @return
@@ -222,6 +224,20 @@ public class MessageController {
         modelMap.addAttribute("msg", "查找成功");
         modelMap.addAttribute("count", count);
         modelMap.addAttribute("data", messageList);
+        return JSON.toJSONString(modelMap);
+    }
+
+    @GetMapping("/findById")
+    public String getMessageByMessageId(String messageId){
+        ModelMap modelMap = new ModelMap();
+        QueryWrapper qw = new QueryWrapper();
+        qw.eq("message_id", messageId);
+        Message message = iMessageService.getOne(qw);
+
+        modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
+        modelMap.addAttribute("data", message);
+        modelMap.addAttribute("result", "success");
+        modelMap.addAttribute("description", "查找信件成功");
         return JSON.toJSONString(modelMap);
     }
 
