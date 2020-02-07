@@ -1,6 +1,6 @@
 package com.rowenci.timemachine.mapper;
 
-import com.rowenci.timemachine.entity.Message;
+import com.rowenci.timemachine.entity.FavoriteList;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author rowenci
  * @since 2020-02-07
  */
-public interface MessageMapper extends BaseMapper<Message> {
+public interface FavoriteListMapper extends BaseMapper<FavoriteList> {
 
 }

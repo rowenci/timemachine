@@ -77,6 +77,21 @@ public class ServiceCodeInfo {
      */
     public static final int ADD_PUBLIC_MESSAGE_ERROR = -1;
 
+    /**
+     * add goodlist error
+     */
+    public static final int ADD_GOODLIST_ERROR = -1;
+
+    /**
+     * delete goodlist error
+     */
+    public static final int DEL_GOODLIST_ERROR = -1;
+
+    /**
+     * update goodnumber error
+     */
+    public static final int UPDATE_GOODNUMBER_ERROR = -1;
+
     public String getCodeInfo(int code){
         switch (code){
             case -1 : return "insert error";

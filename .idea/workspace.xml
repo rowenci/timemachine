@@ -29,11 +29,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/PublicMessageController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="76" column="33" lean-forward="true" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+            <state relative-caret-position="-881">
+              <caret line="57" column="55" lean-forward="true" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/GoodListController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="102" column="43" selection-start-line="102" selection-start-column="43" selection-end-line="102" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="512">
+              <caret line="179" column="5" lean-forward="true" selection-start-line="179" selection-start-column="5" selection-end-line="179" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/CodeInfo/ServiceCodeInfo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="92" column="51" selection-start-line="92" selection-start-column="28" selection-end-line="92" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -71,7 +98,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/SendMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/CodeInfo/CRUDCodeInfo.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j2.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/timemachine/MessageMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/mapper/MessageMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/entity/SendGoodList.java" />
@@ -91,7 +117,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/TimemachineApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/interceptor/RegistConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/interceptor/UserHandlerInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/GoodListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/service/impl/GoodListServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/service/IGoodListService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/service/impl/MessageServiceImpl.java" />
@@ -104,11 +129,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/Minio.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/MinioUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/MessageController.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/rowenci/timemachine/TimemachineApplicationTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/CodeInfo/ServiceCodeInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/MessageController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/PublicMessageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/GoodListController.java" />
       </list>
     </option>
   </component>
@@ -146,7 +173,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -311,6 +337,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -440,6 +467,7 @@
       <workItem from="1580966154895" duration="14496000" />
       <workItem from="1580990892405" duration="3909000" />
       <workItem from="1581055233752" duration="10510000" />
+      <workItem from="1581075213985" duration="6171000" />
     </task>
     <servers />
   </component>
@@ -461,7 +489,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105876000" />
+    <option name="totallyTimeSpent" value="112047000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -474,8 +502,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29758713" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3016086" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -484,7 +513,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32931727" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.35341364" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39892906" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39892906" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
@@ -517,7 +546,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/config/MySessionManager.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/config/MyShiroRealm.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/config/ShiroConfig.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/TokenProcessor.java" />
@@ -728,18 +756,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="41" column="28" lean-forward="true" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/BannedUserController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/FavoriteListController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/ManagerController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/VipUserController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/GoodListController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/mapper/GoodListMapper.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/service/impl/GoodListServiceImpl.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/service/IGoodListService.java" />
@@ -857,20 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/rowenci/timemachine/TimemachineApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1968">
-          <caret line="139" column="19" selection-start-line="139" selection-start-column="19" selection-end-line="139" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
@@ -899,27 +905,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/CodeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/rowenci/timemachine/TimemachineApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/MessageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="934">
-          <caret line="117" column="22" lean-forward="true" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="227" column="5" lean-forward="true" selection-start-line="227" selection-start-column="5" selection-end-line="227" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/entity/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-129">
+          <caret line="29" column="27" lean-forward="true" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/CodeInfo/ServiceCodeInfo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="77" column="52" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="52" />
+        <state relative-caret-position="343">
+          <caret line="92" column="51" selection-start-line="92" selection-start-column="28" selection-end-line="92" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/PublicMessageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="76" column="33" lean-forward="true" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+        <state relative-caret-position="-881">
+          <caret line="57" column="55" lean-forward="true" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="179" column="5" lean-forward="true" selection-start-line="179" selection-start-column="5" selection-end-line="179" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/GoodListController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="102" column="43" selection-start-line="102" selection-start-column="43" selection-end-line="102" selection-end-column="43" />
         </state>
       </provider>
     </entry>

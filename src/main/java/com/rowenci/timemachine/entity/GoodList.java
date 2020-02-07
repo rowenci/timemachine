@@ -18,38 +18,18 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class Message implements Serializable {
+public class GoodList implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    private String messageId;
-
     private String userId;
 
-    private String title;
+    private String messageId;
 
-    private String context;
-
-    private Integer means;
-
-    private String target;
-
-    private String sendTime;
-
-    private String writeTime;
-
-    /**
-     * 0 false / 1 true
-     */
-    private Integer isPublic;
-
-    /**
-     * 0 false / 1 true
-     */
-    private Integer isSend;
+    private String time;
 
 
 }

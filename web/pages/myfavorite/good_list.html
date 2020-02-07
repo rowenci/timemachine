@@ -67,9 +67,6 @@
 
         <script src="../../js/layui/layui.js"></script>
         <script type="text/javascript" src="../../js/jquery-3.4.0.js"></script>
-        <script type="text/html" id="barDemo">
-            <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
-        </script>
         <script>
 
             //获取token  根据token向服务器请求数据
@@ -83,7 +80,7 @@
 
                 table.render({
                     elem: '#public_message'
-                    , url: 'http://localhost:8080/timemachine/public-message/'
+                    , url: 'http://localhost:8080/timemachine/good-list/'
                     , page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
                         layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
                         //,curr: 5 //设定初始在第 5 页
@@ -118,26 +115,33 @@
                             }
                             res.data[i].context.substr(0, 20)
                             //是否已经发送
-                            if(res.data[i].isSend == 0){
+                            if (res.data[i].isSend == 0) {
                                 res.data[i].isSend = '否'
-                            }else{
+                            } else {
                                 res.data[i].isSend = '是'
                             }
                         }
                     }
                 });
-                table.on('tool(public_message)', function (obj) {
+                table.on('rowDouble(public_message)', function (obj) {
                     var data = obj.data;
                     window.localStorage.setItem("messageId", data.messageId);
 
-                    layer.open({
-                        type: 2,
-                        content: 'context.html', //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
-                        title: [data.title, 'font-size:18px;'],
-                        area: ['800px', '700px']
-                    });
-                    //标注选中样式
-                    obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
+                    if (obj.event === "detail") {
+                        layer.open({
+                            type: 2,
+                            content: 'context.html', //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+                            title: [data.title, 'font-size:18px;'],
+                            area: ['800px', '700px']
+                        });
+                        //标注选中样式
+                        obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
+                    }else if(obj.event === "del"){
+                        //取消喜欢
+
+                        //标注选中样式
+                        obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
+                    }
 
                 });
             });

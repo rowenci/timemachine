@@ -96,6 +96,7 @@
                         , { field: 'means', width: 135, title: '发送方式' }
                         , { field: 'target', width: 180, title: '发送地址' }
                         , { field: 'isPublic', width: 135, title: '是否公开' }
+                        , { field: 'isSend', width: 135, title: '是否已经发送' }
                     ]]
                     , where: {
                         token: token,
@@ -117,6 +118,12 @@
                                 res.data[i].isPublic = '否'
                             }else{
                                 res.data[i].isPublic = '是'
+                            }
+                            //是否已经发送
+                            if(res.data[i].isSend == 0){
+                                res.data[i].isSend = '否'
+                            }else{
+                                res.data[i].isSend = '是'
                             }
                         }
                     }

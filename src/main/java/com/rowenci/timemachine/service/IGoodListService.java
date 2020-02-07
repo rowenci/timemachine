@@ -1,6 +1,6 @@
 package com.rowenci.timemachine.service;
 
-import com.rowenci.timemachine.entity.Message;
+import com.rowenci.timemachine.entity.GoodList;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author rowenci
  * @since 2020-02-07
  */
-public interface IMessageService extends IService<Message> {
+public interface IGoodListService extends IService<GoodList> {
 
 }
