@@ -93,7 +93,7 @@ public class PublicMessageController {
 
     }
 
-    @GetMapping("/getNumber")
+    @GetMapping("/getGoodNumber")
     public String getGoodNumber(String messageId){
         ModelMap modelMap = new ModelMap();
         QueryWrapper qw = new QueryWrapper();
@@ -106,7 +106,20 @@ public class PublicMessageController {
         return JSON.toJSONString(modelMap);
     }
 
-    @PutMapping("/")
+    @GetMapping("/getFavoriteNumber")
+    public String getFavoriteNumber(String messageId){
+        ModelMap modelMap = new ModelMap();
+        QueryWrapper qw = new QueryWrapper();
+        qw.eq("message_id", messageId);
+        PublicMessage publicMessage = iPublicMessageService.getOne(qw);
+        modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
+        modelMap.addAttribute("data", publicMessage.getFavoriteNumber());
+        modelMap.addAttribute("result", "success");
+        modelMap.addAttribute("description", "获取成功");
+        return JSON.toJSONString(modelMap);
+    }
+
+    @PutMapping("/goodNumber")
     public String updateGoodNumber(String messageId, int goodNumber){
         ModelMap modelMap = new ModelMap();
         UpdateWrapper uw = new UpdateWrapper();
@@ -121,6 +134,28 @@ public class PublicMessageController {
             modelMap.addAttribute("description", "修改成功");
         }else {
             modelMap.addAttribute("code", serviceCodeInfo.UPDATE_GOODNUMBER_ERROR);
+            modelMap.addAttribute("data", "");
+            modelMap.addAttribute("result", "error");
+            modelMap.addAttribute("description", "修改失败");
+        }
+        return JSON.toJSONString(modelMap);
+    }
+
+    @PutMapping("/favoriteNumber")
+    public String updateFavoriteNumber(String messageId, int favoriteNumber){
+        ModelMap modelMap = new ModelMap();
+        UpdateWrapper uw = new UpdateWrapper();
+        uw.eq("message_id", messageId);
+        uw.set("favorite_number", favoriteNumber);
+
+        boolean res = iPublicMessageService.update(uw);
+        if (res){
+            modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
+            modelMap.addAttribute("data", "");
+            modelMap.addAttribute("result", "success");
+            modelMap.addAttribute("description", "修改成功");
+        }else {
+            modelMap.addAttribute("code", serviceCodeInfo.UPDATE_FAVORITE_NUMBER_ERROR);
             modelMap.addAttribute("data", "");
             modelMap.addAttribute("result", "error");
             modelMap.addAttribute("description", "修改失败");

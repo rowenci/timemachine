@@ -33,6 +33,8 @@ public class PublicMessage implements Serializable {
 
     private Integer goodNumber;
 
+    private Integer favoriteNumber;
+
     /**
      * 0 false / 1 true
      */

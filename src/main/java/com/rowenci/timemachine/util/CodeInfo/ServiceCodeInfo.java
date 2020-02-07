@@ -92,6 +92,21 @@ public class ServiceCodeInfo {
      */
     public static final int UPDATE_GOODNUMBER_ERROR = -1;
 
+    /**
+     * update favoritelist error
+     */
+    public static final int UPDATE_FAVORITELIST_ERROR = -1;
+
+    /**
+     * update favoritenumber error
+     */
+    public static final int UPDATE_FAVORITE_NUMBER_ERROR = -1;
+
+    /**
+     * delete favoritelist error
+     */
+    public static final int DEL_FAVORITE_LIST_ERROR = -1;
+
     public String getCodeInfo(int code){
         switch (code){
             case -1 : return "insert error";
