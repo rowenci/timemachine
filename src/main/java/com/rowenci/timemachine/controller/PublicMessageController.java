@@ -41,6 +41,11 @@ public class PublicMessageController {
     @Resource
     private IMessageService iMessageService;
 
+    /**
+     * 添加公共信件
+     * @param publicMessage
+     * @return
+     */
     @PostMapping("/")
     public String addPublicMessage(PublicMessage publicMessage){
 
@@ -68,6 +73,13 @@ public class PublicMessageController {
 
     }
 
+    /**
+     * 根据用户id获取用户公共信件的列表
+     * @param userId
+     * @param limit
+     * @param page
+     * @return
+     */
     @GetMapping("/")
     public String getPublicMessage(String userId, int limit, int page){
         ModelMap modelMap = new ModelMap();
@@ -100,6 +112,12 @@ public class PublicMessageController {
 
     }
 
+    /**
+     * 获取公共区域的信件
+     * @param limit
+     * @param page
+     * @return
+     */
     @GetMapping("/public_area")
     public String publicArea(int limit, int page){
         ModelMap modelMap = new ModelMap();
@@ -146,6 +164,11 @@ public class PublicMessageController {
         return JSON.toJSONString(modelMap);
     }
 
+    /**
+     * 获取点赞数
+     * @param messageId
+     * @return
+     */
     @GetMapping("/getGoodNumber")
     public String getGoodNumber(String messageId){
         ModelMap modelMap = new ModelMap();
@@ -159,6 +182,11 @@ public class PublicMessageController {
         return JSON.toJSONString(modelMap);
     }
 
+    /**
+     * 获取收藏数
+     * @param messageId
+     * @return
+     */
     @GetMapping("/getFavoriteNumber")
     public String getFavoriteNumber(String messageId){
         ModelMap modelMap = new ModelMap();
@@ -172,6 +200,12 @@ public class PublicMessageController {
         return JSON.toJSONString(modelMap);
     }
 
+    /**
+     * 更改点赞数
+     * @param messageId
+     * @param goodNumber
+     * @return
+     */
     @PutMapping("/goodNumber")
     public String updateGoodNumber(String messageId, int goodNumber){
         ModelMap modelMap = new ModelMap();
@@ -194,6 +228,12 @@ public class PublicMessageController {
         return JSON.toJSONString(modelMap);
     }
 
+    /**
+     * 更改收藏数
+     * @param messageId
+     * @param favoriteNumber
+     * @return
+     */
     @PutMapping("/favoriteNumber")
     public String updateFavoriteNumber(String messageId, int favoriteNumber){
         ModelMap modelMap = new ModelMap();

@@ -43,6 +43,11 @@ public class FavoriteListController {
     @Resource
     private IPublicMessageService iPublicMessageService;
 
+    /**
+     * 添加收藏列表
+     * @param favoriteList
+     * @return
+     */
     @PostMapping("/")
     public String addFavoriteList(FavoriteList favoriteList){
         ModelMap modelMap = new ModelMap();
@@ -61,23 +66,34 @@ public class FavoriteListController {
         return JSON.toJSONString(modelMap);
     }
 
+    /**
+     * 根据用户id获取用户的收藏列表
+     * @param userId
+     * @param page
+     * @param limit
+     * @return
+     */
     @GetMapping("/")
     public String getFavoriteList(String userId, int page, int limit){
         ModelMap modelMap = new ModelMap();
+
+        //获取用户收藏的记录
         QueryWrapper qw = new QueryWrapper();
         qw.eq("user_id", userId);
         IPage<FavoriteList> favoriteListIPage = new Page<>(page, limit);
         List<FavoriteList> favoriteLists = iFavoriteListService.page(favoriteListIPage, qw).getRecords();
 
+        //获取传送到前端的信件信息
         List<Message> messageList = new ArrayList<>();
-
         for(int i = 0; i < favoriteLists.size(); i ++){
+            //判断公共信件是否被ban
             QueryWrapper qBan = new QueryWrapper();
             qBan.eq("message_id", favoriteLists.get(i).getMessageId());
             if (iPublicMessageService.getOne(qBan).getBanned() == 1){
                 continue;
             }
 
+            //公共信件没有被ban就加入messagelist
             String messageId = favoriteLists.get(i).getMessageId();
             QueryWrapper qwm = new QueryWrapper();
             qwm.eq("message_id", messageId);
@@ -93,13 +109,22 @@ public class FavoriteListController {
         return JSON.toJSONString(modelMap);
     }
 
+    /**
+     * 判断用户是否可以收藏
+     * @param userId
+     * @param messageId
+     * @return
+     */
     @GetMapping("/check")
     public String getGoodRecordByUserId(String userId, String messageId){
         ModelMap modelMap = new ModelMap();
+
+        //获取该用户对该信件的收藏信息
         QueryWrapper qw = new QueryWrapper();
         qw.eq("user_id", userId);
         qw.eq("message_id", messageId);
         FavoriteList favoriteList = iFavoriteListService.getOne(qw);
+        //查找成功说明不可以收藏 失败说明可以收藏
         if (favoriteList == null){
             modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
             modelMap.addAttribute("data", "");
@@ -114,6 +139,12 @@ public class FavoriteListController {
         return JSON.toJSONString(modelMap);
     }
 
+    /**
+     * 删除用户收藏
+     * @param userId
+     * @param messageId
+     * @return
+     */
     @DeleteMapping("/")
     public String delFavoriteList(String userId, String messageId){
         ModelMap modelMap = new ModelMap();

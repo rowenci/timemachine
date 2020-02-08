@@ -219,6 +219,8 @@ public class UserController {
     @PutMapping("/password")
     public String changePWD(String userId, String password, int question_id, String answer) {
         ModelMap model = new ModelMap();
+
+        //获取用户信息
         QueryWrapper qw = new QueryWrapper();
         qw.eq("user_id", userId);
         User user = iUserService.getOne(qw);

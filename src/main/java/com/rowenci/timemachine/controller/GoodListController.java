@@ -42,6 +42,11 @@ public class GoodListController {
     @Resource
     private IMessageService iMessageService;
 
+    /**
+     * 添加点赞列表
+     * @param goodList
+     * @return
+     */
     @PostMapping("/")
     public String addGoodList(GoodList goodList){
         ModelMap modelMap = new ModelMap();
@@ -60,9 +65,18 @@ public class GoodListController {
         return JSON.toJSONString(modelMap);
     }
 
+    /**
+     * 根据用户id获取用户的点赞列表
+     * @param userId
+     * @param page
+     * @param limit
+     * @return
+     */
     @GetMapping("/")
     public String getGoodList(String userId, int page, int limit){
         ModelMap modelMap = new ModelMap();
+
+        //获取点赞列表信息
         QueryWrapper qw = new QueryWrapper();
         qw.eq("user_id", userId);
         IPage<GoodList> goodListIPage = new Page<>(page, limit);
@@ -71,7 +85,7 @@ public class GoodListController {
         List<Message> messageList = new ArrayList<>();
 
         for(int i = 0; i < goodListList.size(); i ++){
-
+            //判断点赞列表里面的公共信件是否被ban
             QueryWrapper qBan = new QueryWrapper();
             qBan.eq("message_id", goodListList.get(i).getMessageId());
             if (iPublicMessageService.getOne(qBan).getBanned() == 1){
@@ -79,6 +93,7 @@ public class GoodListController {
                 continue;
             }
 
+            //没有被ban的信件加入列表
             String messageId = goodListList.get(i).getMessageId();
             QueryWrapper qwm = new QueryWrapper();
             qwm.eq("message_id", messageId);
@@ -94,6 +109,12 @@ public class GoodListController {
         return JSON.toJSONString(modelMap);
     }
 
+    /**
+     * 判断用户是否可以点赞
+     * @param userId
+     * @param messageId
+     * @return
+     */
     @GetMapping("/check")
     public String getGoodRecordByUserId(String userId, String messageId){
         ModelMap modelMap = new ModelMap();
@@ -115,6 +136,12 @@ public class GoodListController {
         return JSON.toJSONString(modelMap);
     }
 
+    /**
+     * 删除用户点赞
+     * @param userId
+     * @param messageId
+     * @return
+     */
     @DeleteMapping("/")
     public String delGoodList(String userId, String messageId){
         ModelMap modelMap = new ModelMap();

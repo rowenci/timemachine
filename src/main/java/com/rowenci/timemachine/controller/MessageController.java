@@ -227,6 +227,11 @@ public class MessageController {
         return JSON.toJSONString(modelMap);
     }
 
+    /**
+     * 根据信件id获取信件信息
+     * @param messageId
+     * @return
+     */
     @GetMapping("/findById")
     public String getMessageByMessageId(String messageId){
         ModelMap modelMap = new ModelMap();
