@@ -186,11 +186,11 @@ public class UserController {
      * @return
      */
     @PutMapping("/")
-    public String changeInfo(@RequestBody User user) {
+    public String changeInfo(User user) {
         ModelMap model = new ModelMap();
         UpdateWrapper uw = new UpdateWrapper();
-        uw.setEntity(user);
-        boolean res = iUserService.update(uw);
+        uw.eq("user_id", user.getUserId());
+        boolean res = iUserService.update(user, uw);
         if (!res) {
             model.addAttribute("code", serviceCodeInfo.NO_USER);
             model.addAttribute("data", "");

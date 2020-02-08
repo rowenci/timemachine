@@ -57,6 +57,9 @@
 
         <div class="layui-body">
             <!-- 内容主体区域 -->
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;">
+                <legend>公共区域</legend>
+            </fieldset>
             <table class="layui-hide" id="public_message" lay-filter="public_message"></table>
         </div>
 
@@ -142,24 +145,24 @@
             });
             //获取头像
             $.ajax({
-                    type: "GET",
-                    url: "http://localhost:8080/timemachine/user/" + userId,
-                    data: {
-                        "token": token
-                    },
-                    async: false,
-                    cache: false,
-                    success: function (data) {
-                        if (JSON.parse(data).result == "success") {
-                            $("#head_image").attr("src", JSON.parse(data).data.image);
-                        } else {
-                            alert(JSON.parse(data).description);
-                        }
-                    },
-                    error: function () {
-                        alert("系统错误");
+                type: "GET",
+                url: "http://localhost:8080/timemachine/user/" + userId,
+                data: {
+                    "token": token
+                },
+                async: false,
+                cache: false,
+                success: function (data) {
+                    if (JSON.parse(data).result == "success") {
+                        $("#head_image").attr("src", JSON.parse(data).data.image);
+                    } else {
+                        alert(JSON.parse(data).description);
                     }
-                });
+                },
+                error: function () {
+                    alert("系统错误");
+                }
+            });
             function logout() {
                 $.ajax({
                     type: "GET",
