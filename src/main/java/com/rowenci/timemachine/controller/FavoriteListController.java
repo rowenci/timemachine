@@ -10,6 +10,7 @@ import com.rowenci.timemachine.entity.GoodList;
 import com.rowenci.timemachine.entity.Message;
 import com.rowenci.timemachine.service.IFavoriteListService;
 import com.rowenci.timemachine.service.IMessageService;
+import com.rowenci.timemachine.service.IPublicMessageService;
 import com.rowenci.timemachine.util.CodeInfo.ServiceCodeInfo;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +40,9 @@ public class FavoriteListController {
     @Resource
     private IMessageService iMessageService;
 
+    @Resource
+    private IPublicMessageService iPublicMessageService;
+
     @PostMapping("/")
     public String addFavoriteList(FavoriteList favoriteList){
         ModelMap modelMap = new ModelMap();
@@ -63,18 +67,24 @@ public class FavoriteListController {
         QueryWrapper qw = new QueryWrapper();
         qw.eq("user_id", userId);
         IPage<FavoriteList> favoriteListIPage = new Page<>(page, limit);
-        int count = iFavoriteListService.count(qw);
         List<FavoriteList> favoriteLists = iFavoriteListService.page(favoriteListIPage, qw).getRecords();
 
         List<Message> messageList = new ArrayList<>();
 
         for(int i = 0; i < favoriteLists.size(); i ++){
+            QueryWrapper qBan = new QueryWrapper();
+            qBan.eq("message_id", favoriteLists.get(i).getMessageId());
+            if (iPublicMessageService.getOne(qBan).getBanned() == 1){
+                continue;
+            }
+
             String messageId = favoriteLists.get(i).getMessageId();
             QueryWrapper qwm = new QueryWrapper();
             qwm.eq("message_id", messageId);
             Message message = iMessageService.getOne(qwm);
             messageList.add(message);
         }
+        int count = messageList.size();
 
         modelMap.addAttribute("code", serviceCodeInfo.LAYUI_SUCCESS);
         modelMap.addAttribute("msg", "查找成功");

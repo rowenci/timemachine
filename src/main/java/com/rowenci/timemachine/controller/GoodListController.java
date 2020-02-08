@@ -9,6 +9,7 @@ import com.rowenci.timemachine.entity.GoodList;
 import com.rowenci.timemachine.entity.Message;
 import com.rowenci.timemachine.service.IGoodListService;
 import com.rowenci.timemachine.service.IMessageService;
+import com.rowenci.timemachine.service.IPublicMessageService;
 import com.rowenci.timemachine.util.CodeInfo.ServiceCodeInfo;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +35,9 @@ public class GoodListController {
 
     @Resource
     private IGoodListService iGoodListService;
+
+    @Resource
+    private IPublicMessageService iPublicMessageService;
 
     @Resource
     private IMessageService iMessageService;
@@ -62,18 +66,26 @@ public class GoodListController {
         QueryWrapper qw = new QueryWrapper();
         qw.eq("user_id", userId);
         IPage<GoodList> goodListIPage = new Page<>(page, limit);
-        int count = iGoodListService.count(qw);
         List<GoodList> goodListList = iGoodListService.page(goodListIPage, qw).getRecords();
 
         List<Message> messageList = new ArrayList<>();
 
         for(int i = 0; i < goodListList.size(); i ++){
+
+            QueryWrapper qBan = new QueryWrapper();
+            qBan.eq("message_id", goodListList.get(i).getMessageId());
+            if (iPublicMessageService.getOne(qBan).getBanned() == 1){
+                //跳出循环
+                continue;
+            }
+
             String messageId = goodListList.get(i).getMessageId();
             QueryWrapper qwm = new QueryWrapper();
             qwm.eq("message_id", messageId);
             Message message = iMessageService.getOne(qwm);
             messageList.add(message);
         }
+        int count = messageList.size();
 
         modelMap.addAttribute("code", serviceCodeInfo.LAYUI_SUCCESS);
         modelMap.addAttribute("msg", "查找成功");

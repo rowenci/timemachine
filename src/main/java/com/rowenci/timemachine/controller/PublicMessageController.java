@@ -73,12 +73,18 @@ public class PublicMessageController {
         ModelMap modelMap = new ModelMap();
         QueryWrapper qw = new QueryWrapper();
         qw.eq("user_id", userId);
+        qw.notIn("banned", 1);
         IPage<PublicMessage> publicMessageIPage = new Page<>(page, limit);
         int count = iPublicMessageService.count(qw);
         List<PublicMessage> publicMessageList = iPublicMessageService.page(publicMessageIPage, qw).getRecords();
 
         List<Message> messageList = new ArrayList<>();
         for(int i = 0; i < publicMessageList.size(); i ++){
+            //公共信件被ban
+            if (publicMessageList.get(i).getBanned() == 1){
+                //跳出循环
+                continue;
+            }
             String messageId = publicMessageList.get(i).getMessageId();
             QueryWrapper qwm = new QueryWrapper();
             qwm.eq("message_id", messageId);
@@ -99,12 +105,20 @@ public class PublicMessageController {
         ModelMap modelMap = new ModelMap();
         QueryWrapper qw = new QueryWrapper();
         qw.orderByDesc("good_number", "favorite_number");
+        qw.notIn("banned", 1);
         IPage<PublicMessage> publicMessageIPage = new Page<>(page, limit);
         int count = iPublicMessageService.count(qw);
         List<PublicMessage> publicMessageList = iPublicMessageService.page(publicMessageIPage, qw).getRecords();
 
         List<PublicArea> messageList = new ArrayList<>();
         for(int i = 0; i < publicMessageList.size(); i ++){
+
+            //公共信件被ban
+            if (publicMessageList.get(i).getBanned() == 1){
+                //跳出循环
+                continue;
+            }
+
             String messageId = publicMessageList.get(i).getMessageId();
             QueryWrapper qwm = new QueryWrapper();
             qwm.eq("message_id", messageId);
