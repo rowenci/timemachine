@@ -234,8 +234,6 @@
                     message.isPublic = 1;
                 }
 
-                console.log(message);
-
                 var messageId;
 
                 var public = message.isPublic;
@@ -272,7 +270,7 @@
                             if (JSON.parse(data).result == "success") {
                                 messageId = JSON.parse(data).data.messageId;
                             } else {
-                                console.log(JSON.parse(data).description);
+                                alert(JSON.parse(data).description);
                             }
                         },
                         error: function () {

@@ -175,8 +175,6 @@
                 if (user.location == "") {
                     user.location = old_user.location;
                 }
-                console.log(user);
-                console.log(user.location);
                 $.ajax({
                     type: "PUT",
                     url: "http://localhost:8080/timemachine/user/",

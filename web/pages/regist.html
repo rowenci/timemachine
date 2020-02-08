@@ -145,7 +145,6 @@
       if (user.account == "" || user.password == "" || user.birthday == "" || user.sex == "" || user.question_id == "" || user.phonenumber == "") {
         alert("请填写完整信息");
       } else {
-        console.log(user);
         $.ajax({
           type: "POST",
           url: "http://localhost:8080/timemachine/user/",

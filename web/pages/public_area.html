@@ -122,7 +122,6 @@
                 });
                 table.on('tool(public_message)', function (obj) {
                     var data = obj.data;
-                    console.log(data)
                     window.localStorage.setItem("messageId", data.messageId);
 
                     if (obj.event === "detail") {

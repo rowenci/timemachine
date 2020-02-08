@@ -95,7 +95,8 @@
                         class="layui-input" id="answer">
                 </div>
             </div>
-            <button type="button" class="layui-btn layui-btn-lg" style="margin-left: 110px;" onclick="change()">提交</button>
+            <button type="button" class="layui-btn layui-btn-lg" style="margin-left: 110px;"
+                onclick="change()">提交</button>
         </div>
 
         <script src="../../js/layui/layui.js"></script>
@@ -119,38 +120,43 @@
             function changePWD() {
                 layer.open({
                     type: 1,
+                    title: "修改密码",
                     content: $('#show_change') //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
                 });
             }
 
-            function change(){
+            function change() {
                 var question_id = $("#question option:selected").val();
                 var password = $("#password").val();
                 var answer = $("#answer").val();
 
-                $.ajax({
-                type: "PUT",
-                url: "http://localhost:8080/timemachine/user/password",
-                data: {
-                    "token": token,
-                    "userId": userId,
-                    "question_id": question_id,
-                    "password": password,
-                    "answer": answer
-                },
-                async: false,
-                cache: false,
-                success: function (data) {
-                    if (JSON.parse(data).result == "success") {
-                        alert(JSON.parse(data).description);
-                    } else {
-                        alert(JSON.parse(data).description);
-                    }
-                },
-                error: function () {
-                    alert("系统错误");
+                if (question_id == "" || password == "" || answer == "") {
+                    alert("请将信息填写完整");
+                } else {
+                    $.ajax({
+                        type: "PUT",
+                        url: "http://localhost:8080/timemachine/user/password",
+                        data: {
+                            "token": token,
+                            "userId": userId,
+                            "question_id": question_id,
+                            "password": password,
+                            "answer": answer
+                        },
+                        async: false,
+                        cache: false,
+                        success: function (data) {
+                            if (JSON.parse(data).result == "success") {
+                                alert(JSON.parse(data).description);
+                            } else {
+                                alert(JSON.parse(data).description);
+                            }
+                        },
+                        error: function () {
+                            alert("系统错误");
+                        }
+                    });
                 }
-            });
             }
 
             //获取信息

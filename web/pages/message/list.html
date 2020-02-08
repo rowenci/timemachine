@@ -80,7 +80,6 @@
 
             layui.use('table', function () {
                 var table = layui.table;
-                console.log("begin");
                 table.render({
                     elem: '#message_list'
                     , url: 'http://localhost:8080/timemachine/message/'
@@ -105,7 +104,6 @@
                         token: token,
                         userId: userId
                     }, parseData: function (res) {
-                        console.log(res);
                         for (var i = 0; i < res.data.length; i++) {
                             //发送方式
                             switch (res.data[i].means) {
