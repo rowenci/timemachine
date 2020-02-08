@@ -22,7 +22,7 @@
                     </a>
                     <dl class="layui-nav-child">
                         <dd><a href="../user/userinfo.html">基本资料</a></dd>
-                        <dd><a href="">安全设置</a></dd>
+                        <dd><a href="../user/securityinfo.html">安全设置</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item"><a href="" onclick="logout()">退出</a></li>
@@ -81,7 +81,7 @@
                         <div class="layui-inline">
                             <label class="layui-form-label">邮箱地址：</label>
                             <div class="layui-input-inline">
-                                <input id="email" type="text" name="email" lay-verify="email" autocomplete="off"
+                                <input id="email" type="email" name="email" lay-verify="email" autocomplete="off"
                                     class="layui-input">
                             </div>
                         </div>
@@ -101,6 +101,12 @@
         <div class="layui-footer">
             <!-- 底部固定区域 -->
             © Rowenci.com
+        </div>
+
+        <div id="conf">
+            <div id="conf_isPublic"></div>
+            <div id="conf_sendTime"></div>
+            <div id="conf_target"></div>
         </div>
 
         <script src="../../js/layui/layui.js"></script>
@@ -181,7 +187,6 @@
 
             function send() {
                 //富文本编辑器出来的是html
-                console.log(layedit.getContent(editor));
 
                 var message = new Object();
                 message.userId = userId;
@@ -232,60 +237,76 @@
                 console.log(message);
 
                 var messageId;
-                $.ajax({
-                    type: "POST",
-                    url: "http://localhost:8080/timemachine/message/",
-                    data: {
-                        "token": token,
-                        "userId": message.userId,
-                        "title": message.title,
-                        "context": message.context,
-                        "means": message.means,
-                        "target": message.target,
-                        "sendTime": message.sendTime,
-                        "writeTime": message.writeTime,
-                        "isPublic": message.isPublic
-                    },
-                    async: false,
-                    cache: false,
-                    success: function (data) {
-                        if (JSON.parse(data).result == "success") {
-                            messageId = JSON.parse(data).data.messageId;
-                        } else {
-                            console.log(JSON.parse(data).description);
-                        }
-                    },
-                    error: function () {
-                        alert("系统错误");
-                    }
-                });
-                if (message.isPublic == 1) {
+
+                var public = message.isPublic;
+                if (public == 0) {
+                    public = "否";
+                } else if (public == 1) {
+                    public = "是";
+                }
+
+                $("#conf_isPublic").text("是否公开：" + public);
+                $("#conf_sendTime").text("发送时间：" + message.sendTime);
+                $("#conf_target").text("邮箱地址：" + $("#email").val());
+
+
+                layer.confirm('', {title: "请检查您的邮件发送信息", content: $("#conf").html()} ,function (index) {
+                    //do something
                     $.ajax({
                         type: "POST",
-                        url: "http://localhost:8080/timemachine/public-message/",
+                        url: "http://localhost:8080/timemachine/message/",
                         data: {
-                            "userId": userId,
-                            "messageId": messageId
+                            "token": token,
+                            "userId": message.userId,
+                            "title": message.title,
+                            "context": message.context,
+                            "means": message.means,
+                            "target": message.target,
+                            "sendTime": message.sendTime,
+                            "writeTime": message.writeTime,
+                            "isPublic": message.isPublic
                         },
                         async: false,
                         cache: false,
                         success: function (data) {
                             if (JSON.parse(data).result == "success") {
-                                alert("添加信件成功，请前往信件列表查看");
-                                location.reload();
+                                messageId = JSON.parse(data).data.messageId;
                             } else {
-                                alert(JSON.parse(data).description);
+                                console.log(JSON.parse(data).description);
                             }
                         },
                         error: function () {
                             alert("系统错误");
                         }
                     });
-                } else {
-                    alert("添加信件成功，请前往信件列表查看");
-                    location.reload();
-                }
-
+                    if (message.isPublic == 1) {
+                        $.ajax({
+                            type: "POST",
+                            url: "http://localhost:8080/timemachine/public-message/",
+                            data: {
+                                "userId": userId,
+                                "messageId": messageId
+                            },
+                            async: false,
+                            cache: false,
+                            success: function (data) {
+                                if (JSON.parse(data).result == "success") {
+                                    alert("添加信件成功，请前往信件列表查看");
+                                    location.reload();
+                                } else {
+                                    alert(JSON.parse(data).description);
+                                }
+                            },
+                            error: function () {
+                                alert("系统错误");
+                            }
+                        });
+                    } else {
+                        alert("添加信件成功，请前往信件列表查看");
+                        location.reload();
+                    }
+                    layer.close(index);
+                });
             }
         </script>
 </body>
