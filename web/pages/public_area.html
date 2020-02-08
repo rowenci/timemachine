@@ -17,7 +17,7 @@
             <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item">
                     <a href="javascript:;">
-                        <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                        <img id="head_image" src="" class="layui-nav-img">
                         贤心
                     </a>
                     <dl class="layui-nav-child">
@@ -34,7 +34,7 @@
             <div class="layui-side-scroll">
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                    <li class="layui-nav-item layui-this"><a href="">公共区域</a></li>
+                    <li class="layui-nav-item layui-nav-itemed layui-this"><a href="javascript:;">公共区域</a></li>
                     <li class="layui-nav-item">
                         <a class="" href="javascript:;">我的信件</a>
                         <dl class="layui-nav-child">
@@ -46,8 +46,8 @@
                     <li class="layui-nav-item">
                         <a href="javascript:;">我的喜欢</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">点赞信件</a></dd>
-                            <dd><a href="javascript:;">收藏信件</a></dd>
+                            <dd><a href="./myfavorite/good_list.html">点赞列表</a></dd>
+                            <dd><a href="./myfavorite/favorite_list.html">收藏列表</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item"><a href="">点击赞助</a></li>
@@ -57,7 +57,7 @@
 
         <div class="layui-body">
             <!-- 内容主体区域 -->
-            <table class="layui-hide" id="test"></table>
+            <table class="layui-hide" id="public_message" lay-filter="public_message"></table>
         </div>
 
         <div class="layui-footer">
@@ -67,56 +67,99 @@
 
         <script src="../js/layui/layui.js"></script>
         <script type="text/javascript" src="../js/jquery-3.4.0.js"></script>
+        <script type="text/html" id="barDemo">
+            <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+        </script>
         <script>
+
             //获取token  根据token向服务器请求数据
             var storage = window.sessionStorage;
             var token = storage.getItem("token");
-            var userId = storage.getItem("userId");;
+            var userId = 1;
+            //var userId = storage.getItem("userId");
 
             layui.use('table', function () {
                 var table = layui.table;
 
                 table.render({
-                    elem: '#test'
-                    , url: '/demo/table/user/'
+                    elem: '#public_message'
+                    , url: 'http://localhost:8080/timemachine/public-message/public_area'
                     , page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
                         layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
                         //,curr: 5 //设定初始在第 5 页
                         , groups: 1 //只显示 1 个连续页码
-                        , first: true //不显示首页
-                        , last: true //不显示尾页
-
+                        , first: false //不显示首页
+                        , last: false //不显示尾页
+                        , limit: 20
                     }
                     , cols: [[
                         { field: 'id', width: 80, title: 'ID' }
-                        , { field: 'sex', width: 130, title: '信件标题' }
-                        , { field: 'username', minWidth: 150, title: '内容摘要' }
-                        , { field: 'sex', width: 130, title: '作者名称' }
-                        , { field: 'city', width: 130, title: '编写时间' }
-                        , { field: 'city', width: 130, title: '发送时间' }
-                        , { field: 'city', width: 130, title: '点赞数' }
-                        , { field: 'city', width: 130, title: '收藏数' }
-                    ]]
-
+                        , { field: 'title', width: 135, title: '信件标题' }
+                        , { field: 'context', minWidth: 150, title: '信件摘要' }
+                        , { field: 'writeTime', width: 135, title: '编写时间' }
+                        , { field: 'sendTime', width: 135, title: '发送时间' }
+                        , { field: 'good_number', width: 135, title: '点赞数', sort: true }
+                        , { field: 'favorite_number', width: 135, title: '收藏数', sort: true }
+                        , { field: 'isSend', width: 135, title: '是否已经发送' }
+                        , { fixed: 'right', width: 100, align: 'center', toolbar: '#barDemo' }
+                    ]], where: {
+                        token: token,
+                        userId: userId
+                    }, parseData: function (res) {
+                        for (var i = 0; i < res.data.length; i++) {
+                            res.data[i].context.substr(0, 20);
+                            //是否已经发送
+                            if (res.data[i].isSend == 0) {
+                                res.data[i].isSend = '否'
+                            } else {
+                                res.data[i].isSend = '是'
+                            }
+                        }
+                    }
                 });
-
-                table.on('row(test)', function (obj) {
+                table.on('tool(public_message)', function (obj) {
                     var data = obj.data;
+                    console.log(data)
+                    window.localStorage.setItem("messageId", data.messageId);
 
-                    layer.alert(JSON.stringify(data), {
-                        title: '当前行数据：'
-                    });
+                    if (obj.event === "detail") {
+                        layer.open({
+                            type: 2,
+                            content: '../pages/message/context.html', //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+                            title: [data.title, 'font-size:18px;'],
+                            area: ['800px', '700px']
+                        });
+                        //标注选中样式
+                        obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
+                    }
 
-                    //标注选中样式
-                    obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
                 });
-
             });
 
             //JavaScript代码区域
             layui.use('element', function () {
                 var element = layui.element;
             });
+            //获取头像
+            $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8080/timemachine/user/" + userId,
+                    data: {
+                        "token": token
+                    },
+                    async: false,
+                    cache: false,
+                    success: function (data) {
+                        if (JSON.parse(data).result == "success") {
+                            $("#head_image").attr("src", JSON.parse(data).data.image);
+                        } else {
+                            alert(JSON.parse(data).description);
+                        }
+                    },
+                    error: function () {
+                        alert("系统错误");
+                    }
+                });
             function logout() {
                 $.ajax({
                     type: "GET",

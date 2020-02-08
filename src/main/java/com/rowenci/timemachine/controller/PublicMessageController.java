@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.rowenci.timemachine.entity.Message;
+import com.rowenci.timemachine.entity.PublicArea;
 import com.rowenci.timemachine.entity.PublicMessage;
 import com.rowenci.timemachine.service.IMessageService;
 import com.rowenci.timemachine.service.IPublicMessageService;
@@ -86,11 +87,49 @@ public class PublicMessageController {
         }
 
         modelMap.addAttribute("code", serviceCodeInfo.LAYUI_SUCCESS);
-        modelMap.addAttribute("msg", "查找成功");
+        modelMap.addAttribute("msg", "根据userid查找publicmessage成功");
         modelMap.addAttribute("count", count);
         modelMap.addAttribute("data", messageList);
         return JSON.toJSONString(modelMap);
 
+    }
+
+    @GetMapping("/public_area")
+    public String publicArea(int limit, int page){
+        ModelMap modelMap = new ModelMap();
+        QueryWrapper qw = new QueryWrapper();
+        qw.orderByDesc("good_number", "favorite_number");
+        IPage<PublicMessage> publicMessageIPage = new Page<>(page, limit);
+        int count = iPublicMessageService.count(qw);
+        List<PublicMessage> publicMessageList = iPublicMessageService.page(publicMessageIPage, qw).getRecords();
+
+        List<PublicArea> messageList = new ArrayList<>();
+        for(int i = 0; i < publicMessageList.size(); i ++){
+            String messageId = publicMessageList.get(i).getMessageId();
+            QueryWrapper qwm = new QueryWrapper();
+            qwm.eq("message_id", messageId);
+
+            Message message = iMessageService.getOne(qwm);
+
+            PublicArea publicArea = new PublicArea();
+            publicArea.setId(message.getId());
+            publicArea.setUserId(message.getUserId());
+            publicArea.setMessageId(messageId);
+            publicArea.setTitle(message.getTitle());
+            publicArea.setContext(message.getContext());
+            publicArea.setWriteTime(message.getWriteTime());
+            publicArea.setSendTime(message.getSendTime());
+            publicArea.setGood_number(publicMessageList.get(i).getGoodNumber());
+            publicArea.setFavorite_number(publicMessageList.get(i).getFavoriteNumber());
+            publicArea.setIsSend(message.getIsSend());
+            messageList.add(publicArea);
+        }
+
+        modelMap.addAttribute("code", serviceCodeInfo.LAYUI_SUCCESS);
+        modelMap.addAttribute("msg", "生成public_area成功");
+        modelMap.addAttribute("count", count);
+        modelMap.addAttribute("data", messageList);
+        return JSON.toJSONString(modelMap);
     }
 
     @GetMapping("/getGoodNumber")
@@ -102,7 +141,7 @@ public class PublicMessageController {
         modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
         modelMap.addAttribute("data", publicMessage.getGoodNumber());
         modelMap.addAttribute("result", "success");
-        modelMap.addAttribute("description", "获取成功");
+        modelMap.addAttribute("description", "获取点赞数成功");
         return JSON.toJSONString(modelMap);
     }
 
@@ -115,7 +154,7 @@ public class PublicMessageController {
         modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
         modelMap.addAttribute("data", publicMessage.getFavoriteNumber());
         modelMap.addAttribute("result", "success");
-        modelMap.addAttribute("description", "获取成功");
+        modelMap.addAttribute("description", "获取收藏数成功");
         return JSON.toJSONString(modelMap);
     }
 

@@ -1,0 +1,1092 @@
+2020-02-07 15:21:40.713 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 18384 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 15:21:40.741 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 15:21:42.295 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 15:21:42.310 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 15:21:42.362 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 25ms. Found 0 Redis repository interfaces.
+2020-02-07 15:21:42.523 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 15:21:42.524 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 15:21:42.524 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 15:21:42.822 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 15:21:43.282 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 15:21:43.294 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 15:21:43.295 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 15:21:43.296 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 15:21:43.427 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 15:21:43.427 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2602 ms
+2020-02-07 15:21:46.671 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 15:21:47.246 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 15:21:47.272 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 15:21:47.273 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 15:21:47.274 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 15:21:47.276 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 15:21:47.276 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 15:21:47.276 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 15:21:47.277 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@57bdceaa
+2020-02-07 15:21:47.338 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 15:21:47.339 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 15:21:47.349 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 15:21:47.392 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 15:21:47.397 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 7.478 seconds (JVM running for 12.713)
+2020-02-07 15:22:03.997 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 15:22:03.998 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 15:22:04.008 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 10 ms
+2020-02-07 15:22:04.188 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 15:22:04.917 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 15:25:58.274 - WARN  [l-1 housekeeper] c.z.h.p.HikariPool$HouseKeeper : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=53s246ms161µs600ns).
+2020-02-07 15:32:41.938 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 15:32:41.939 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 15:32:41.940 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 15:32:41.940 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 15:32:41.941 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 15:32:41.943 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 15:32:42.028 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 15:32:42.042 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 15:44:53.653 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 20876 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 15:44:53.667 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 15:44:54.390 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 15:44:54.394 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 15:44:54.437 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 Redis repository interfaces.
+2020-02-07 15:44:54.573 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 15:44:54.573 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 15:44:54.574 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 15:44:54.574 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 15:44:54.794 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 15:44:55.095 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 15:44:55.122 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 15:44:55.123 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 15:44:55.124 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 15:44:55.243 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 15:44:55.243 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1527 ms
+2020-02-07 15:44:57.952 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 15:44:58.315 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 15:44:58.332 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 15:44:58.333 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 15:44:58.334 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 15:44:58.335 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 15:44:58.335 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 15:44:58.335 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 15:44:58.336 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@13cc31ae
+2020-02-07 15:44:58.378 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 15:44:58.379 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 15:44:58.387 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 15:44:58.416 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 15:44:58.420 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.262 seconds (JVM running for 8.75)
+2020-02-07 15:45:02.124 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 15:45:02.124 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 15:45:02.135 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 11 ms
+2020-02-07 15:45:02.312 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 15:45:02.971 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 15:56:36.032 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 15:56:36.033 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 15:56:36.033 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 15:56:36.033 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 15:56:36.034 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 15:56:36.035 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 15:56:36.055 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 15:56:36.067 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 16:08:28.567 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 17136 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 16:08:28.581 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 16:08:29.300 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 16:08:29.304 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 16:08:29.348 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 26ms. Found 0 Redis repository interfaces.
+2020-02-07 16:08:29.483 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 16:08:29.483 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 16:08:29.483 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 16:08:29.484 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 16:08:29.689 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 16:08:29.995 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 16:08:30.009 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 16:08:30.010 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 16:08:30.021 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 16:08:30.149 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 16:08:30.149 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1513 ms
+2020-02-07 16:08:32.898 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 16:08:33.274 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 16:08:33.290 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 16:08:33.291 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 16:08:33.292 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 16:08:33.293 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 16:08:33.293 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 16:08:33.294 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 16:08:33.294 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@1f26b992
+2020-02-07 16:08:33.338 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 16:08:33.338 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 16:08:33.346 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 16:08:33.392 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 16:08:33.396 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.33 seconds (JVM running for 8.927)
+2020-02-07 16:09:10.037 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 16:09:10.038 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 16:09:10.048 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 10 ms
+2020-02-07 16:09:10.212 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 16:09:10.892 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 16:10:51.430 - WARN  [l-1 housekeeper] c.z.h.p.HikariPool$HouseKeeper : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m40s436ms909µs500ns).
+2020-02-07 16:10:51.511 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 16:10:51.513 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 16:10:51.513 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 16:10:51.513 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 16:10:51.516 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 16:10:51.517 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 16:10:51.546 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 16:10:51.560 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 16:14:47.068 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 18884 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 16:14:47.080 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 16:14:47.773 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 16:14:47.778 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 16:14:47.821 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 27ms. Found 0 Redis repository interfaces.
+2020-02-07 16:14:47.950 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 16:14:47.950 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 16:14:47.950 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 16:14:47.951 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 16:14:48.161 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 16:14:48.459 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 16:14:48.471 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 16:14:48.484 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 16:14:48.486 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 16:14:48.607 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 16:14:48.607 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1475 ms
+2020-02-07 16:14:51.289 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 16:14:51.648 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 16:14:51.665 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 16:14:51.665 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 16:14:51.666 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 16:14:51.667 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 16:14:51.668 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 16:14:51.668 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 16:14:51.668 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@55638165
+2020-02-07 16:14:51.710 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 16:14:51.710 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 16:14:51.719 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 16:14:51.748 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 16:14:51.751 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.174 seconds (JVM running for 8.569)
+2020-02-07 16:15:05.328 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 16:15:05.329 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 16:15:05.340 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 11 ms
+2020-02-07 16:15:05.502 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 16:15:06.172 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 16:16:07.949 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 16:16:07.950 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 16:16:07.950 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 16:16:07.950 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 16:16:07.952 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 16:16:07.953 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 16:16:07.981 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 16:16:07.989 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 16:16:34.547 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 24368 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 16:16:34.561 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 16:16:35.245 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 16:16:35.250 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 16:16:35.292 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 25ms. Found 0 Redis repository interfaces.
+2020-02-07 16:16:35.421 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 16:16:35.421 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 16:16:35.422 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 16:16:35.422 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 16:16:35.627 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 16:16:35.919 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 16:16:35.931 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 16:16:35.933 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 16:16:35.934 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 16:16:36.067 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 16:16:36.067 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1456 ms
+2020-02-07 16:16:38.757 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 16:16:39.136 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 16:16:39.154 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 16:16:39.154 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 16:16:39.156 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 16:16:39.156 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 16:16:39.157 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 16:16:39.157 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 16:16:39.157 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@5c8b10b4
+2020-02-07 16:16:39.205 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 16:16:39.205 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 16:16:39.213 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 16:16:39.264 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 16:16:39.267 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.214 seconds (JVM running for 8.719)
+2020-02-07 16:16:49.363 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 16:16:49.363 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 16:16:49.372 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 9 ms
+2020-02-07 16:16:49.523 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 16:16:50.138 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 16:22:03.906 - WARN  [nio-8080-exec-6] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2fe8e8b2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 16:22:08.911 - WARN  [nio-8080-exec-6] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@341d35a1 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 16:22:13.921 - WARN  [nio-8080-exec-6] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@62e06079 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 16:22:18.929 - WARN  [nio-8080-exec-6] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6155b46e (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 16:36:42.730 - WARN  [nio-8080-exec-6] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@35bb2859 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 16:36:47.737 - WARN  [nio-8080-exec-6] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@514843b1 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 16:36:52.747 - WARN  [nio-8080-exec-6] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@940b9c5 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 16:36:57.755 - WARN  [nio-8080-exec-6] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@66059742 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 16:36:59.930 - WARN  [nio-8080-exec-7] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6444922d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 16:37:02.764 - WARN  [nio-8080-exec-6] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@22fcbe43 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 16:37:04.936 - WARN  [nio-8080-exec-7] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@672d0aed (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 16:37:07.771 - WARN  [nio-8080-exec-6] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4f6e429b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 16:37:09.943 - WARN  [nio-8080-exec-7] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@19c6b070 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 16:37:14.945 - WARN  [nio-8080-exec-7] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2f6fd438 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 16:45:51.313 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 16:45:51.314 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 16:45:51.314 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 16:45:51.314 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 16:45:51.315 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 16:45:51.316 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 16:45:51.341 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 16:45:51.356 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 16:50:52.743 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 22952 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 16:50:52.756 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 16:50:53.458 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 16:50:53.462 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 16:50:53.508 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 28ms. Found 0 Redis repository interfaces.
+2020-02-07 16:50:53.651 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 16:50:53.651 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 16:50:53.651 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 16:50:53.652 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 16:50:53.871 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 16:50:54.154 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 16:50:54.165 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 16:50:54.166 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 16:50:54.168 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 16:50:54.293 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 16:50:54.294 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1488 ms
+2020-02-07 16:50:57.223 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 16:50:57.607 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 16:50:57.628 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 16:50:57.628 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 16:50:57.630 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 16:50:57.631 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 16:50:57.631 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 16:50:57.631 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 16:50:57.632 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@27dc335a
+2020-02-07 16:50:57.679 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 16:50:57.679 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 16:50:57.687 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 16:50:57.716 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 16:50:57.720 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.508 seconds (JVM running for 9.473)
+2020-02-07 16:51:01.290 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 16:51:01.290 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 16:51:01.304 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 13 ms
+2020-02-07 16:51:01.480 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 16:51:02.091 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 17:01:59.371 - WARN  [nio-8080-exec-5] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@598b5aa2 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:02:04.378 - WARN  [nio-8080-exec-5] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@53847330 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:02:09.389 - WARN  [nio-8080-exec-5] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@757eda07 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:02:14.398 - WARN  [nio-8080-exec-5] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2469faeb (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:02:19.407 - WARN  [nio-8080-exec-5] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@3c6b3cee (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:02:24.417 - WARN  [nio-8080-exec-5] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@233b81c1 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:02:32.110 - WARN  [nio-8080-exec-6] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@53b8795b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:02:37.116 - WARN  [nio-8080-exec-6] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2dd13653 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:02:42.123 - WARN  [nio-8080-exec-6] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@64ade6c7 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:02:47.133 - WARN  [nio-8080-exec-6] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6a302ce7 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:07:24.084 - INFO  [nio-8080-exec-8] c.r.t.c.MessageController      : 文件名----280819696453905946652.png
+2020-02-07 17:07:24.085 - INFO  [nio-8080-exec-8] c.r.t.c.MessageController      : 文件路径----D:\Codes\javacode\timemachine
+2020-02-07 17:07:24.085 - INFO  [nio-8080-exec-8] c.r.t.c.MessageController      : 文件路径----\uploadImg\280819696453905946652.png
+2020-02-07 17:07:24.085 - INFO  [nio-8080-exec-8] c.r.t.c.MessageController      : 打开inputstream
+2020-02-07 17:13:46.851 - INFO  [nio-8080-exec-9] c.r.t.c.MessageController      : 文件名----516017344849103299568.png
+2020-02-07 17:13:46.851 - INFO  [nio-8080-exec-9] c.r.t.c.MessageController      : 文件路径----D:\Codes\javacode\timemachine
+2020-02-07 17:13:46.852 - INFO  [nio-8080-exec-9] c.r.t.c.MessageController      : 文件路径----\uploadImg\516017344849103299568.png
+2020-02-07 17:13:46.852 - INFO  [nio-8080-exec-9] c.r.t.c.MessageController      : 打开inputstream
+2020-02-07 17:13:47.070 - INFO  [nio-8080-exec-9] c.r.t.c.MessageController      : Bucket already exists.
+2020-02-07 17:13:47.339 - INFO  [nio-8080-exec-9] c.r.t.c.MessageController      : 关闭inputstream
+2020-02-07 17:13:47.346 - INFO  [nio-8080-exec-9] c.r.t.c.MessageController      : statobject----timemachine
+2020-02-07 17:13:47.347 - INFO  [nio-8080-exec-9] c.r.t.c.MessageController      : statobject----516017344849103299568.png
+2020-02-07 17:13:47.347 - INFO  [nio-8080-exec-9] c.r.t.c.MessageController      : 上传文件到Minio成功
+2020-02-07 17:14:05.069 - WARN  [io-8080-exec-10] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@110619fb (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:14:10.073 - WARN  [io-8080-exec-10] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2ec6a65d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:14:15.078 - WARN  [io-8080-exec-10] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@4397a7a0 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:14:20.082 - WARN  [io-8080-exec-10] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7cf2d87b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:14:25.087 - WARN  [io-8080-exec-10] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1dd82c4d (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:14:30.090 - WARN  [io-8080-exec-10] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@25673d9c (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:14:44.154 - WARN  [nio-8080-exec-1] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@195cda8f (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:14:49.158 - WARN  [nio-8080-exec-1] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@62281ecd (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:14:54.163 - WARN  [nio-8080-exec-1] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7c8fccd (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:14:59.170 - WARN  [nio-8080-exec-1] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@40328a77 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:15:03.868 - INFO  [nio-8080-exec-4] c.r.t.c.MessageController      : 文件名----0687207454995879111506.jpg
+2020-02-07 17:15:03.868 - INFO  [nio-8080-exec-4] c.r.t.c.MessageController      : 文件路径----D:\Codes\javacode\timemachine
+2020-02-07 17:15:03.869 - INFO  [nio-8080-exec-4] c.r.t.c.MessageController      : 文件路径----\uploadImg\0687207454995879111506.jpg
+2020-02-07 17:15:03.869 - INFO  [nio-8080-exec-4] c.r.t.c.MessageController      : 打开inputstream
+2020-02-07 17:15:03.875 - INFO  [nio-8080-exec-4] c.r.t.c.MessageController      : Bucket already exists.
+2020-02-07 17:15:03.981 - INFO  [nio-8080-exec-4] c.r.t.c.MessageController      : 关闭inputstream
+2020-02-07 17:15:03.994 - INFO  [nio-8080-exec-4] c.r.t.c.MessageController      : statobject----timemachine
+2020-02-07 17:15:03.995 - INFO  [nio-8080-exec-4] c.r.t.c.MessageController      : statobject----0687207454995879111506.jpg
+2020-02-07 17:15:03.995 - INFO  [nio-8080-exec-4] c.r.t.c.MessageController      : 上传文件到Minio成功
+2020-02-07 17:20:33.955 - WARN  [l-1 housekeeper] c.z.h.p.HikariPool$HouseKeeper : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m1s692ms64µs100ns).
+2020-02-07 17:20:38.960 - WARN  [nio-8080-exec-8] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@372f672f (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:43:55.829 - WARN  [nio-8080-exec-4] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6597e371 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:44:00.833 - WARN  [nio-8080-exec-4] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6ca1db49 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:44:05.839 - WARN  [nio-8080-exec-4] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@1139b5f6 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:44:05.851 - WARN  [nio-8080-exec-4] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@2d403c34 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:44:10.858 - WARN  [nio-8080-exec-4] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@7e5b532b (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:44:15.863 - WARN  [nio-8080-exec-4] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@61fe2869 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:44:20.870 - WARN  [nio-8080-exec-4] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6915d970 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:45:17.355 - WARN  [nio-8080-exec-5] c.z.h.p.PoolBase               : HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@173195e3 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+2020-02-07 17:45:39.315 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 17:45:39.316 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 17:45:39.316 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 17:45:39.316 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 17:45:39.317 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 17:45:39.319 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 17:45:39.644 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 17:45:39.671 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 17:46:32.623 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 12272 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 17:46:32.640 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 17:46:34.019 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 17:46:34.025 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 17:46:34.063 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 22ms. Found 0 Redis repository interfaces.
+2020-02-07 17:46:34.194 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 17:46:34.194 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 17:46:34.194 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 17:46:34.195 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 17:46:34.415 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 17:46:34.743 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 17:46:34.754 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 17:46:34.755 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 17:46:34.756 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 17:46:34.867 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 17:46:34.867 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2141 ms
+2020-02-07 17:46:37.442 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 17:46:37.814 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 17:46:37.832 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 17:46:37.832 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 17:46:37.833 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 17:46:37.834 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 17:46:37.834 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 17:46:37.835 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 17:46:37.835 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@2c77344f
+2020-02-07 17:46:37.890 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 17:46:37.890 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 17:46:37.916 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 17:46:37.945 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 17:46:37.949 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.957 seconds (JVM running for 9.482)
+2020-02-07 17:47:04.076 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 17:47:04.077 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 17:47:04.089 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 12 ms
+2020-02-07 17:47:04.244 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 17:47:04.833 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 18:17:26.158 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 18:17:26.159 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 18:17:26.159 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 18:17:26.159 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 18:17:26.160 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 18:17:26.162 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 18:17:26.185 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 18:17:26.194 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 18:21:39.411 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 23960 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 18:21:39.423 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 18:21:40.085 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 18:21:40.089 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 18:21:40.129 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 0 Redis repository interfaces.
+2020-02-07 18:21:40.257 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 18:21:40.258 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 18:21:40.258 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 18:21:40.258 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 18:21:40.450 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 18:21:40.741 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 18:21:40.750 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 18:21:40.751 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 18:21:40.752 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 18:21:40.876 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 18:21:40.877 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1402 ms
+2020-02-07 18:21:43.182 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 18:21:43.628 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 18:21:43.647 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 18:21:43.647 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 18:21:43.649 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 18:21:43.650 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 18:21:43.650 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 18:21:43.650 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 18:21:43.651 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@7d088813
+2020-02-07 18:21:43.700 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 18:21:43.700 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 18:21:43.708 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 18:21:43.738 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 18:21:43.742 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 4.85 seconds (JVM running for 9.167)
+2020-02-07 18:21:46.037 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 18:21:46.037 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 18:21:46.046 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 8 ms
+2020-02-07 18:21:46.188 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 18:21:46.774 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 18:31:19.823 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 18:31:19.824 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 18:31:19.824 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 18:31:19.824 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 18:31:19.825 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 18:31:19.826 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 18:31:19.845 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 18:31:20.137 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 19:43:48.781 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 10544 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 19:43:48.794 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 19:43:49.756 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 19:43:49.761 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 19:43:49.810 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 28ms. Found 0 Redis repository interfaces.
+2020-02-07 19:43:50.007 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 19:43:50.007 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 19:43:50.008 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 19:43:50.008 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 19:43:50.276 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 19:43:50.667 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 19:43:50.680 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 19:43:50.682 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 19:43:50.683 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 19:43:50.849 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 19:43:50.850 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1992 ms
+2020-02-07 19:43:53.294 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 19:43:53.668 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 19:43:53.686 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 19:43:53.686 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 19:43:53.687 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 19:43:53.688 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 19:43:53.689 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 19:43:53.689 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 19:43:53.689 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@64ec1459
+2020-02-07 19:43:53.731 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 19:43:53.732 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 19:43:53.744 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 19:43:53.772 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 19:43:53.777 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.55 seconds (JVM running for 9.968)
+2020-02-07 19:44:05.740 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 19:44:05.741 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 19:44:05.751 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 10 ms
+2020-02-07 19:44:05.917 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 19:44:06.533 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 19:46:28.198 - WARN  [l-1 housekeeper] c.z.h.p.HikariPool$HouseKeeper : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m21s562ms124µs100ns).
+2020-02-07 19:46:42.049 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 19:46:42.050 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 19:46:42.051 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 19:46:42.051 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 19:46:42.052 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 19:46:42.054 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 19:46:42.076 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 19:46:42.087 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 19:48:34.377 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 12668 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 19:48:34.391 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 19:48:35.113 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 19:48:35.119 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 19:48:35.172 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 31ms. Found 0 Redis repository interfaces.
+2020-02-07 19:48:35.308 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 19:48:35.308 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 19:48:35.309 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 19:48:35.309 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 19:48:35.532 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 19:48:35.847 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 19:48:35.880 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 19:48:35.882 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 19:48:35.883 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 19:48:36.000 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 19:48:36.000 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1559 ms
+2020-02-07 19:48:38.416 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 19:48:38.796 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 19:48:38.812 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 19:48:38.812 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 19:48:38.813 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 19:48:38.814 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 19:48:38.814 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 19:48:38.815 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 19:48:38.815 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@36238b12
+2020-02-07 19:48:38.859 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 19:48:38.860 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 19:48:38.868 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 19:48:38.917 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 19:48:38.920 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.05 seconds (JVM running for 8.436)
+2020-02-07 19:48:42.470 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 19:48:42.470 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 19:48:42.482 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 12 ms
+2020-02-07 19:48:42.636 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 19:48:43.264 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 20:04:02.181 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 20:04:02.182 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 20:04:02.182 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 20:04:02.182 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 20:04:02.183 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 20:04:02.186 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 20:04:02.206 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 20:04:02.217 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 20:11:04.786 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 2668 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 20:11:04.799 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 20:11:05.531 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 20:11:05.534 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 20:11:05.584 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 29ms. Found 0 Redis repository interfaces.
+2020-02-07 20:11:05.737 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'favoriteListMapper' and 'com.rowenci.timemachine.mapper.FavoriteListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:11:05.738 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'goodListMapper' and 'com.rowenci.timemachine.mapper.GoodListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:11:05.738 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:11:05.739 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:11:05.739 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:11:05.740 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 20:11:06.008 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 20:11:06.328 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 20:11:06.359 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 20:11:06.360 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 20:11:06.361 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 20:11:06.489 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 20:11:06.489 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1636 ms
+2020-02-07 20:11:09.312 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 20:11:09.843 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 20:11:09.859 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 20:11:09.860 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 20:11:09.861 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 20:11:09.862 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 20:11:09.862 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 20:11:09.863 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 20:11:09.863 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4ad1a276
+2020-02-07 20:11:09.911 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 20:11:09.912 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 20:11:09.921 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 20:11:09.950 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 20:11:09.953 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.679 seconds (JVM running for 9.362)
+2020-02-07 20:11:15.055 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 20:11:15.055 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 20:11:15.069 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 13 ms
+2020-02-07 20:11:15.231 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 20:11:15.837 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 20:26:24.634 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 20:26:24.635 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 20:26:24.635 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 20:26:24.635 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 20:26:24.635 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 20:26:24.639 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 20:26:24.656 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 20:26:24.661 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 20:32:02.612 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 4056 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 20:32:02.628 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 20:32:03.417 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 20:32:03.421 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 20:32:03.471 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 31ms. Found 0 Redis repository interfaces.
+2020-02-07 20:32:03.609 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'favoriteListMapper' and 'com.rowenci.timemachine.mapper.FavoriteListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:32:03.609 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'goodListMapper' and 'com.rowenci.timemachine.mapper.GoodListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:32:03.609 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:32:03.610 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:32:03.610 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:32:03.610 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 20:32:03.837 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 20:32:04.159 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 20:32:04.178 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 20:32:04.180 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 20:32:04.182 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 20:32:04.324 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 20:32:04.324 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1626 ms
+2020-02-07 20:32:07.272 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 20:32:07.765 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 20:32:07.787 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 20:32:07.788 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 20:32:07.790 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 20:32:07.791 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 20:32:07.791 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 20:32:07.792 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 20:32:07.792 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@16a09809
+2020-02-07 20:32:07.834 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 20:32:07.834 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 20:32:07.842 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 20:32:07.872 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 20:32:07.875 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.878 seconds (JVM running for 9.443)
+2020-02-07 20:32:09.789 - INFO  [nio-8080-exec-2] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 20:32:09.789 - INFO  [nio-8080-exec-2] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 20:32:09.802 - INFO  [nio-8080-exec-2] o.s.w.s.FrameworkServlet       : Completed initialization in 12 ms
+2020-02-07 20:32:59.431 - INFO  [nio-8080-exec-4] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 20:33:00.006 - INFO  [nio-8080-exec-4] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 20:39:11.798 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 20:39:11.800 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 20:39:11.800 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 20:39:11.800 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 20:39:11.801 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 20:39:11.805 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 20:39:11.826 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 20:39:11.836 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 20:39:22.746 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 17832 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 20:39:22.761 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 20:39:23.582 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 20:39:23.587 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 20:39:23.640 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 33ms. Found 0 Redis repository interfaces.
+2020-02-07 20:39:23.801 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'favoriteListMapper' and 'com.rowenci.timemachine.mapper.FavoriteListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:39:23.801 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'goodListMapper' and 'com.rowenci.timemachine.mapper.GoodListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:39:23.801 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:39:23.802 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:39:23.802 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:39:23.802 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 20:39:24.047 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 20:39:24.408 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 20:39:24.420 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 20:39:24.422 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 20:39:24.422 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 20:39:24.548 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 20:39:24.549 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1725 ms
+2020-02-07 20:39:27.450 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 20:39:27.878 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 20:39:27.907 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 20:39:27.907 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 20:39:27.908 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 20:39:27.910 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 20:39:27.911 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 20:39:27.911 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 20:39:27.911 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@2c3f43d1
+2020-02-07 20:39:27.963 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 20:39:27.963 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 20:39:27.973 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 20:39:28.006 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 20:39:28.010 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.833 seconds (JVM running for 9.85)
+2020-02-07 20:45:49.663 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 20:45:49.663 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 20:45:49.671 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 8 ms
+2020-02-07 20:45:49.843 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 20:45:50.400 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 20:49:20.776 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 20:49:20.776 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 20:49:20.777 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 20:49:20.777 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 20:49:20.778 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 20:49:20.784 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 20:49:20.812 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 20:49:21.132 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 20:49:27.731 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 3612 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 20:49:27.753 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 20:49:28.525 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 20:49:28.532 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 20:49:28.587 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 34ms. Found 0 Redis repository interfaces.
+2020-02-07 20:49:28.736 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'favoriteListMapper' and 'com.rowenci.timemachine.mapper.FavoriteListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:49:28.736 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'goodListMapper' and 'com.rowenci.timemachine.mapper.GoodListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:49:28.736 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:49:28.737 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:49:28.737 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 20:49:28.737 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 20:49:28.939 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 20:49:29.382 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 20:49:29.402 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 20:49:29.404 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 20:49:29.404 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 20:49:29.569 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 20:49:29.570 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1744 ms
+2020-02-07 20:49:32.299 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 20:49:32.703 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 20:49:32.720 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 20:49:32.720 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 20:49:32.721 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 20:49:32.722 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 20:49:32.722 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 20:49:32.723 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 20:49:32.723 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@3d798e76
+2020-02-07 20:49:32.765 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 20:49:32.766 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 20:49:32.775 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 20:49:32.806 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 20:49:32.809 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.63 seconds (JVM running for 8.913)
+2020-02-07 20:49:55.472 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 20:49:55.473 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 20:49:55.485 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 11 ms
+2020-02-07 20:49:55.660 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 20:49:56.238 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 21:02:07.815 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 21:02:07.816 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 21:02:07.816 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 21:02:07.816 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 21:02:07.817 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 21:02:07.818 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 21:02:07.838 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 21:02:07.845 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 21:07:42.037 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 10332 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 21:07:42.050 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 21:07:42.780 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 21:07:42.786 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 21:07:42.831 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 28ms. Found 0 Redis repository interfaces.
+2020-02-07 21:07:42.965 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'favoriteListMapper' and 'com.rowenci.timemachine.mapper.FavoriteListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:07:42.965 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'goodListMapper' and 'com.rowenci.timemachine.mapper.GoodListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:07:42.965 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:07:42.966 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:07:42.966 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:07:42.966 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 21:07:43.178 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 21:07:43.513 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 21:07:43.525 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 21:07:43.526 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 21:07:43.527 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 21:07:43.651 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 21:07:43.651 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1553 ms
+2020-02-07 21:07:46.214 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 21:07:46.637 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 21:07:46.660 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 21:07:46.660 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 21:07:46.661 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 21:07:46.662 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 21:07:46.662 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 21:07:46.663 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 21:07:46.663 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@370a8b6e
+2020-02-07 21:07:46.707 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 21:07:46.707 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 21:07:46.717 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 21:07:46.751 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 21:07:46.757 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.251 seconds (JVM running for 8.386)
+2020-02-07 21:08:11.256 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 21:08:11.257 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 21:08:11.270 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 13 ms
+2020-02-07 21:08:11.449 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 21:08:12.014 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 21:23:14.325 - WARN  [l-1 housekeeper] c.z.h.p.HikariPool$HouseKeeper : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m32s177ms733µs100ns).
+2020-02-07 21:24:51.940 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 21:24:51.941 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 21:24:51.941 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 21:24:51.942 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 21:24:51.943 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 21:24:51.945 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 21:24:51.968 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 21:24:51.979 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 21:25:01.738 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 15336 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 21:25:01.755 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 21:25:02.586 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 21:25:02.591 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 21:25:02.639 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 31ms. Found 0 Redis repository interfaces.
+2020-02-07 21:25:02.797 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'favoriteListMapper' and 'com.rowenci.timemachine.mapper.FavoriteListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:25:02.797 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'goodListMapper' and 'com.rowenci.timemachine.mapper.GoodListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:25:02.798 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:25:02.798 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:25:02.798 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:25:02.798 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 21:25:03.023 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 21:25:03.351 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 21:25:03.380 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 21:25:03.382 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 21:25:03.384 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 21:25:03.506 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 21:25:03.507 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1690 ms
+2020-02-07 21:25:06.109 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 21:25:06.533 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 21:25:06.549 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 21:25:06.549 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 21:25:06.550 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 21:25:06.552 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 21:25:06.552 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 21:25:06.553 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 21:25:06.553 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@280484c7
+2020-02-07 21:25:06.594 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 21:25:06.595 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 21:25:06.605 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 21:25:06.634 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 21:25:06.637 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.431 seconds (JVM running for 9.394)
+2020-02-07 21:26:34.817 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 21:26:34.818 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 21:26:34.827 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 9 ms
+2020-02-07 21:26:34.982 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 21:26:35.827 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 21:27:40.665 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 21:27:40.666 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 21:27:40.666 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 21:27:40.666 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 21:27:40.667 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 21:27:40.669 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 21:27:40.686 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 21:27:40.692 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 21:44:49.551 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 21796 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 21:44:49.564 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 21:44:50.313 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 21:44:50.319 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 21:44:50.369 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 31ms. Found 0 Redis repository interfaces.
+2020-02-07 21:44:50.536 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'favoriteListMapper' and 'com.rowenci.timemachine.mapper.FavoriteListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:44:50.536 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'goodListMapper' and 'com.rowenci.timemachine.mapper.GoodListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:44:50.536 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:44:50.537 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:44:50.537 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:44:50.537 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 21:44:50.787 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 21:44:51.127 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 21:44:51.155 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 21:44:51.156 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 21:44:51.157 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 21:44:51.285 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 21:44:51.286 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1669 ms
+2020-02-07 21:44:53.878 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 21:44:54.298 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 21:44:54.314 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 21:44:54.314 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 21:44:54.315 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 21:44:54.317 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 21:44:54.318 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 21:44:54.318 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 21:44:54.318 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@6851b296
+2020-02-07 21:44:54.359 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 21:44:54.359 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 21:44:54.367 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 21:44:54.395 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 21:44:54.399 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.359 seconds (JVM running for 8.588)
+2020-02-07 21:45:03.038 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 21:45:03.038 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 21:45:03.050 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 12 ms
+2020-02-07 21:45:03.207 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 21:45:03.803 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 21:47:28.715 - WARN  [nio-8080-exec-9] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2020-02-07 21:50:24.093 - WARN  [io-8080-exec-10] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2020-02-07 21:50:58.968 - WARN  [nio-8080-exec-3] stractHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PUT' not supported]
+2020-02-07 21:56:28.502 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 21:56:28.503 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 21:56:28.503 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 21:56:28.503 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 21:56:28.504 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 21:56:28.506 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 21:56:28.538 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 21:56:28.552 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 21:56:40.542 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 23856 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 21:56:40.555 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 21:56:41.338 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 21:56:41.342 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 21:56:41.391 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 30ms. Found 0 Redis repository interfaces.
+2020-02-07 21:56:41.562 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'favoriteListMapper' and 'com.rowenci.timemachine.mapper.FavoriteListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:56:41.562 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'goodListMapper' and 'com.rowenci.timemachine.mapper.GoodListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:56:41.562 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:56:41.562 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:56:41.562 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 21:56:41.563 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 21:56:41.780 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 21:56:42.163 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 21:56:42.176 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 21:56:42.179 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 21:56:42.179 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 21:56:42.310 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 21:56:42.311 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1705 ms
+2020-02-07 21:56:44.995 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 21:56:45.421 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 21:56:45.438 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 21:56:45.439 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 21:56:45.441 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 21:56:45.443 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 21:56:45.443 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 21:56:45.443 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 21:56:45.443 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4db728df
+2020-02-07 21:56:45.493 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 21:56:45.493 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 21:56:45.501 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 21:56:45.533 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 21:56:45.536 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.514 seconds (JVM running for 9.009)
+2020-02-07 21:57:06.963 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 21:57:06.963 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 21:57:06.975 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 12 ms
+2020-02-07 21:57:07.174 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 21:57:07.797 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 22:04:33.199 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 22:04:33.200 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 22:04:33.200 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 22:04:33.200 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 22:04:33.201 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 22:04:33.202 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 22:04:33.223 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 22:04:33.228 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 22:06:29.107 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 22048 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 22:06:29.122 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 22:06:29.871 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 22:06:29.875 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 22:06:29.930 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 35ms. Found 0 Redis repository interfaces.
+2020-02-07 22:06:30.099 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'favoriteListMapper' and 'com.rowenci.timemachine.mapper.FavoriteListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 22:06:30.099 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'goodListMapper' and 'com.rowenci.timemachine.mapper.GoodListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 22:06:30.099 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 22:06:30.099 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 22:06:30.100 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 22:06:30.100 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 22:06:30.352 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 22:06:30.771 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 22:06:30.786 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 22:06:30.788 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 22:06:30.789 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 22:06:30.944 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 22:06:30.944 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1772 ms
+2020-02-07 22:06:33.800 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 22:06:34.198 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 22:06:34.213 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 22:06:34.213 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 22:06:34.215 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 22:06:34.216 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 22:06:34.216 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 22:06:34.217 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 22:06:34.217 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@5b7ee56c
+2020-02-07 22:06:34.262 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 22:06:34.262 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 22:06:34.269 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 22:06:34.298 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 22:06:34.301 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 5.702 seconds (JVM running for 8.823)
+2020-02-07 22:06:45.708 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 22:06:45.709 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 22:06:45.720 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 9 ms
+2020-02-07 22:06:45.888 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 22:06:46.515 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 22:19:44.477 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 22:19:44.479 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 22:19:44.480 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 22:19:44.480 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 22:19:44.481 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 22:19:44.483 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 22:19:44.515 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 22:19:44.542 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
+2020-02-07 22:19:53.967 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting TimemachineApplication on Rowenci with PID 8632 (D:\Codes\javacode\timemachine\target\classes started by rowenci in D:\Codes\javacode\timemachine)
+2020-02-07 22:19:53.984 - INFO  [           main] o.s.b.SpringApplication        : No active profile set, falling back to default profiles: default
+2020-02-07 22:19:54.828 - INFO  [           main] epositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-02-07 22:19:54.835 - INFO  [           main] epositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-02-07 22:19:54.888 - INFO  [           main] epositoryConfigurationDelegate : Finished Spring Data repository scanning in 33ms. Found 0 Redis repository interfaces.
+2020-02-07 22:19:55.045 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'favoriteListMapper' and 'com.rowenci.timemachine.mapper.FavoriteListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 22:19:55.045 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'goodListMapper' and 'com.rowenci.timemachine.mapper.GoodListMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 22:19:55.045 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'messageMapper' and 'com.rowenci.timemachine.mapper.MessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 22:19:55.046 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'publicMessageMapper' and 'com.rowenci.timemachine.mapper.PublicMessageMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 22:19:55.046 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userMapper' and 'com.rowenci.timemachine.mapper.UserMapper' mapperInterface. Bean already defined with the same name!
+2020-02-07 22:19:55.047 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.rowenci.timemachine.mapper]' package. Please check your configuration.
+2020-02-07 22:19:55.323 - INFO  [           main] egate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-02-07 22:19:55.741 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 8080 (http)
+2020-02-07 22:19:55.757 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-8080"]
+2020-02-07 22:19:55.759 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-02-07 22:19:55.761 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2020-02-07 22:19:55.912 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-02-07 22:19:55.912 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1870 ms
+2020-02-07 22:19:58.921 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-02-07 22:19:59.373 - INFO  [           main] o.q.i.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2020-02-07 22:19:59.391 - INFO  [           main] o.q.c.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-02-07 22:19:59.391 - INFO  [           main] o.q.c.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2020-02-07 22:19:59.392 - INFO  [           main] o.q.s.RAMJobStore              : RAMJobStore initialized.
+2020-02-07 22:19:59.393 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2020-02-07 22:19:59.393 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2020-02-07 22:19:59.393 - INFO  [           main] o.q.i.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2020-02-07 22:19:59.393 - INFO  [           main] o.q.c.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@6501b105
+2020-02-07 22:19:59.445 - INFO  [           main] o.s.s.q.SchedulerFactoryBean   : Starting Quartz Scheduler now
+2020-02-07 22:19:59.445 - INFO  [           main] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2020-02-07 22:19:59.455 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-8080"]
+2020-02-07 22:19:59.495 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 8080 (http) with context path ''
+2020-02-07 22:19:59.500 - INFO  [           main] o.s.b.StartupInfoLogger        : Started TimemachineApplication in 6.122 seconds (JVM running for 9.575)
+2020-02-07 22:20:03.138 - INFO  [nio-8080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-02-07 22:20:03.138 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-02-07 22:20:03.146 - INFO  [nio-8080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 8 ms
+2020-02-07 22:20:03.324 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Starting...
+2020-02-07 22:20:03.950 - INFO  [nio-8080-exec-1] c.z.h.HikariDataSource         : HikariPool-1 - Start completed.
+2020-02-07 22:22:12.639 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 22:22:12.641 - INFO  [extShutdownHook] o.s.s.q.SchedulerFactoryBean   : Shutting down Quartz Scheduler
+2020-02-07 22:22:12.642 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+2020-02-07 22:22:12.642 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+2020-02-07 22:22:12.645 - INFO  [extShutdownHook] o.q.c.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-02-07 22:22:12.647 - INFO  [extShutdownHook] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-02-07 22:22:12.670 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown initiated...
+2020-02-07 22:22:12.680 - INFO  [extShutdownHook] c.z.h.HikariDataSource         : HikariPool-1 - Shutdown completed.
