@@ -18,10 +18,10 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">
                         <img id="head_image" src="" class="layui-nav-img">
-                        贤心
+                        <span id="username"></span>
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="">基本资料</a></dd>
+                        <dd><a href="../user/userinfo.html">基本资料</a></dd>
                         <dd><a href="">安全设置</a></dd>
                     </dl>
                 </li>
@@ -142,7 +142,7 @@
                         });
                         //标注选中样式
                         obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
-                    }else if(obj.event === "del"){
+                    } else if (obj.event === "del") {
                         //取消喜欢
 
                         //标注选中样式
@@ -156,26 +156,27 @@
             layui.use('element', function () {
                 var element = layui.element;
             });
-            //获取头像
+            //获取信息
             $.ajax({
-                    type: "GET",
-                    url: "http://localhost:8080/timemachine/user/" + userId,
-                    data: {
-                        "token": token
-                    },
-                    async: false,
-                    cache: false,
-                    success: function (data) {
-                        if (JSON.parse(data).result == "success") {
-                            $("#head_image").attr("src", JSON.parse(data).data.image);
-                        } else {
-                            alert(JSON.parse(data).description);
-                        }
-                    },
-                    error: function () {
-                        alert("系统错误");
+                type: "GET",
+                url: "http://localhost:8080/timemachine/user/" + userId,
+                data: {
+                    "token": token
+                },
+                async: false,
+                cache: false,
+                success: function (data) {
+                    if (JSON.parse(data).result == "success") {
+                        $("#head_image").attr("src", JSON.parse(data).data.image);
+                        $("#username").text(JSON.parse(data).data.account);
+                    } else {
+                        alert(JSON.parse(data).description);
                     }
-                });
+                },
+                error: function () {
+                    alert("系统错误");
+                }
+            });
             function logout() {
                 $.ajax({
                     type: "GET",

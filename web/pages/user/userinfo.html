@@ -16,13 +16,13 @@
             <div class="layui-logo">TimeMachine</div>
             <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item">
-                    <a href="javascript:点击修改;">
+                    <a href="javascript:;">
                         <img id="head_image" src="" class="layui-nav-img">
-                        贤心
+                        <span id="username"></span>
                     </a>
                     <dl class="layui-nav-child">
                         <dd><a href="">基本资料</a></dd>
-                        <dd><a href="">安全设置</a></dd>
+                        <dd><a href="./securityinfo.html">安全设置</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item"><a href="" onclick="logout()">退出</a></li>
@@ -226,6 +226,8 @@
                         $("#email").val(JSON.parse(data).data.email);
                         $("#location").val(JSON.parse(data).data.location);
                         layui.$("#birthday").val(JSON.parse(data).data.birthday);
+
+                        $("#username").text(JSON.parse(data).data.account);
                     } else {
                         alert(JSON.parse(data).description);
                     }

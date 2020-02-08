@@ -21,26 +21,24 @@
                         <span id="username"></span>
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="../user/userinfo.html">基本资料</a></dd>
+                        <dd><a href="./userinfo.html">基本资料</a></dd>
                         <dd><a href="">安全设置</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item"><a href="" onclick="logout()">退出</a></li>
             </ul>
         </div>
-
-
         <div class="layui-side layui-bg-black">
             <div class="layui-side-scroll">
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree" lay-filter="test">
                     <li class="layui-nav-item"><a href="../public_area.html">公共区域</a></li>
-                    <li class="layui-nav-item layui-nav-itemed">
+                    <li class="layui-nav-item">
                         <a class="" href="javascript:;">我的信件</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="./message.html">写信件</a></dd>
-                            <dd><a href="./list.html">信件列表</a></dd class="layui-this">
-                            <dd class="layui-this"><a href="javascript:;">公开信件</a></dd class="layui-this">
+                            <dd><a href="../message/message.html">写信件</a></dd>
+                            <dd><a href="../message/list.html">信件列表</a></dd class="layui-this">
+                            <dd><a href="../message/public_list.html">公开信件</a></dd class="layui-this">
                         </dl>
                     </li>
                     <li class="layui-nav-item">
@@ -58,9 +56,11 @@
         <div class="layui-body">
             <!-- 内容主体区域 -->
             <fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;">
-                <legend>公开信件</legend>
+                <legend>安全信息</legend>
             </fieldset>
-            <table class="layui-hide" id="public_message" lay-filter="public_message"></table>
+            <div class="layui-form" style="margin: 20px 0 20px 20px;">
+                <button type="button" class="layui-btn layui-btn-lg" onclick="changePWD()">修改密码</button>
+            </div>
         </div>
 
         <div class="layui-footer">
@@ -68,11 +68,38 @@
             © Rowenci.com
         </div>
 
+        <div id="show_change" style="display: none; margin: 20px 20px 20px 0;">
+            <div class="layui-form-item">
+                <label class="layui-form-label">新密码</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="password" lay-verify="required" placeholder="请输入密码" autocomplete="off"
+                        class="layui-input" id="password">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">安全问题</label>
+                <div class="layui-input-block">
+                    <select name="city" lay-verify=""
+                        style="display: block; height: 40px; width: 190px; border: 1px solid gray;" id="question">
+                        <option value="">请选择一个问题</option>
+                        <option value="1">母亲的名字</option>
+                        <option value="2">父亲的名字</option>
+                        <option value="3">小学的名字</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">安全答案</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="username" lay-verify="required" placeholder="请输入" autocomplete="off"
+                        class="layui-input" id="answer">
+                </div>
+            </div>
+            <button type="button" class="layui-btn layui-btn-lg" style="margin-left: 110px;" onclick="change()">提交</button>
+        </div>
+
         <script src="../../js/layui/layui.js"></script>
         <script type="text/javascript" src="../../js/jquery-3.4.0.js"></script>
-        <script type="text/html" id="barDemo">
-            <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
-        </script>
         <script>
 
             //获取token  根据token向服务器请求数据
@@ -81,77 +108,51 @@
             var userId = 1;
             //var userId = storage.getItem("userId");
 
-            layui.use('table', function () {
-                var table = layui.table;
-
-                table.render({
-                    elem: '#public_message'
-                    , url: 'http://localhost:8080/timemachine/public-message/'
-                    , page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
-                        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
-                        //,curr: 5 //设定初始在第 5 页
-                        , groups: 1 //只显示 1 个连续页码
-                        , first: false //不显示首页
-                        , last: false //不显示尾页
-
-                    }
-                    , cols: [[
-                        { field: 'id', width: 80, title: 'ID' }
-                        , { field: 'title', width: 135, title: '信件标题' }
-                        , { field: 'context', minWidth: 150, title: '信件摘要' }
-                        , { field: 'writeTime', width: 135, title: '编写时间' }
-                        , { field: 'sendTime', width: 135, title: '发送时间' }
-                        , { field: 'means', width: 135, title: '发送方式' }
-                        , { field: 'target', width: 135, title: '发送地址' }
-                        , { field: 'isSend', width: 135, title: '是否已经发送' }
-                        , { fixed: 'right', width: 100, align: 'center', toolbar: '#barDemo' }
-                    ]], where: {
-                        token: token,
-                        userId: userId
-                    }, parseData: function (res) {
-                        for (var i = 0; i < res.data.length; i++) {
-                            //发送方式
-                            switch (res.data[i].means) {
-                                case 1:
-                                    res.data[i].means = '邮箱'
-                                    break;
-                                default:
-                                    res.data[i].means = '未知方式'
-                                    break;
-                            }
-                            res.data[i].context.substr(0, 20)
-                            //是否已经发送
-                            if (res.data[i].isSend == 0) {
-                                res.data[i].isSend = '否'
-                            } else {
-                                res.data[i].isSend = '是'
-                            }
-                        }
-                    }
-                });
-                table.on('tool(public_message)', function (obj) {
-                    var data = obj.data;
-                    console.log(data)
-                    window.localStorage.setItem("messageId", data.messageId);
-
-                    if (obj.event === "detail") {
-                        layer.open({
-                            type: 2,
-                            content: 'context.html', //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
-                            title: [data.title, 'font-size:18px;'],
-                            area: ['800px', '700px']
-                        });
-                        //标注选中样式
-                        obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
-                    }
-
-                });
-            });
-
             //JavaScript代码区域
             layui.use('element', function () {
                 var element = layui.element;
             });
+            layui.use('layer', function () {
+                var layer = layui.layer;
+            });
+
+            function changePWD() {
+                layer.open({
+                    type: 1,
+                    content: $('#show_change') //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+                });
+            }
+
+            function change(){
+                var question_id = $("#question option:selected").val();
+                var password = $("#password").val();
+                var answer = $("#answer").val();
+
+                $.ajax({
+                type: "PUT",
+                url: "http://localhost:8080/timemachine/user/password",
+                data: {
+                    "token": token,
+                    "userId": userId,
+                    "question_id": question_id,
+                    "password": password,
+                    "answer": answer
+                },
+                async: false,
+                cache: false,
+                success: function (data) {
+                    if (JSON.parse(data).result == "success") {
+                        alert(JSON.parse(data).description);
+                    } else {
+                        alert(JSON.parse(data).description);
+                    }
+                },
+                error: function () {
+                    alert("系统错误");
+                }
+            });
+            }
+
             //获取信息
             $.ajax({
                 type: "GET",
@@ -164,6 +165,13 @@
                 success: function (data) {
                     if (JSON.parse(data).result == "success") {
                         $("#head_image").attr("src", JSON.parse(data).data.image);
+                        $("#my_img").attr("src", JSON.parse(data).data.image);
+                        $("#account").text(JSON.parse(data).data.account);
+                        $("#phonenumber").val(JSON.parse(data).data.phoneNumber);
+                        $("#email").val(JSON.parse(data).data.email);
+                        $("#location").val(JSON.parse(data).data.location);
+                        layui.$("#birthday").val(JSON.parse(data).data.birthday);
+
                         $("#username").text(JSON.parse(data).data.account);
                     } else {
                         alert(JSON.parse(data).description);
@@ -173,6 +181,7 @@
                     alert("系统错误");
                 }
             });
+
             function logout() {
                 $.ajax({
                     type: "GET",

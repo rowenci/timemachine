@@ -18,10 +18,10 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">
                         <img id="head_image" src="" class="layui-nav-img">
-                        贤心
+                        <span id="username"></span>
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="">基本资料</a></dd>
+                        <dd><a href="../user/userinfo.html">基本资料</a></dd>
                         <dd><a href="">安全设置</a></dd>
                     </dl>
                 </li>
@@ -105,27 +105,27 @@
                         token: token,
                         userId: userId
                     }, parseData: function (res) {
-                            console.log(res);
-                        for(var i = 0; i < res.data.length; i ++){
+                        console.log(res);
+                        for (var i = 0; i < res.data.length; i++) {
                             //发送方式
-                            switch(res.data[i].means){
-                                case 1 :
-                                 res.data[i].means = '邮箱'
-                                 break;
+                            switch (res.data[i].means) {
+                                case 1:
+                                    res.data[i].means = '邮箱'
+                                    break;
                                 default:
-                                 res.data[i].means = '未知方式'
-                                 break;
+                                    res.data[i].means = '未知方式'
+                                    break;
                             }
                             //是否公开
-                            if(res.data[i].isPublic == 0){
+                            if (res.data[i].isPublic == 0) {
                                 res.data[i].isPublic = '否'
-                            }else{
+                            } else {
                                 res.data[i].isPublic = '是'
                             }
                             //是否已经发送
-                            if(res.data[i].isSend == 0){
+                            if (res.data[i].isSend == 0) {
                                 res.data[i].isSend = '否'
-                            }else{
+                            } else {
                                 res.data[i].isSend = '是'
                             }
                         }
@@ -138,26 +138,27 @@
             layui.use('element', function () {
                 var element = layui.element;
             });
-            //获取头像
+            //获取信息
             $.ajax({
-                    type: "GET",
-                    url: "http://localhost:8080/timemachine/user/" + userId,
-                    data: {
-                        "token": token
-                    },
-                    async: false,
-                    cache: false,
-                    success: function (data) {
-                        if (JSON.parse(data).result == "success") {
-                            $("#head_image").attr("src", JSON.parse(data).data.image);
-                        } else {
-                            alert(JSON.parse(data).description);
-                        }
-                    },
-                    error: function () {
-                        alert("系统错误");
+                type: "GET",
+                url: "http://localhost:8080/timemachine/user/" + userId,
+                data: {
+                    "token": token
+                },
+                async: false,
+                cache: false,
+                success: function (data) {
+                    if (JSON.parse(data).result == "success") {
+                        $("#head_image").attr("src", JSON.parse(data).data.image);
+                        $("#username").text(JSON.parse(data).data.account);
+                    } else {
+                        alert(JSON.parse(data).description);
                     }
-                });
+                },
+                error: function () {
+                    alert("系统错误");
+                }
+            });
             function logout() {
                 $.ajax({
                     type: "GET",

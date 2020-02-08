@@ -210,17 +210,33 @@ public class UserController {
 
     /**
      * 修改密码
-     *
-     * @param account
+     * @param userId
      * @param password
+     * @param question_id
+     * @param answer
      * @return
      */
     @PutMapping("/password")
-    public String changePWD(String account, String password) {
+    public String changePWD(String userId, String password, int question_id, String answer) {
         ModelMap model = new ModelMap();
+        QueryWrapper qw = new QueryWrapper();
+        qw.eq("user_id", userId);
+        User user = iUserService.getOne(qw);
+        int user_question = user.getQuestionId();
+        String user_answer = user.getAnswer();
+
+        //安全问题或者答案错误
+        if (user_question != question_id || !user_answer.equals(answer)){
+            model.addAttribute("code", serviceCodeInfo.CHANGE_PASSWORD_ERROR);
+            model.addAttribute("data", "");
+            model.addAttribute("result", "error");
+            model.addAttribute("description", "安全问题或答案错误");
+            return JSON.toJSONString(model);
+        }
+        //修改密码
         UpdateWrapper uw = new UpdateWrapper();
+        uw.eq("user_id", userId);
         uw.set("password", password);
-        uw.eq("account", account);
         boolean res = iUserService.update(uw);
         if (res) {
             model.addAttribute("code", serviceCodeInfo.SUCCESS);

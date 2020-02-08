@@ -41,8 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="191" column="43" selection-start-line="191" selection-start-column="43" selection-end-line="191" selection-end-column="43" />
+            <state relative-caret-position="223">
+              <caret line="228" column="22" selection-start-line="228" selection-start-column="22" selection-end-line="228" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -209,7 +209,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="270" />
     <option name="y" value="50" />
     <option name="width" value="1525" />
@@ -518,7 +518,7 @@
       <workItem from="1580990892405" duration="3909000" />
       <workItem from="1581055233752" duration="10510000" />
       <workItem from="1581075213985" duration="9693000" />
-      <workItem from="1581135773708" duration="7839000" />
+      <workItem from="1581135773708" duration="9600000" />
     </task>
     <servers />
   </component>
@@ -540,7 +540,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123408000" />
+    <option name="totallyTimeSpent" value="125169000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -595,6 +595,18 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/UserController.java</url>
+          <line>225</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/config/ShiroConfig.java" />
@@ -1060,8 +1072,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="191" column="43" selection-start-line="191" selection-start-column="43" selection-end-line="191" selection-end-column="43" />
+        <state relative-caret-position="223">
+          <caret line="228" column="22" selection-start-line="228" selection-start-column="22" selection-end-line="228" selection-end-column="22" />
         </state>
       </provider>
     </entry>
