@@ -18,41 +18,18 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class User implements Serializable {
+public class UserBlackList implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    private String userId;
+    private String banUserId;
 
-    private String account;
+    private String time;
 
-    private String password;
-
-    private String phoneNumber;
-
-    private Integer questionId;
-
-    private String answer;
-
-    private String email;
-
-    private String birthday;
-
-    /**
-     * 1 male / 0 female
-     */
-    private Integer sex;
-
-    private Integer age;
-
-    private String location;
-
-    private String logupTime;
-
-    private String image;
+    private Integer reason;
 
 
 }

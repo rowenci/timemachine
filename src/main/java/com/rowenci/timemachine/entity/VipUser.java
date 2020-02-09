@@ -18,7 +18,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class User implements Serializable {
+public class VipUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -27,32 +27,16 @@ public class User implements Serializable {
 
     private String userId;
 
-    private String account;
+    private String startTime;
 
-    private String password;
+    private String endTime;
 
-    private String phoneNumber;
-
-    private Integer questionId;
-
-    private String answer;
-
-    private String email;
-
-    private String birthday;
+    private Integer leftDays;
 
     /**
-     * 1 male / 0 female
+     * 1 true / 0 false
      */
-    private Integer sex;
-
-    private Integer age;
-
-    private String location;
-
-    private String logupTime;
-
-    private String image;
+    private Integer status;
 
 
 }

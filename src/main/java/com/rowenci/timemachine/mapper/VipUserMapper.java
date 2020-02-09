@@ -1,6 +1,6 @@
 package com.rowenci.timemachine.mapper;
 
-import com.rowenci.timemachine.entity.User;
+import com.rowenci.timemachine.entity.VipUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author rowenci
  * @since 2020-02-09
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface VipUserMapper extends BaseMapper<VipUser> {
 
 }

@@ -4,9 +4,12 @@ package com.rowenci.timemachine.controller;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
-import com.rowenci.timemachine.entity.SendMessage;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.rowenci.timemachine.entity.ManagerUserList;
 import com.rowenci.timemachine.entity.User;
-import com.rowenci.timemachine.service.IUserService;
+import com.rowenci.timemachine.entity.VipUser;
+import com.rowenci.timemachine.service.*;
 import com.rowenci.timemachine.util.CodeInfo.ServiceCodeInfo;
 import com.rowenci.timemachine.util.CreateUUID;
 import com.rowenci.timemachine.util.TokenUtil.TokenUtil;
@@ -15,24 +18,23 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * <p>
- * 前端控制器
+ *  前端控制器
  * </p>
  *
  * @author rowenci
- * @since 2020-02-05
+ * @since 2020-02-09
  */
 @RestController
 @RequestMapping("/timemachine/user")
 public class UserController {
 
-    @Resource
-    private IUserService iUserService;
 
     @Resource
     private ServiceCodeInfo serviceCodeInfo;
@@ -40,6 +42,20 @@ public class UserController {
     @Resource
     private RedisUtil redisUtil;
 
+    @Resource
+    private IUserService iUserService;
+
+    @Resource
+    private IVipUserService iVipUserService;
+
+    @Resource
+    private IMessageService iMessageService;
+
+    @Resource
+    private IPublicMessageService iPublicMessageService;
+
+    @Resource
+    private IUserBlackListService iUserBlackListService;
 
     /**
      * 注册
@@ -181,6 +197,56 @@ public class UserController {
     }
 
     /**
+     * 获取用户列表（没有被封禁的）
+     * @param limit
+     * @param page
+     * @return
+     */
+    @GetMapping("user_list")
+    public String getUserList(int limit, int page){
+        ModelMap modelMap = new ModelMap();
+        IPage<User> userIPage = new Page<>(page, limit);
+        int count = iUserService.count();
+
+        List<User> userList = iUserService.page(userIPage).getRecords();
+
+        List<ManagerUserList> managerUserLists = new ArrayList<>();
+
+        for(int i = 0; i < userList.size(); i ++){
+            QueryWrapper qwBlack = new QueryWrapper();
+            qwBlack.eq("ban_user_id", userList.get(i).getUserId());
+            if (iUserBlackListService.getOne(qwBlack) != null){
+                //用户被ban
+                continue;
+            }
+
+            QueryWrapper qw = new QueryWrapper();
+            qw.eq("user_id", userList.get(i).getUserId());
+
+
+            VipUser vipUser = iVipUserService.getOne(qw);
+
+            int messageNumber = iMessageService.count(qw);
+            int publicMessageNumber = iPublicMessageService.count(qw);
+
+            if (vipUser == null){
+                ManagerUserList managerUserList = new ManagerUserList(userList.get(i).getUserId(), userList.get(i).getAccount(), "否",  messageNumber, publicMessageNumber, userList.get(i).getLogupTime());
+                managerUserLists.add(managerUserList);
+            }else {
+                ManagerUserList managerUserList = new ManagerUserList(userList.get(i).getUserId(), userList.get(i).getAccount(), "是",  messageNumber, publicMessageNumber, userList.get(i).getLogupTime());
+                managerUserLists.add(managerUserList);
+            }
+
+        }
+
+        modelMap.addAttribute("code", serviceCodeInfo.LAYUI_SUCCESS);
+        modelMap.addAttribute("msg", "user_list查找成功");
+        modelMap.addAttribute("count", count);
+        modelMap.addAttribute("data", managerUserLists);
+        return JSON.toJSONString(modelMap);
+    }
+
+    /**
      * 修改个人信息
      *
      * @param user
@@ -254,5 +320,4 @@ public class UserController {
         }
         return JSON.toJSONString(modelMap);
     }
-
 }

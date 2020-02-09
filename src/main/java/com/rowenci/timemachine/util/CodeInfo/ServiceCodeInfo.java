@@ -117,6 +117,16 @@ public class ServiceCodeInfo {
      */
     public static final int DEL_MESSAGE_BLACK_LIST_ERROR = -1;
 
+    /**
+     * add user black list error
+     */
+    public static final int ADD_USER_BLACK_LIST_ERROR = -1;
+
+    /**
+     * del user black list error
+     */
+    public static final int DEL_USER_BLACK_LIST_ERROR = -1;
+
 
     public String getCodeInfo(int code){
         switch (code){

@@ -1,8 +1,8 @@
 package com.rowenci.timemachine.service.impl;
 
-import com.rowenci.timemachine.entity.User;
-import com.rowenci.timemachine.mapper.UserMapper;
-import com.rowenci.timemachine.service.IUserService;
+import com.rowenci.timemachine.entity.VipUser;
+import com.rowenci.timemachine.mapper.VipUserMapper;
+import com.rowenci.timemachine.service.IVipUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2020-02-09
  */
 @Service
-public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
+public class VipUserServiceImpl extends ServiceImpl<VipUserMapper, VipUser> implements IVipUserService {
 
 }

@@ -30,17 +30,17 @@
             <div class="layui-side-scroll">
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                    <li class="layui-nav-item layui-nav-itemed">
+                    <li class="layui-nav-item">
                         <a class="" href="javascript:;">信件管理</a>
                         <dl class="layui-nav-child">
                             <dd><a href="./manager_main.html">公共信件</a></dd>
-                            <dd class="layui-this"><a href="javascript:;">信件黑名单</a></dd>
+                            <dd><a href="./message_black_list.html">信件黑名单</a></dd>
                         </dl>
                     </li>
-                    <li class="layui-nav-item">
+                    <li class="layui-nav-item layui-nav-itemed">
                         <a href="javascript:;">用户管理</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="./manager_user_list.html">用户列表</a></dd>
+                            <dd class="layui-this"><a href="javascript:;">用户列表</a></dd>
                             <dd><a href="./user_black_list.html">用户黑名单</a></dd>
                         </dl>
                     </li>
@@ -51,7 +51,7 @@
         <div class="layui-body">
             <!-- 内容主体区域 -->
             <fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;">
-                <legend>公共信件黑名单</legend>
+                <legend>用户列表</legend>
             </fieldset>
             <table class="layui-hide" id="public_message" lay-filter="public_message"></table>
         </div>
@@ -64,7 +64,7 @@
         <script src="../../js/layui/layui.js"></script>
         <script type="text/javascript" src="../../js/jquery-3.4.0.js"></script>
         <script type="text/html" id="barDemo">
-            <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+            <a id= "ban" style="display: ;" class="layui-btn layui-btn-primary layui-btn-xs" lay-event="ban">封禁</a>
         </script>
         <script>
             var storage = window.sessionStorage;
@@ -77,7 +77,7 @@
 
                 table.render({
                     elem: '#public_message'
-                    , url: 'http://localhost:8080/timemachine/message-black-list/'
+                    , url: 'http://localhost:8080/timemachine/user/user_list/'
                     , page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
                         layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
                         //,curr: 5 //设定初始在第 5 页
@@ -87,40 +87,64 @@
                         , limit: 20
                     }
                     , cols: [[
-                         { field: 'title', width: 135, title: '信件标题' }
-                        , { field: 'context', minWidth: 150, title: '信件摘要' }
-                        , { field: 'writeTime', width: 125, title: '编写时间' }
-                        , { field: 'sendTime', width: 135, title: '发送时间' }
-                        , { field: 'isSend', width: 135, title: '是否已经发送' }
-                        , { field: 'time', width: 180, title: '加入黑名单时间' }
-                        , { field: 'reason', width: 80, title: '原因' }
-                        , { field: 'account', width: 120, title: '管理员' }
-                        , { fixed: 'right', width: 100, align: 'center', toolbar: '#barDemo' }
+                        { field: 'id', width: 150, title: 'id' }
+                        , { field: 'account', minWidth: 150, title: '用户名' }
+                        , { field: 'logupTime', width: 135, title: '注册时间' }
+                        , { field: 'isVIP', width: 135, title: '是否是VIP' }
+                        , { field: 'messageNumber', width: 125, title: '信件数量' }
+                        , { field: 'publicMessageNumber', width: 135, title: '公开信件数量' }
+                        , { fixed: 'right', width: 135, align: 'center', toolbar: '#barDemo' }
                     ]], where: {
                         token: token,
-                    }, parseData: function (res) {
-                        for (var i = 0; i < res.data.length; i++) {
-                            res.data[i].context.substr(0, 20);
-                            //是否已经发送
-                            if (res.data[i].isSend == 0) {
-                                res.data[i].isSend = '否'
-                            } else {
-                                res.data[i].isSend = '是'
-                            }
-                        }
                     }
                 });
                 table.on('tool(public_message)', function (obj) {
                     var data = obj.data;
-                    window.localStorage.setItem("messageId", data.messageId);
+                    Date.prototype.Format = function (fmt) { // author: meizz
+                        var o = {
+                            "M+": this.getMonth() + 1, // 月份
+                            "d+": this.getDate(), // 日
+                            "H+": this.getHours(), // 小时
+                            "m+": this.getMinutes(), // 分
+                            "s+": this.getSeconds(), // 秒
+                            "q+": Math.floor((this.getMonth() + 3) / 3), // 季度
+                            "S": this.getMilliseconds() // 毫秒
+                        };
+                        if (/(y+)/.test(fmt))
+                            fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+                        for (var k in o)
+                            if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                        return fmt;
+                    }
+                    var time = new Date().Format("yyyy-MM-dd HH:mm:ss");
 
-                    if (obj.event === "detail") {
-                        layer.open({
-                            type: 2,
-                            content: './manager_context.html', //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
-                            title: [data.title, 'font-size:18px;'],
-                            area: ['800px', '700px']
-                        });
+                    if (obj.event === "ban") {
+                        var conf = confirm("是否将用户封禁");
+                        if (conf) {
+                            //封禁
+                            $.ajax({
+                                type: "POST",
+                                url: "http://localhost:8080/timemachine/user-black-list/",
+                                data: {
+                                    "token": token,
+                                    "banUserId": data.id,
+                                    "time": time
+                                },
+                                async: false,
+                                cache: false,
+                                success: function (data) {
+                                    if (JSON.parse(data).result == "success") {
+                                        alert("封禁成功");
+                                        window.location.reload();
+                                    } else {
+                                        alert(JSON.parse(data).description);
+                                    }
+                                },
+                                error: function () {
+                                    alert("系统错误");
+                                }
+                            });
+                        }
                         //标注选中样式
                         obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
                     }
