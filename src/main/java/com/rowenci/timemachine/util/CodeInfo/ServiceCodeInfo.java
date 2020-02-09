@@ -127,6 +127,11 @@ public class ServiceCodeInfo {
      */
     public static final int DEL_USER_BLACK_LIST_ERROR = -1;
 
+    /**
+     * change manager password error
+     */
+    public static final int CHANGE_MANAGER_PASSWORD_ERROR = -1;
+
 
     public String getCodeInfo(int code){
         switch (code){

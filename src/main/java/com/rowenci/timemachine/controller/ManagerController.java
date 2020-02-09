@@ -3,6 +3,7 @@ package com.rowenci.timemachine.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.rowenci.timemachine.entity.Manager;
 import com.rowenci.timemachine.service.IManagerService;
 import com.rowenci.timemachine.util.CodeInfo.ServiceCodeInfo;
@@ -172,6 +173,51 @@ public class ManagerController {
             modelMap.addAttribute("data", manager);
             modelMap.addAttribute("result", "success");
             modelMap.addAttribute("description", "查找成功");
+        }
+        return JSON.toJSONString(modelMap);
+    }
+
+    /**
+     * 修改管理员密码
+     * @param managerId
+     * @param password
+     * @param supercode
+     * @return
+     */
+    @PutMapping("/")
+    public String changePWD(String managerId, String password, String supercode){
+        ModelMap modelMap = new ModelMap();
+        UpdateWrapper uw = new UpdateWrapper();
+        uw.eq("manager_id", managerId);
+        Manager manager = iManagerService.getOne(uw);
+        if (manager == null){
+            modelMap.addAttribute("code", serviceCodeInfo.NO_USER);
+            modelMap.addAttribute("data", "");
+            modelMap.addAttribute("result", "error");
+            modelMap.addAttribute("description", "没有该管理员");
+        }else {
+            if (manager.getSuperCode().equals(supercode)){
+                //超级密码正确
+                uw.set("password", password);
+                boolean res = iManagerService.update(uw);
+                if (res){
+                    modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
+                    modelMap.addAttribute("data", "");
+                    modelMap.addAttribute("result", "success");
+                    modelMap.addAttribute("description", "修改密码成功");
+                }else {
+                    modelMap.addAttribute("code", serviceCodeInfo.CHANGE_MANAGER_PASSWORD_ERROR);
+                    modelMap.addAttribute("data", "");
+                    modelMap.addAttribute("result", "error");
+                    modelMap.addAttribute("description", "修改密码失败");
+                }
+            }else {
+                //超级密码错误
+                modelMap.addAttribute("code", serviceCodeInfo.CHANGE_MANAGER_PASSWORD_ERROR);
+                modelMap.addAttribute("data", "");
+                modelMap.addAttribute("result", "error");
+                modelMap.addAttribute("description", "超级密码错误");
+            }
         }
         return JSON.toJSONString(modelMap);
     }

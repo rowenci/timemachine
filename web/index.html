@@ -88,9 +88,9 @@
                                 storage.setItem("token", JSON.parse(data).data.token);
                                 storage.setItem("userId", JSON.parse(data).data.userId);
                             }
-                            window.location.href = "./pages/main.html";
+                            window.location.href = "../pages/public_area.html";
                         } else {
-                            alert("账号密码错误");
+                            alert(JSON.parse(data).description);
                         }
                     },
                     error: function () {

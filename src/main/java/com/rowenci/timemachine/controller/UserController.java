@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.rowenci.timemachine.entity.ManagerUserList;
 import com.rowenci.timemachine.entity.User;
+import com.rowenci.timemachine.entity.UserBlackList;
 import com.rowenci.timemachine.entity.VipUser;
 import com.rowenci.timemachine.service.*;
 import com.rowenci.timemachine.util.CodeInfo.ServiceCodeInfo;
@@ -112,12 +113,25 @@ public class UserController {
         QueryWrapper qw = new QueryWrapper();
         qw.eq("account", account);
         User user = iUserService.getOne(qw);
+
+        QueryWrapper qwBlack = new QueryWrapper();
+        qwBlack.eq("ban_user_id", user.getUserId());
+        UserBlackList userBlackList = iUserBlackListService.getOne(qwBlack);
+
+        if (userBlackList != null){
+            modelMap.addAttribute("code", serviceCodeInfo.LOGIN_ERROR);
+            modelMap.addAttribute("data", "");
+            modelMap.addAttribute("result", "error");
+            modelMap.addAttribute("description", "用户被封禁，请联系管理员");
+            return JSON.toJSONString(modelMap);
+        }
+
         if (user == null) {
             //用户不存在
             modelMap.addAttribute("code", serviceCodeInfo.LOGIN_ERROR);
             modelMap.addAttribute("data", "");
             modelMap.addAttribute("result", "error");
-            modelMap.addAttribute("description", "");
+            modelMap.addAttribute("description", "用户不存在");
         } else {
             if (user.getPassword().equals(password)) {
 

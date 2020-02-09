@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>TimeMachine - Rowenci</title>
+    <link rel="stylesheet" href="../../../js/layui/css/layui.css">
+</head>
+
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+
+        <div class="layui-header">
+            <div class="layui-logo">TimeMachine Manager</div>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        <span id="username"></span>
+                    </a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">安全设置</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item"><a href="" onclick="logout()">退出</a></li>
+            </ul>
+        </div>
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <li class="layui-nav-item">
+                        <a class="" href="javascript:;">信件管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="../manager_main.html">公共信件</a></dd>
+                            <dd><a href="../message_black_list.html">信件黑名单</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">用户管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="../manager_user_list.html">用户列表</a></dd>
+                            <dd><a href="../user_black_list.html">用户黑名单</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <!-- 内容主体区域 -->
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;">
+                <legend>管理员安全操作</legend>
+            </fieldset>
+            
+            <div class="layui-form" style="margin: 20px 0 20px 20px;">
+                <button type="button" class="layui-btn layui-btn-lg" onclick="changePWD()">修改密码</button>
+            </div>
+            <div class="layui-form" style="margin: 20px 0 20px 20px;">
+                <button type="button" class="layui-btn layui-btn-lg" onclick="addManager()">添加新管理员</button>
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            © Rowenci.com
+        </div>
+
+        <div id="show_change" style="display: none; margin: 20px 20px 20px 0;">
+            <div class="layui-form-item">
+                <label class="layui-form-label">新密码</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="password" lay-verify="required" placeholder="请输入密码" autocomplete="off"
+                        class="layui-input" id="password">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">超级密码</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="password" lay-verify="required" placeholder="请输入超级密码" autocomplete="off"
+                        class="layui-input" id="supercode">
+                </div>
+            </div>
+            <button type="button" class="layui-btn layui-btn-lg" style="margin-left: 110px;"
+                onclick="change()">提交</button>
+        </div>
+
+        <div id="show_add" style="display: none; margin: 20px 20px 20px 0;">
+            <div class="layui-form-item">
+                <label class="layui-form-label">账号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="password" lay-verify="required" placeholder="请输入账号" autocomplete="off"
+                        class="layui-input" id="add_account">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="password" lay-verify="required" placeholder="请输入密码" autocomplete="off"
+                        class="layui-input" id="add_password">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">超级密码</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="password" lay-verify="required" placeholder="请输入超级密码" autocomplete="off"
+                        class="layui-input" id="add_supercode">
+                </div>
+            </div>
+            <button type="button" class="layui-btn layui-btn-lg" style="margin-left: 110px;"
+                onclick="add()">提交</button>
+        </div>
+
+        <script src="../../../js/layui/layui.js"></script>
+        <script type="text/javascript" src="../../../js/jquery-3.4.0.js"></script>
+        <script>
+            var storage = window.sessionStorage;
+            var token = storage.getItem("token");
+            var managerId = 1;
+            //var managerId = storage.getItem("managerId");
+
+            //JavaScript代码区域
+            layui.use('element', function () {
+                var element = layui.element;
+            });
+            layui.use('layer', function () {
+                var layer = layui.layer;
+            });
+
+            function changePWD() {
+                layer.open({
+                    type: 1,
+                    title: "修改密码",
+                    content: $('#show_change') //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+                });
+            }
+
+            function addManager(){
+                layer.open({
+                    type: 1,
+                    title: "添加新管理员",
+                    content: $('#show_add') //这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+                });
+            }
+
+            function change(){
+                var password = $("#password").val();
+                var supercode = $("#supercode").val();
+
+                if (supercode == "" || password == "") {
+                    alert("请将信息填写完整");
+                } else {
+                    $.ajax({
+                        type: "PUT",
+                        url: "http://localhost:8080/timemachine/manager/",
+                        data: {
+                            "token": token,
+                            "managerId": managerId,
+                            "password": password,
+                            "supercode": supercode
+                        },
+                        async: false,
+                        cache: false,
+                        success: function (data) {
+                                console.log(JSON.parse(data));
+                            if (JSON.parse(data).result == "success") {
+                                alert(JSON.parse(data).description);
+                            } else {
+                                alert(JSON.parse(data).description);
+                            }
+                        },
+                        error: function () {
+                            alert("系统错误");
+                        }
+                    });
+                }
+            }
+            function add(){
+                var account = $("#add_account").val();
+                var password = $("#add_password").val();
+                var supercode = $("#add_supercode").val();
+
+                if (supercode == "" || password == "" || account == "") {
+                    alert("请将信息填写完整");
+                } else {
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost:8080/timemachine/manager/",
+                        data: {
+                            "token": token,
+                            "account": account,
+                            "password": password,
+                            "superCode": supercode
+                        },
+                        async: false,
+                        cache: false,
+                        success: function (data) {
+                                console.log(JSON.parse(data));
+                            if (JSON.parse(data).result == "success") {
+                                alert(JSON.parse(data).description);
+                            } else {
+                                alert(JSON.parse(data).description);
+                            }
+                        },
+                        error: function () {
+                            alert("系统错误");
+                        }
+                    });
+                }
+            }
+
+            //获取信息
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/timemachine/manager/" + managerId,
+                data: {
+                    "token": token
+                },
+                async: false,
+                cache: false,
+                success: function (data) {
+                    if (JSON.parse(data).result == "success") {
+                        $("#username").text(JSON.parse(data).data.account);
+                    } else {
+                        alert(JSON.parse(data).description);
+                    }
+                },
+                error: function () {
+                    alert("系统错误");
+                }
+            });
+            function logout() {
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8080/timemachine/manager/managerLogout/",
+                    data: {
+                        "token": token
+                    },
+                    async: false,
+                    cache: false,
+                    success: function (data) {
+                        if (JSON.parse(data).result == "success") {
+                            storage.clear();
+                            window.location.href = "../index.html";
+                        } else {
+                            alert(JSON.parse(data).description);
+                        }
+                    },
+                    error: function () {
+                        alert("系统错误");
+                    }
+                });
+            }
+        </script>
+</body>
+
+</html>
