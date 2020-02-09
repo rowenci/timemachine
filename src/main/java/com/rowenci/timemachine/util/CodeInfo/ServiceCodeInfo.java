@@ -107,6 +107,17 @@ public class ServiceCodeInfo {
      */
     public static final int DEL_FAVORITE_LIST_ERROR = -1;
 
+    /**
+     * add message black list error
+     */
+    public static final int ADD_MESSAGE_BLACK_LIST_ERROR = -1;
+
+    /**
+     * del message black list error
+     */
+    public static final int DEL_MESSAGE_BLACK_LIST_ERROR = -1;
+
+
     public String getCodeInfo(int code){
         switch (code){
             case -1 : return "insert error";

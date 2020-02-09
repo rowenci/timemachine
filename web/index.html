@@ -22,7 +22,7 @@
     <div class="login">
         <div class="message">TimeMachine</div>
         <div id="darkbannerwrap"></div>
-        <div class="show_login">
+        <div id="show_login" class="show_login">
             <p>账号</p>
             <input id="account" name="account" type="text" lay-verify="required" class="layui-input">
             <hr class="hr15">
@@ -35,6 +35,20 @@
             <input id="regist" onclick="regist()" value="注册" lay-submit lay-filter="login" style="width:100%;"
                 type="submit">
             <hr class="hr20">
+            <div><a onclick="show_managerLogin()" href="javascript:;">管理员登陆</a></div>
+        </div>
+
+        <div id="show_managerLogin" class="show_login" style="display: none;">
+            <p>管理员账号</p>
+            <input id="manager_account" name="manager_account" type="text" lay-verify="required" class="layui-input">
+            <hr class="hr15">
+            <p>管理员密码</p>
+            <input id="manager_password" name="manager_password" lay-verify="required" type="password" class="layui-input">
+            <hr class="hr15">
+            <input id="manager_login" onclick="managerLogin()" value="登录" lay-submit lay-filter="login" style="width:100%;"
+                type="submit">
+            <hr class="hr20">
+            <div><a onclick="back()" href="javascript:;">返回用户登陆</a></div>
         </div>
     </div>
 
@@ -72,7 +86,7 @@
                             }else{
                                 var storage = window.sessionStorage;
                                 storage.setItem("token", JSON.parse(data).data.token);
-                                storage.setItem("token", JSON.parse(data).data.userId);
+                                storage.setItem("userId", JSON.parse(data).data.userId);
                             }
                             window.location.href = "./pages/main.html";
                         } else {
@@ -93,6 +107,54 @@
                 title: ['用户注册', 'font-size:18px;'],
                 area: ['500px', '800px']
             });
+        }
+
+        function show_managerLogin(){
+            $("#show_login").css("display", "none");
+            $("#show_managerLogin").css("display", "block");
+        }
+
+        function back(){
+            $("#show_managerLogin").css("display", "none");
+            $("#show_login").css("display", "block");
+        }
+
+        function managerLogin(){
+            var account = $("#manager_account").val();
+            var password = $("#manager_password").val();
+            if (account == "" || password == "") {
+                alert("请输入账号密码");
+            } else {
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8080/timemachine/manager/",
+                    data: {
+                        "account": account,
+                        "password": password
+                    },
+                    async: false,
+                    cache: false,
+                    success: function (data) {
+                        if (JSON.parse(data).result == "success") {
+                            //localstorage保存token
+                            if(! window.localStorage){
+                                alert("浏览器不支持localstorage");
+                                return false;
+                            }else{
+                                var storage = window.sessionStorage;
+                                storage.setItem("token", JSON.parse(data).data.token);
+                                storage.setItem("managerId", JSON.parse(data).data.managerId);
+                            }
+                            window.location.href = "./pages/manager/manager_main.html";
+                        } else {
+                            alert("账号密码错误");
+                        }
+                    },
+                    error: function () {
+                        alert("系统错误");
+                    }
+                });
+            }
         }
 
     </script>

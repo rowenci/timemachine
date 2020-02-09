@@ -128,6 +128,7 @@ public class PublicMessageController {
         int count = iPublicMessageService.count(qw);
         List<PublicMessage> publicMessageList = iPublicMessageService.page(publicMessageIPage, qw).getRecords();
 
+        //获取信件信息
         List<PublicArea> messageList = new ArrayList<>();
         for(int i = 0; i < publicMessageList.size(); i ++){
 
@@ -253,6 +254,19 @@ public class PublicMessageController {
             modelMap.addAttribute("result", "error");
             modelMap.addAttribute("description", "修改失败");
         }
+        return JSON.toJSONString(modelMap);
+    }
+
+    @GetMapping("/checkBlack")
+    public String checkBlack(String messageId){
+        ModelMap modelMap = new ModelMap();
+        QueryWrapper qw = new QueryWrapper();
+        qw.eq("message_id", messageId);
+        PublicMessage publicMessage = iPublicMessageService.getOne(qw);
+        modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
+        modelMap.addAttribute("data", publicMessage.getBanned());
+        modelMap.addAttribute("result", "success");
+        modelMap.addAttribute("description", "获取信件黑名单状态成功");
         return JSON.toJSONString(modelMap);
     }
 

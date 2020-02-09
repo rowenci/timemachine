@@ -11,46 +11,39 @@
 <body class="layui-layout-body">
     <div class="layui-layout layui-layout-admin">
 
-
         <div class="layui-header">
-            <div class="layui-logo">TimeMachine</div>
+            <div class="layui-logo">TimeMachine Manager</div>
             <ul class="layui-nav layui-layout-right">
                 <li class="layui-nav-item">
                     <a href="javascript:;">
-                        <img id="head_image" src="" class="layui-nav-img">
                         <span id="username"></span>
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="../user/userinfo.html">基本资料</a></dd>
-                        <dd><a href="../user/securityinfo.html">安全设置</a></dd>
+                        <dd><a href="./userinfo.html">基本资料</a></dd>
+                        <dd><a href="">安全设置</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item"><a href="" onclick="logout()">退出</a></li>
             </ul>
         </div>
-
-
         <div class="layui-side layui-bg-black">
             <div class="layui-side-scroll">
                 <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
                 <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                    <li class="layui-nav-item"><a href="../public_area.html">公共区域</a></li>
                     <li class="layui-nav-item layui-nav-itemed">
-                        <a class="" href="javascript:;">我的信件</a>
+                        <a class="" href="javascript:;">信件管理</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="./message.html">写信件</a></dd>
-                            <dd class="layui-this"><a href="javascript:;">信件列表</a></dd>
-                            <dd><a href="./public_list.html">公开信件</a></dd>
+                            <dd class="layui-this"><a href="javascript:;">公共信件</a></dd>
+                            <dd><a href="./message_black_list.html">信件黑名单</a></dd>
                         </dl>
                     </li>
                     <li class="layui-nav-item">
-                        <a href="javascript:;">我的喜欢</a>
+                        <a href="javascript:;">用户管理</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="../myfavorite/good_list.html">点赞列表</a></dd>
-                            <dd><a href="../myfavorite/favorite_list.html">收藏列表</a></dd>
+                            <dd><a href="javascript:;">用户列表</a></dd>
+                            <dd><a href="javascript:;">用户黑名单</a></dd>
                         </dl>
                     </li>
-                    <li class="layui-nav-item"><a href="">点击赞助</a></li>
                 </ul>
             </div>
         </div>
@@ -58,9 +51,9 @@
         <div class="layui-body">
             <!-- 内容主体区域 -->
             <fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;">
-                <legend>信件列表</legend>
+                <legend>公共信件</legend>
             </fieldset>
-            <table class="layui-hide" id="message_list"></table>
+            <table class="layui-hide" id="public_message" lay-filter="public_message"></table>
         </div>
 
         <div class="layui-footer">
@@ -70,56 +63,44 @@
 
         <script src="../../js/layui/layui.js"></script>
         <script type="text/javascript" src="../../js/jquery-3.4.0.js"></script>
+        <script type="text/html" id="barDemo">
+            <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+        </script>
         <script>
-
-            //获取token  根据token向服务器请求数据
             var storage = window.sessionStorage;
             var token = storage.getItem("token");
-            var userId = 1;
-            //var userId = storage.getItem("userId");
+            var managerId = 1;
+            //var managerId = storage.getItem("managerId");
 
             layui.use('table', function () {
                 var table = layui.table;
+
                 table.render({
-                    elem: '#message_list'
-                    , url: 'http://localhost:8080/timemachine/message/'
+                    elem: '#public_message'
+                    , url: 'http://localhost:8080/timemachine/public-message/public_area'
                     , page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
                         layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
                         //,curr: 5 //设定初始在第 5 页
                         , groups: 1 //只显示 1 个连续页码
                         , first: false //不显示首页
                         , last: false //不显示尾页
+                        , limit: 20
                     }
                     , cols: [[
                         { field: 'id', width: 80, title: 'ID' }
-                        , { field: 'title', minWidth: 150, title: '信件标题' }
-                        , { field: 'writeTime', width: 150, title: '撰写时间' }
-                        , { field: 'sendTime', width: 150, title: '发送时间' }
-                        , { field: 'means', width: 135, title: '发送方式' }
-                        , { field: 'target', width: 180, title: '发送地址' }
-                        , { field: 'isPublic', width: 135, title: '是否公开' }
+                        , { field: 'title', width: 135, title: '信件标题' }
+                        , { field: 'context', minWidth: 150, title: '信件摘要' }
+                        , { field: 'writeTime', width: 135, title: '编写时间' }
+                        , { field: 'sendTime', width: 135, title: '发送时间' }
+                        , { field: 'good_number', width: 135, title: '点赞数', sort: true }
+                        , { field: 'favorite_number', width: 135, title: '收藏数', sort: true }
                         , { field: 'isSend', width: 135, title: '是否已经发送' }
-                    ]]
-                    , where: {
+                        , { fixed: 'right', width: 100, align: 'center', toolbar: '#barDemo' }
+                    ]], where: {
                         token: token,
-                        userId: userId
                     }, parseData: function (res) {
                         for (var i = 0; i < res.data.length; i++) {
-                            //发送方式
-                            switch (res.data[i].means) {
-                                case 1:
-                                    res.data[i].means = '邮箱'
-                                    break;
-                                default:
-                                    res.data[i].means = '未知方式'
-                                    break;
-                            }
-                            //是否公开
-                            if (res.data[i].isPublic == 0) {
-                                res.data[i].isPublic = '否'
-                            } else {
-                                res.data[i].isPublic = '是'
-                            }
+                            res.data[i].context.substr(0, 20);
                             //是否已经发送
                             if (res.data[i].isSend == 0) {
                                 res.data[i].isSend = '否'
@@ -127,6 +108,21 @@
                                 res.data[i].isSend = '是'
                             }
                         }
+                    }
+                });
+                table.on('tool(public_message)', function (obj) {
+                    var data = obj.data;
+                    window.localStorage.setItem("messageId", data.messageId);
+
+                    if (obj.event === "detail") {
+                        layer.open({
+                            type: 2,
+                            content: './manager_context.html', //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+                            title: [data.title, 'font-size:18px;'],
+                            area: ['800px', '700px']
+                        });
+                        //标注选中样式
+                        obj.tr.addClass('layui-table-click').siblings().removeClass('layui-table-click');
                     }
 
                 });
@@ -139,7 +135,7 @@
             //获取信息
             $.ajax({
                 type: "GET",
-                url: "http://localhost:8080/timemachine/user/" + userId,
+                url: "http://localhost:8080/timemachine/manager/" + managerId,
                 data: {
                     "token": token
                 },
@@ -147,7 +143,6 @@
                 cache: false,
                 success: function (data) {
                     if (JSON.parse(data).result == "success") {
-                        $("#head_image").attr("src", JSON.parse(data).data.image);
                         $("#username").text(JSON.parse(data).data.account);
                     } else {
                         alert(JSON.parse(data).description);
@@ -160,7 +155,7 @@
             function logout() {
                 $.ajax({
                     type: "GET",
-                    url: "http://localhost:8080/timemachine/user/logOut/",
+                    url: "http://localhost:8080/timemachine/manager/managerLogout/",
                     data: {
                         "token": token
                     },
