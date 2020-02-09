@@ -26,7 +26,9 @@ public class UserInBlack {
 
     private int reason;
 
-    public UserInBlack(String id, String account, String logupTime, String isVIP, int messageNumber, int publicMessageNumber, String time, int reason) {
+    private String managerAccount;
+
+    public UserInBlack(String id, String account, String logupTime, String isVIP, int messageNumber, int publicMessageNumber, String time, int reason, String managerAccount) {
         this.id = id;
         this.account = account;
         this.logupTime = logupTime;
@@ -35,6 +37,7 @@ public class UserInBlack {
         this.publicMessageNumber = publicMessageNumber;
         this.time = time;
         this.reason = reason;
+        this.managerAccount = managerAccount;
     }
 
     public String getId() {
@@ -99,5 +102,13 @@ public class UserInBlack {
 
     public void setReason(int reason) {
         this.reason = reason;
+    }
+
+    public String getManagerAccount() {
+        return managerAccount;
+    }
+
+    public void setManagerAccount(String managerAccount) {
+        this.managerAccount = managerAccount;
     }
 }

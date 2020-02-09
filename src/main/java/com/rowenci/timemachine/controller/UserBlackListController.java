@@ -3,7 +3,6 @@ package com.rowenci.timemachine.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.rowenci.timemachine.entity.User;
@@ -30,6 +29,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/timemachine/user-black-list")
 public class UserBlackListController {
+
 
     @Resource
     private ServiceCodeInfo serviceCodeInfo;
@@ -106,10 +106,10 @@ public class UserBlackListController {
             int publicMessageNumber = iPublicMessageService.count(qw);
 
             if (vipUser == null){
-                UserInBlack userInBlack = new UserInBlack(user.getUserId(), user.getAccount(), user.getLogupTime(), "否",  messageNumber, publicMessageNumber, userBlackLists.get(i).getTime(), userBlackLists.get(i).getReason());
+                UserInBlack userInBlack = new UserInBlack(user.getUserId(), user.getAccount(), user.getLogupTime(), "否",  messageNumber, publicMessageNumber, userBlackLists.get(i).getTime(), userBlackLists.get(i).getReason(), userBlackLists.get(i).getManagerId());
                 userInBlacks.add(userInBlack);
             }else {
-                UserInBlack userInBlack = new UserInBlack(user.getUserId(), user.getAccount(), user.getLogupTime(), "是",  messageNumber, publicMessageNumber, userBlackLists.get(i).getTime(), userBlackLists.get(i).getReason());
+                UserInBlack userInBlack = new UserInBlack(user.getUserId(), user.getAccount(), user.getLogupTime(), "是",  messageNumber, publicMessageNumber, userBlackLists.get(i).getTime(), userBlackLists.get(i).getReason(), userBlackLists.get(i).getManagerId());
                 userInBlacks.add(userInBlack);
             }
 
@@ -149,5 +149,4 @@ public class UserBlackListController {
 
         return JSON.toJSONString(modelMap);
     }
-
 }

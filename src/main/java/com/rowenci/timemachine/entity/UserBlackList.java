@@ -27,6 +27,8 @@ public class UserBlackList implements Serializable {
 
     private String banUserId;
 
+    private String managerId;
+
     private String time;
 
     private Integer reason;
