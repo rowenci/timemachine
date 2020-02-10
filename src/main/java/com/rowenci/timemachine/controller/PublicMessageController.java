@@ -13,16 +13,24 @@ import com.rowenci.timemachine.service.IMessageService;
 import com.rowenci.timemachine.service.IPublicMessageService;
 import com.rowenci.timemachine.util.CodeInfo.ServiceCodeInfo;
 import com.rowenci.timemachine.util.CreateUUID;
+import com.rowenci.timemachine.util.QrCodeUtil;
+import io.minio.MinioClient;
+import io.minio.ObjectStat;
+import io.minio.errors.MinioException;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.io.File;
+import java.io.FileInputStream;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author rowenci
@@ -43,11 +51,12 @@ public class PublicMessageController {
 
     /**
      * 添加公共信件
+     *
      * @param publicMessage
      * @return
      */
     @PostMapping("/")
-    public String addPublicMessage(PublicMessage publicMessage){
+    public String addPublicMessage(PublicMessage publicMessage) {
 
         ModelMap modelMap = new ModelMap();
 
@@ -58,12 +67,12 @@ public class PublicMessageController {
 
         boolean res = iPublicMessageService.save(publicMessage);
 
-        if (res){
+        if (res) {
             modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
             modelMap.addAttribute("data", "");
             modelMap.addAttribute("result", "success");
             modelMap.addAttribute("description", "添加成功");
-        }else {
+        } else {
             modelMap.addAttribute("code", serviceCodeInfo.ADD_PUBLIC_MESSAGE_ERROR);
             modelMap.addAttribute("data", "");
             modelMap.addAttribute("result", "error");
@@ -75,13 +84,14 @@ public class PublicMessageController {
 
     /**
      * 根据用户id获取用户公共信件的列表
+     *
      * @param userId
      * @param limit
      * @param page
      * @return
      */
     @GetMapping("/")
-    public String getPublicMessage(String userId, int limit, int page){
+    public String getPublicMessage(String userId, int limit, int page) {
         ModelMap modelMap = new ModelMap();
         QueryWrapper qw = new QueryWrapper();
         qw.eq("user_id", userId);
@@ -91,9 +101,9 @@ public class PublicMessageController {
         List<PublicMessage> publicMessageList = iPublicMessageService.page(publicMessageIPage, qw).getRecords();
 
         List<Message> messageList = new ArrayList<>();
-        for(int i = 0; i < publicMessageList.size(); i ++){
+        for (int i = 0; i < publicMessageList.size(); i++) {
             //公共信件被ban
-            if (publicMessageList.get(i).getBanned() == 1){
+            if (publicMessageList.get(i).getBanned() == 1) {
                 //跳出循环
                 continue;
             }
@@ -114,12 +124,13 @@ public class PublicMessageController {
 
     /**
      * 获取公共区域的信件
+     *
      * @param limit
      * @param page
      * @return
      */
     @GetMapping("/public_area")
-    public String publicArea(int limit, int page){
+    public String publicArea(int limit, int page) {
         ModelMap modelMap = new ModelMap();
         QueryWrapper qw = new QueryWrapper();
         qw.orderByDesc("good_number", "favorite_number");
@@ -130,10 +141,10 @@ public class PublicMessageController {
 
         //获取信件信息
         List<PublicArea> messageList = new ArrayList<>();
-        for(int i = 0; i < publicMessageList.size(); i ++){
+        for (int i = 0; i < publicMessageList.size(); i++) {
 
             //公共信件被ban
-            if (publicMessageList.get(i).getBanned() == 1){
+            if (publicMessageList.get(i).getBanned() == 1) {
                 //跳出循环
                 continue;
             }
@@ -167,11 +178,12 @@ public class PublicMessageController {
 
     /**
      * 获取点赞数
+     *
      * @param messageId
      * @return
      */
     @GetMapping("/getGoodNumber")
-    public String getGoodNumber(String messageId){
+    public String getGoodNumber(String messageId) {
         ModelMap modelMap = new ModelMap();
         QueryWrapper qw = new QueryWrapper();
         qw.eq("message_id", messageId);
@@ -185,11 +197,12 @@ public class PublicMessageController {
 
     /**
      * 获取收藏数
+     *
      * @param messageId
      * @return
      */
     @GetMapping("/getFavoriteNumber")
-    public String getFavoriteNumber(String messageId){
+    public String getFavoriteNumber(String messageId) {
         ModelMap modelMap = new ModelMap();
         QueryWrapper qw = new QueryWrapper();
         qw.eq("message_id", messageId);
@@ -203,24 +216,25 @@ public class PublicMessageController {
 
     /**
      * 更改点赞数
+     *
      * @param messageId
      * @param goodNumber
      * @return
      */
     @PutMapping("/goodNumber")
-    public String updateGoodNumber(String messageId, int goodNumber){
+    public String updateGoodNumber(String messageId, int goodNumber) {
         ModelMap modelMap = new ModelMap();
         UpdateWrapper uw = new UpdateWrapper();
         uw.eq("message_id", messageId);
         uw.set("good_number", goodNumber);
 
         boolean res = iPublicMessageService.update(uw);
-        if (res){
+        if (res) {
             modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
             modelMap.addAttribute("data", "");
             modelMap.addAttribute("result", "success");
             modelMap.addAttribute("description", "修改成功");
-        }else {
+        } else {
             modelMap.addAttribute("code", serviceCodeInfo.UPDATE_GOODNUMBER_ERROR);
             modelMap.addAttribute("data", "");
             modelMap.addAttribute("result", "error");
@@ -231,24 +245,25 @@ public class PublicMessageController {
 
     /**
      * 更改收藏数
+     *
      * @param messageId
      * @param favoriteNumber
      * @return
      */
     @PutMapping("/favoriteNumber")
-    public String updateFavoriteNumber(String messageId, int favoriteNumber){
+    public String updateFavoriteNumber(String messageId, int favoriteNumber) {
         ModelMap modelMap = new ModelMap();
         UpdateWrapper uw = new UpdateWrapper();
         uw.eq("message_id", messageId);
         uw.set("favorite_number", favoriteNumber);
 
         boolean res = iPublicMessageService.update(uw);
-        if (res){
+        if (res) {
             modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
             modelMap.addAttribute("data", "");
             modelMap.addAttribute("result", "success");
             modelMap.addAttribute("description", "修改成功");
-        }else {
+        } else {
             modelMap.addAttribute("code", serviceCodeInfo.UPDATE_FAVORITE_NUMBER_ERROR);
             modelMap.addAttribute("data", "");
             modelMap.addAttribute("result", "error");
@@ -258,7 +273,7 @@ public class PublicMessageController {
     }
 
     @GetMapping("/checkBlack")
-    public String checkBlack(String messageId){
+    public String checkBlack(String messageId) {
         ModelMap modelMap = new ModelMap();
         QueryWrapper qw = new QueryWrapper();
         qw.eq("message_id", messageId);
@@ -270,4 +285,98 @@ public class PublicMessageController {
         return JSON.toJSONString(modelMap);
     }
 
+
+    @GetMapping("/share")
+    public String share(String messageId) {
+        ModelMap modelMap = new ModelMap();
+        String filename = messageId + ".jpg";
+
+        try {
+            // 使用MinIO服务的URL，端口，Access key和Secret key创建一个MinioClient对象
+            MinioClient minioClient = new MinioClient("http://192.168.1.21:9001", "minio", "minio123");
+            ObjectStat obj = minioClient.statObject("timemachine", filename);
+            //二维码已经存在
+            modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
+            modelMap.addAttribute("src", "http://192.168.1.21:9001/timemachine/" + filename);
+            modelMap.addAttribute("result", "success");
+            modelMap.addAttribute("description", "获取二维码成功");
+            return JSON.toJSONString(modelMap);
+        } catch (Exception e) {
+            //二维码不存在
+            InetAddress address = null;
+            try {
+                address = InetAddress.getLocalHost();
+            } catch (UnknownHostException ee) {
+                ee.printStackTrace();
+            }
+            String host = "http://" + address.getHostAddress() + ":8080";
+
+            String url = host + "/share/shareMessage?messageId=" + messageId;
+
+            String dirPath = System.getProperty("user.dir");
+            String path = File.separator + "uploadImg" + File.separator;
+
+            try {
+                QrCodeUtil.encode(url, dirPath + path, messageId, true);
+                FileInputStream inputStream = new FileInputStream(new File(dirPath + path + filename));
+                File file = new File(dirPath + path + filename);
+                //上传文件至Minio
+                try {
+                    MinioClient minioClient = new MinioClient("http://192.168.1.21:9001", "minio", "minio123");
+                    // 检查存储桶是否已经存在
+                    boolean isExist = minioClient.bucketExists("timemachine");
+                    if (isExist) {
+                    } else {
+                        // 创建一个名为timemachine的存储桶
+                        minioClient.makeBucket("timemachine");
+                    }
+
+                    // 使用putObject上传一个文件到存储桶中。
+                    minioClient.putObject("timemachine", filename, inputStream, file.length(), "img");
+                    inputStream.close();
+                    minioClient.statObject("timemachine", filename);
+
+                    try {
+
+                        ObjectStat obj1 = minioClient.statObject("timemachine", filename);
+
+                    } catch (Exception ee) {
+
+                        modelMap.addAttribute("code", serviceCodeInfo.UPLOAD_ERROR);
+                        modelMap.addAttribute("data", "");
+                        modelMap.addAttribute("result", "error");
+                        modelMap.addAttribute("description", "获取二维码失败");
+                        return JSON.toJSONString(modelMap);
+
+                    }
+
+                } catch (MinioException ee) {
+
+                    //上传文件到Minio失败
+                    System.out.println("Error occurred: " + e);
+                    inputStream.close();
+
+                    modelMap.addAttribute("code", serviceCodeInfo.UPLOAD_ERROR);
+                    modelMap.addAttribute("data", "");
+                    modelMap.addAttribute("result", "error");
+                    modelMap.addAttribute("description", "获取二维码失败");
+
+                    return JSON.toJSONString(modelMap);
+                }
+                //上传文件到Minio成功
+                //删除临时文件
+                File tempFile = new File(dirPath + path + filename);
+                tempFile.delete();
+            } catch (Exception ee) {
+                e.printStackTrace();
+            }
+
+            modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
+            modelMap.addAttribute("src", "http://192.168.1.21:9001/timemachine/" + filename);
+            modelMap.addAttribute("result", "success");
+            modelMap.addAttribute("description", "获取二维码成功");
+            return JSON.toJSONString(modelMap);
+        }
+
+    }
 }

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>信件</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+
+<body>
+
+    <div id="context_view"></div>
+
+    <script src="../../js/layui/layui.js"></script>
+    <script type="text/javascript" src="../../js/jquery-3.4.0.js"></script>
+
+    <!-- html模板 -->
+    <script id="message_temp" type="text/html">
+        <h3>{{ d.title }}</h3>
+        <p>作者：{{ d.account }}</p>
+        {{ d.context }}
+    </script>
+
+    <script>
+        var messageId = window.localStorage.getItem("messageId");
+
+        window.localStorage.removeItem("messageId");
+        var message;
+
+        if (messageId == "" || messageId == undefined) {
+            console.log("messageId not exists");
+        } else {
+            //获取信件内容
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/timemachine/message/findById/",
+                data: {
+                    "token": token,
+                    "messageId": messageId
+                },
+                async: false,
+                cache: false,
+                success: function (data) {
+                    message = JSON.parse(data).data
+                    console.log(message);
+                },
+                error: function () {
+                    alert("系统错误");
+                }
+            });
+            //获取点赞数
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/timemachine/public-message/getGoodNumber",
+                data: {
+                    "token": token,
+                    "messageId": messageId
+                },
+                async: false,
+                cache: false,
+                success: function (data) {
+                    $("#good_number").html(JSON.parse(data).data);
+                },
+                error: function () {
+                    alert("系统错误");
+                }
+            });
+            //获取收藏数
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/timemachine/public-message/getFavoriteNumber",
+                data: {
+                    "token": token,
+                    "messageId": messageId
+                },
+                async: false,
+                cache: false,
+                success: function (data) {
+                    $("#favorite_number").html(JSON.parse(data).data);
+                },
+                error: function () {
+                    alert("系统错误");
+                }
+            });
+            //获取作者名称
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/timemachine/user/" + message.userId,
+                data: {
+                    "token": token,
+                    "messageId": messageId
+                },
+                async: false,
+                cache: false,
+                success: function (data) {
+                    message.account = JSON.parse(data).data.account;
+                },
+                error: function () {
+                    alert("系统错误");
+                }
+            });
+            layui.use('laytpl', function () {
+                var laytpl = layui.laytpl;
+                var getTpl = message_temp.innerHTML
+                    , view = document.getElementById('context_view');
+                laytpl(getTpl).render(message, function (html) {
+                    view.innerHTML = html;
+                });
+            });
+
+        }
+    </script>
+
+</body>
+
+</html>

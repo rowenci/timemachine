@@ -132,6 +132,11 @@ public class ServiceCodeInfo {
      */
     public static final int CHANGE_MANAGER_PASSWORD_ERROR = -1;
 
+    /**
+     * get vipuser info error
+     */
+    public static final int GET_VIPUSER_INFO_ERROR = -1;
+
 
     public String getCodeInfo(int code){
         switch (code){

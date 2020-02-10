@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author rowenci
- * @since 2020-02-09
+ * @since 2020-02-10
  */
 public interface VipUserMapper extends BaseMapper<VipUser> {
 

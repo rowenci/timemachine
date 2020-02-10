@@ -69,16 +69,26 @@
                 <fieldset class="layui-elem-field site-demo-button" style="margin-top: 30px; height: 250px;">
                     <legend>信件选项</legend>
                     <div class="layui-form">
-                        <div id="time" style="margin: 10px 0 0 25px;">
+                        <div id="time" style="margin: 10px 0 0 25px; display: inline;">
                             发送至 ：
                             <input id="week" type="radio" name="time" value="week" title="一周后" checked>
                             <input id="month" type="radio" name="time" value="month" title="一月后">
                             <input id="three_month" type="radio" name="time" value="three_month" title="三月后">
                             <input id="half_year" type="radio" name="time" value="half_year" title="半年后">
                             <input id="year" type="radio" name="time" value="year" title="一年后">
+                            <button id="show_vip_option" onclick="show_vip_option()" type="button"
+                                class="layui-btn">会员选项</button>
+                        </div>
+                        <div id="vip_time" style="margin: 10px 0 10px 0; display: none;" class="layui-inline">
+                            <label class="layui-form-label">发送至 ：</label>
+                            <div class="layui-input-inline">
+                                <input type="text" class="layui-input" id="vip_send" placeholder="yyyy年MM月dd日">
+                            </div>
+                            <button onclick="back_vip_option()" style="margin-left: 25px;" type="button"
+                                class="layui-btn">返回</button>
                         </div>
                         </br>
-                        <div class="layui-inline">
+                        <div class="layui-inline" style="margin-top: 10px;">
                             <label class="layui-form-label">邮箱地址：</label>
                             <div class="layui-input-inline">
                                 <input id="email" type="email" name="email" lay-verify="email" autocomplete="off"
@@ -141,6 +151,14 @@
                 var element = layui.element;
             });
 
+            layui.use('laydate', function () {
+                var laydate = layui.laydate;
+                laydate.render({
+                    elem: '#vip_send'
+                    , format: 'yyyy-MM-dd'
+                });
+            })
+
             //获取信息
             $.ajax({
                 type: "GET",
@@ -162,6 +180,41 @@
                     alert("系统错误");
                 }
             });
+            //获取会员信息
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/timemachine/vip-user/check/",
+                data: {
+                    "token": token,
+                    "userId": userId
+                },
+                async: false,
+                cache: false,
+                success: function (data) {
+                    if (JSON.parse(data).data == 0) {
+                        //不是会员
+                        $("#show_vip_option").attr("class", "layui-btn layui-btn-disabled");
+                        $("#show_vip_option").attr("onclick", "");
+                    } else if (JSON.parse(data).data == 1) {
+                        //是会员
+                    } else {
+                        alert(JSON.parse(data).description)
+                    }
+                },
+                error: function () {
+                    alert("系统错误");
+                    $("#show_vip_option").attr("class", "layui-btn layui-btn-disabled");
+                    $("#show_vip_option").attr("onclick", "");
+                }
+            });
+            function show_vip_option() {
+                $("#time").css("display", "none");
+                $("#vip_time").css("display", "inline");
+            }
+            function back_vip_option() {
+                $("#vip_time").css("display", "none");
+                $("#time").css("display", "inline");
+            }
             function logout() {
                 $.ajax({
                     type: "GET",
@@ -198,33 +251,45 @@
                 message.context = layedit.getContent(editor);
                 message.means = 1;
                 message.target = $("#email").val();
-                var send_date = new Date();
-                var time = $("#time input[name='time']:checked").val();
-                switch (time) {
-                    case "week":
-                        send_date.setDate(send_date.getDate() + 7);
-                        message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
-                        break;
-                    case "month":
-                        send_date.setDate(send_date.getDate() + 30);
-                        message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
-                        break;
-                    case "three_month":
-                        send_date.setDate(send_date.getDate() + 90);
-                        message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
-                        break;
-                    case "half_year":
-                        send_date.setDate(send_date.getDate() + 180);
-                        message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
-                        break;
-                    case "year":
-                        send_date.setDate(send_date.getDate() + 365);
-                        message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
-                        break;
-                    default:
-                        send_date.setDate(send_date.getDate() + 7);
-                        message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
-                        break;
+
+                //如果是会员
+                if ($("#time").css("display") == "none" && $("#vip_time").css("display") == "inline") {
+                    message.sendTime = layui.$("#vip_send").val();
+                    if(message.sendTime == "" || message.sendTime == undefined){
+                        alert("请选择发送日期");
+                        return;
+                    }
+                } else {
+                    //如果是普通用户
+                    $("#vip_time").css("display") == "none" && $("#time").css("display") == "inline"
+                    var send_date = new Date();
+                    var time = $("#time input[name='time']:checked").val();
+                    switch (time) {
+                        case "week":
+                            send_date.setDate(send_date.getDate() + 7);
+                            message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
+                            break;
+                        case "month":
+                            send_date.setDate(send_date.getDate() + 30);
+                            message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
+                            break;
+                        case "three_month":
+                            send_date.setDate(send_date.getDate() + 90);
+                            message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
+                            break;
+                        case "half_year":
+                            send_date.setDate(send_date.getDate() + 180);
+                            message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
+                            break;
+                        case "year":
+                            send_date.setDate(send_date.getDate() + 365);
+                            message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
+                            break;
+                        default:
+                            send_date.setDate(send_date.getDate() + 7);
+                            message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
+                            break;
+                    }
                 }
                 var date = new Date();
                 message.writeTime = date.toLocaleDateString();
@@ -248,7 +313,7 @@
                 $("#conf_target").text("邮箱地址：" + $("#email").val());
 
 
-                layer.confirm('', {title: "请检查您的邮件发送信息", content: $("#conf").html()} ,function (index) {
+                layer.confirm('', { title: "请检查您的邮件发送信息", content: $("#conf").html() }, function (index) {
                     //do something
                     $.ajax({
                         type: "POST",

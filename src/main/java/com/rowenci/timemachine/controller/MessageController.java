@@ -150,7 +150,7 @@ public class MessageController {
             if (isExist) {
                 log.info("Bucket already exists.");
             } else {
-                // 创建一个名为asiatrip的存储桶
+                // 创建一个名为timemachine的存储桶
                 minioClient.makeBucket("timemachine");
             }
 

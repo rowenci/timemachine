@@ -13,7 +13,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author rowenci
- * @since 2020-02-09
+ * @since 2020-02-10
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -30,8 +30,6 @@ public class VipUser implements Serializable {
     private String startTime;
 
     private String endTime;
-
-    private Integer leftDays;
 
     /**
      * 1 true / 0 false

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <title>分享</title>
+</head>
+<body>
+    <h3 th:text="${message.title}"></h3>
+    <p th:text="'作者：' + ${user.account}"></p>
+    <p th:text="${message.context}"></p>
+</body>
+</html>

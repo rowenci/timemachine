@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author rowenci
- * @since 2020-02-09
+ * @since 2020-02-10
  */
 @Service
 public class VipUserServiceImpl extends ServiceImpl<VipUserMapper, VipUser> implements IVipUserService {

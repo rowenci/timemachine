@@ -83,6 +83,12 @@ public class UserBlackListController {
 
     }
 
+    /**
+     * 获取封禁用户列表
+     * @param limit
+     * @param page
+     * @return
+     */
     @GetMapping("/")
     public String getUserBlackList(int limit, int page){
         ModelMap modelMap = new ModelMap();
@@ -122,6 +128,11 @@ public class UserBlackListController {
         return JSON.toJSONString(modelMap);
     }
 
+    /**
+     * 解封用户
+     * @param userId
+     * @return
+     */
     @DeleteMapping("/")
     public String cancelBlack(String userId){
         ModelMap modelMap = new ModelMap();
