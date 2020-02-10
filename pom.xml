@@ -135,6 +135,13 @@
             <artifactId>core</artifactId>
             <version>3.4.0</version>
         </dependency>
+        <!-- alipay -->
+        <dependency>
+            <groupId>com.alipay.sdk</groupId>
+            <artifactId>alipay-sdk-java</artifactId>
+            <version>4.9.13.ALL</version>
+        </dependency>
+
 
         <!-- tools end -->
 
