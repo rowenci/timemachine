@@ -12,8 +12,10 @@ import com.rowenci.timemachine.util.CreateUUID;
 import io.minio.MinioClient;
 import io.minio.ObjectStat;
 import io.minio.errors.MinioException;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,15 +43,23 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/timemachine/message")
+@Slf4j
 public class MessageController {
-
-    final Logger log = LoggerFactory.getLogger(MessageController.class);
 
     @Resource
     private IMessageService iMessageService;
 
     @Resource
     private ServiceCodeInfo serviceCodeInfo;
+
+    @Value("${spring.minio.url}")
+    private String minioUrl;
+
+    @Value("${spring.minio.accessKey}")
+    private String accessKey;
+
+    @Value("${spring.minio.secretKey}")
+    private String secretKey;
 
     /**
      * 添加信件
@@ -143,7 +153,7 @@ public class MessageController {
         //上传文件至Minio
         try {
             // 使用MinIO服务的URL，端口，Access key和Secret key创建一个MinioClient对象
-            MinioClient minioClient = new MinioClient("http://192.168.1.21:9001", "minio", "minio123");
+            MinioClient minioClient = new MinioClient(minioUrl, accessKey, secretKey);
 
             // 检查存储桶是否已经存在
             boolean isExist = minioClient.bucketExists("timemachine");
@@ -197,7 +207,7 @@ public class MessageController {
         tempFile.delete();
 
         Map<String, String> infoMap = new HashMap<>();
-        infoMap.put("src", "http://192.168.1.21:9001/timemachine/" + newFileName);
+        infoMap.put("src", minioUrl + "/timemachine/" + newFileName);
         infoMap.put("title", newFileName);
         modelMap.addAttribute("code", serviceCodeInfo.UPLOAD_MESSAGE_PIC_SUCCESS);
         modelMap.addAttribute("msg", "上传文件成功");

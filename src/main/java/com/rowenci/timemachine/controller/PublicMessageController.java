@@ -17,6 +17,7 @@ import com.rowenci.timemachine.util.QrCodeUtil;
 import io.minio.MinioClient;
 import io.minio.ObjectStat;
 import io.minio.errors.MinioException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
@@ -48,6 +49,15 @@ public class PublicMessageController {
 
     @Resource
     private IMessageService iMessageService;
+
+    @Value("${spring.minio.url}")
+    private String minioUrl;
+
+    @Value("${spring.minio.accessKey}")
+    private String accessKey;
+
+    @Value("${spring.minio.secretKey}")
+    private String secretKey;
 
     /**
      * 添加公共信件
@@ -272,6 +282,11 @@ public class PublicMessageController {
         return JSON.toJSONString(modelMap);
     }
 
+    /**
+     * 判断该信件是否是在黑名单中
+     * @param messageId
+     * @return
+     */
     @GetMapping("/checkBlack")
     public String checkBlack(String messageId) {
         ModelMap modelMap = new ModelMap();
@@ -301,11 +316,11 @@ public class PublicMessageController {
 
         try {
             // 使用MinIO服务的URL，端口，Access key和Secret key创建一个MinioClient对象
-            MinioClient minioClient = new MinioClient("http://192.168.1.21:9001", "minio", "minio123");
+            MinioClient minioClient = new MinioClient(minioUrl, accessKey, secretKey);
             ObjectStat obj = minioClient.statObject("qrcode", filename);
             //二维码已经存在
             modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
-            modelMap.addAttribute("src", "http://192.168.1.21:9001/qrcode/" + filename);
+            modelMap.addAttribute("src", minioUrl + "/qrcode/" + filename);
             modelMap.addAttribute("result", "success");
             modelMap.addAttribute("description", "获取二维码成功");
             return JSON.toJSONString(modelMap);
@@ -330,7 +345,7 @@ public class PublicMessageController {
                 File file = new File(dirPath + path + filename);
                 //上传文件至Minio
                 try {
-                    MinioClient minioClient = new MinioClient("http://192.168.1.21:9001", "minio", "minio123");
+                    MinioClient minioClient = new MinioClient(minioUrl, accessKey, secretKey);
                     // 检查存储桶是否已经存在
                     boolean isExist = minioClient.bucketExists("qrcode");
                     if (isExist) {
@@ -380,7 +395,7 @@ public class PublicMessageController {
             }
 
             modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
-            modelMap.addAttribute("src", "http://192.168.1.21:9001/qrcode/" + filename);
+            modelMap.addAttribute("src", minioUrl + "/qrcode/" + filename);
             modelMap.addAttribute("result", "success");
             modelMap.addAttribute("description", "获取二维码成功");
             return JSON.toJSONString(modelMap);

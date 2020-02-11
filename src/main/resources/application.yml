@@ -32,4 +32,7 @@ spring:
     properties.mail.smtp.starttls.required: true
     properties.mail.smtp.ssl.enable: true
     default-encoding: utf-8
-
+  minio:
+    url: http://192.168.1.21:9001
+    accessKey: minio
+    secretKey: minio123
