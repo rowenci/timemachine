@@ -46,7 +46,7 @@
 							<dd><a href="../myfavorite/favorite_list.html">收藏列表</a></dd>
 						</dl>
 					</li>
-					<li class="layui-nav-item"><a href="">点击赞助</a></li>
+					<li class="layui-nav-item layui-nav-itemed layui-this"><a href="javascript:;">会员中心</a></li>
 				</ul>
 			</div>
 		</div>
@@ -78,8 +78,10 @@
 				<p id="vip_off" style="line-height: 40px; margin-left: 30px; color: red; display: none;">已经到期</p>
 			</div>
 
-			<button type="button" class="layui-btn layui-btn-lg" style="margin-left: 30px;"
+			<button id="show_pay" type="button" class="layui-btn layui-btn-lg" style="margin-left: 30px; display: inline;"
 				onclick="show_pay()">充值</button>
+			<button id="refresh" type="button" class="layui-btn layui-btn-lg" style="margin-left: 30px; display: none;"
+				onclick="refresh()">刷新信息</button>
 		</div>
 
 		<div class="layui-footer">
@@ -160,12 +162,12 @@
 			});
 
 			function show_pay() {
-				layer.open({
-					type: 2,
-					content: 'pay.html', //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
-					title: ["充值", 'font-size:18px;'],
-					area: 2
-				});
+				$("#show_pay").css("display", "none");
+				$("#refresh").css("display", "inline");
+				window.open("pay.html", "_blank");
+			}
+			function refresh(){
+				location.reload();
 			}
 
 			function logout() {

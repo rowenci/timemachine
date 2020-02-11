@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id="show">
 
 <head>
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../../css/main.css" />
 </head>
 
-<body class="layui-layout-body">
+<body id="clear" class="layui-layout-body">
     <div class="pay">
         <!--主内容开始编辑-->
         <div class="tr_recharge">
@@ -158,8 +158,50 @@
                 });
             })
 
-            function pay(){
-                
+            function pay() {
+                var num = $(".rechnum").text();
+                if (num == "0.00元") {
+                    alert("请选择充值月份");
+                }
+                var money;
+                var vipMode;
+                switch (num) {
+                    case "10.00元":
+                        money = 10;
+                        vipMode = 1;
+                        break;
+                    case "20.00元":
+                        money = 20;
+                        vipMode = 2;
+                        break;
+                    case "30.00元":
+                        money = 30;
+                        vipMode = 3;
+                        break;
+                    case "60.00元":
+                        money = 60;
+                        vipMode = 4;
+                        break;
+                }
+                $.ajax({
+                    type: "GET",
+                    url: "http://localhost:8080/timemachine/vip-user/aliPay/",
+                    data: {
+                        "token": token,
+                        "userId": userId,
+                        "money": money,
+                        "vipMode": vipMode
+                    },
+                    async: false,
+                    cache: false,
+                    success: function (data) {
+                        console.log(data);
+                        $("#clear").html(data);
+                    },
+                    error: function () {
+                        alert("系统错误");
+                    }
+                });
             }
 
         </script>

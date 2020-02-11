@@ -24,10 +24,10 @@ spring:
     cache: false
   mail:
     host: smtp.qq.com
-    username: 459287499@qq.com
-    password: wttwvrzzfmqrbghj
+    username: 1421376431@qq.com
+    password: tywxttqxligsggif
     properties.mail.smtp.port: 465
-    from: 459287499@qq.com
+    from: 1421376431@qq.com
     properties.mail.smtp.starttls.enable: true
     properties.mail.smtp.starttls.required: true
     properties.mail.smtp.ssl.enable: true
