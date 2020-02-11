@@ -7,6 +7,7 @@ import com.alipay.api.request.AlipayTradePagePayRequest;
 import com.rowenci.timemachine.entity.VipOrder;
 import com.rowenci.timemachine.service.IVipOrderService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -29,6 +30,31 @@ public class AliPayService {
 
     @Resource
     private IVipOrderService iVipOrderService;
+
+
+    @Value("${alipay.appId}")
+    private String appId;
+
+    @Value("${alipay.appPrivateKey}")
+    private String appPrivateKey;
+
+    @Value("${alipay.alipayPublicKey}")
+    private String alipayPublicKey;
+
+    @Value("${alipay.notifyUrl}")
+    private String notifyUrl;
+
+    @Value("${alipay.returnUrl}")
+    private String returnUrl;
+
+    @Value("${alipay.signType}")
+    private String signType;
+
+    @Value("${alipay.charset}")
+    private String charset;
+
+    @Value("${alipay.gatewayUrl}")
+    private String gatewayUrl;
 
     /**
      * 支付服务
@@ -66,20 +92,18 @@ public class AliPayService {
 
         //构建客户端
         DefaultAlipayClient alipayRsa2Client = new DefaultAlipayClient(
-                AliPayConfig.gatewayUrl,
-                AliPayConfig.APP_ID,
-                AliPayConfig.APP_PRIVATE_KEY,
+                gatewayUrl,
+                appId,
+                appPrivateKey,
                 "json",
-                AliPayConfig.CHARSET,
-                AliPayConfig.ALIPAY_PUBLIC_KEY,
-                AliPayConfig.sign_type);
+                charset,
+                alipayPublicKey,
+                signType);
         AlipayTradePagePayRequest request = new AlipayTradePagePayRequest();  // 网页支付
-        request.setNotifyUrl(AliPayConfig.notify_url);
-        request.setReturnUrl(AliPayConfig.return_url);
+        request.setNotifyUrl(notifyUrl);
+        request.setReturnUrl(returnUrl);
         request.setBizContent(JSON.toJSONString(data));
-        log.info(JSON.toJSONString(data));
         String response = alipayRsa2Client.pageExecute(request).getBody();
-        log.info(response);
         return response;
     }
 

@@ -86,8 +86,8 @@
         var storage = window.sessionStorage;
         var token = storage.getItem("token");
         var managerId = 1;
-        //var managerId = storage.getItem("managerId");
-        var messageId = window.localStorage.getItem("messageId");
+        //var managerId = storage.getItem("managerId") + "";
+        var messageId = window.localStorage.getItem("messageId") + "";
 
 
         window.localStorage.removeItem("messageId");

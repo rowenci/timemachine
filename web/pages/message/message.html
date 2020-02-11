@@ -126,8 +126,8 @@
             //获取token  根据token向服务器请求数据
             var storage = window.sessionStorage;
             var token = storage.getItem("token");
-            var userId = 1;
-            //var userId = storage.getItem("userId");
+            var userId = "34238374713833198854";
+            //var userId = storage.getItem("userId") + "";
 
 
             var editor;
@@ -214,6 +214,7 @@
             function back_vip_option() {
                 $("#vip_time").css("display", "none");
                 $("#time").css("display", "inline");
+                $("#vip_send").val("");
             }
             function logout() {
                 $.ajax({
@@ -239,8 +240,21 @@
             }
 
             function send() {
+                if ($("#email").val() == "") {
+                    alert("邮箱不能为空");
+                    return false;
+                }
+                var email = $("#email").val();
+                if (!email.match(/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/)) {
+                    alert("邮箱格式不正确！请重新输入");
+                    $("#email").focus();
+                    return false;
+                }
+                if(layedit.getContent(editor) == ""){
+                    alert("请不要发送空白信件");
+                    return false;
+                }
                 //富文本编辑器出来的是html
-
                 var message = new Object();
                 message.userId = userId;
                 if ($("#title").val() == "") {
@@ -255,7 +269,7 @@
                 //如果是会员
                 if ($("#time").css("display") == "none" && $("#vip_time").css("display") == "inline") {
                     message.sendTime = layui.$("#vip_send").val();
-                    if(message.sendTime == "" || message.sendTime == undefined){
+                    if (message.sendTime == "" || message.sendTime == undefined) {
                         alert("请选择发送日期");
                         return;
                     }
@@ -264,35 +278,57 @@
                     $("#vip_time").css("display") == "none" && $("#time").css("display") == "inline"
                     var send_date = new Date();
                     var time = $("#time input[name='time']:checked").val();
+                    //判断是否在前面加0
+                    function getNow(s) {
+                        return s < 10 ? '0' + s : s;
+                    }
                     switch (time) {
                         case "week":
                             send_date.setDate(send_date.getDate() + 7);
-                            message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
+                            message.sendTime = send_date.getFullYear() + "-" + getNow(send_date.getMonth() + 1) + "-" + getNow(send_date.getDate());
                             break;
                         case "month":
                             send_date.setDate(send_date.getDate() + 30);
-                            message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
+                            message.sendTime = send_date.getFullYear() + "-" + getNow(send_date.getMonth() + 1) + "-" + getNow(send_date.getDate());
                             break;
                         case "three_month":
                             send_date.setDate(send_date.getDate() + 90);
-                            message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
+                            message.sendTime = send_date.getFullYear() + "-" + getNow(send_date.getMonth() + 1) + "-" + getNow(send_date.getDate());
                             break;
                         case "half_year":
                             send_date.setDate(send_date.getDate() + 180);
-                            message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
+                            message.sendTime = send_date.getFullYear() + "-" + getNow(send_date.getMonth() + 1) + "-" + getNow(send_date.getDate());
                             break;
                         case "year":
                             send_date.setDate(send_date.getDate() + 365);
-                            message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
+                            message.sendTime = send_date.getFullYear() + "-" + getNow(send_date.getMonth() + 1) + "-" + getNow(send_date.getDate());
                             break;
                         default:
                             send_date.setDate(send_date.getDate() + 7);
-                            message.sendTime = send_date.getFullYear() + "/" + (send_date.getMonth() + 1) + "/" + send_date.getDate();
+                            message.sendTime = send_date.getFullYear() + "-" + getNow(send_date.getMonth() + 1) + "-" + getNow(send_date.getDate());
                             break;
                     }
                 }
                 var date = new Date();
-                message.writeTime = date.toLocaleDateString();
+
+                //判断是否在前面加0
+                function getNow(s) {
+                    return s < 10 ? '0' + s : s;
+                }
+
+                var myDate = new Date();
+
+                var year = myDate.getFullYear();        //获取当前年
+                var month = myDate.getMonth() + 1;   //获取当前月
+                var date = myDate.getDate();            //获取当前日
+
+
+                var h = myDate.getHours();              //获取当前小时数(0-23)
+                var m = myDate.getMinutes();          //获取当前分钟数(0-59)
+                var s = myDate.getSeconds();
+
+                var now = year + '-' + getNow(month) + "-" + getNow(date) + " " + getNow(h) + ':' + getNow(m) + ":" + getNow(s);
+                message.writeTime = now;
                 if ($("#is_public  input[name='is_public']:checked").val() == undefined) {
                     message.isPublic = 0;
                 } else {

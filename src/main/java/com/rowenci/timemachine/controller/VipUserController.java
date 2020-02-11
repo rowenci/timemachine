@@ -155,7 +155,7 @@ public class VipUserController {
                 //比较两个日期
                 int result = fomatDate2.compareTo(fomatDate1);
                 //如果日期相等返回0
-                if (result > 0) {
+                if (result < 0) {
                     //过期
                     if (vipUser.getStatus() == 1) {
                         UpdateWrapper uw = new UpdateWrapper();

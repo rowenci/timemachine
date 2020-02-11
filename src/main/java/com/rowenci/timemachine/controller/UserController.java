@@ -187,14 +187,14 @@ public class UserController {
     /**
      * 根据user_id查找用户信息
      *
-     * @param user_id
+     * @param userId
      * @return
      */
-    @GetMapping("/{user_id}")
-    public String getUserById(@PathVariable("user_id") int user_id) {
+    @GetMapping("/{userId}")
+    public String getUserById(@PathVariable("userId") String userId) {
         ModelMap modelMap = new ModelMap();
         QueryWrapper qw = new QueryWrapper();
-        qw.eq("user_id", user_id);
+        qw.eq("user_id", userId);
         User user = iUserService.getOne(qw);
         if (user == null) {
             modelMap.addAttribute("code", serviceCodeInfo.NO_USER);
