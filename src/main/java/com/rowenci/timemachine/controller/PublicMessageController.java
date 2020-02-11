@@ -285,7 +285,15 @@ public class PublicMessageController {
         return JSON.toJSONString(modelMap);
     }
 
-
+    /**
+     * 分享信件
+     * 先去minio服务器看是否有已经生成的二维码
+     * 如果没有就生成并上传再返回二维码的url
+     * 如果有就直接返回二维码的url
+     * minio服务器里的文件名称是信件id
+     * @param messageId
+     * @return
+     */
     @GetMapping("/share")
     public String share(String messageId) {
         ModelMap modelMap = new ModelMap();
@@ -294,10 +302,10 @@ public class PublicMessageController {
         try {
             // 使用MinIO服务的URL，端口，Access key和Secret key创建一个MinioClient对象
             MinioClient minioClient = new MinioClient("http://192.168.1.21:9001", "minio", "minio123");
-            ObjectStat obj = minioClient.statObject("timemachine", filename);
+            ObjectStat obj = minioClient.statObject("qrcode", filename);
             //二维码已经存在
             modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
-            modelMap.addAttribute("src", "http://192.168.1.21:9001/timemachine/" + filename);
+            modelMap.addAttribute("src", "http://192.168.1.21:9001/qrcode/" + filename);
             modelMap.addAttribute("result", "success");
             modelMap.addAttribute("description", "获取二维码成功");
             return JSON.toJSONString(modelMap);
@@ -324,21 +332,21 @@ public class PublicMessageController {
                 try {
                     MinioClient minioClient = new MinioClient("http://192.168.1.21:9001", "minio", "minio123");
                     // 检查存储桶是否已经存在
-                    boolean isExist = minioClient.bucketExists("timemachine");
+                    boolean isExist = minioClient.bucketExists("qrcode");
                     if (isExist) {
                     } else {
                         // 创建一个名为timemachine的存储桶
-                        minioClient.makeBucket("timemachine");
+                        minioClient.makeBucket("qrcode");
                     }
 
                     // 使用putObject上传一个文件到存储桶中。
-                    minioClient.putObject("timemachine", filename, inputStream, file.length(), "img");
+                    minioClient.putObject("qrcode", filename, inputStream, file.length(), "img");
                     inputStream.close();
-                    minioClient.statObject("timemachine", filename);
+                    minioClient.statObject("qrcode", filename);
 
                     try {
 
-                        ObjectStat obj1 = minioClient.statObject("timemachine", filename);
+                        ObjectStat obj1 = minioClient.statObject("qrcode", filename);
 
                     } catch (Exception ee) {
 
@@ -372,7 +380,7 @@ public class PublicMessageController {
             }
 
             modelMap.addAttribute("code", serviceCodeInfo.SUCCESS);
-            modelMap.addAttribute("src", "http://192.168.1.21:9001/timemachine/" + filename);
+            modelMap.addAttribute("src", "http://192.168.1.21:9001/qrcode/" + filename);
             modelMap.addAttribute("result", "success");
             modelMap.addAttribute("description", "获取二维码成功");
             return JSON.toJSONString(modelMap);

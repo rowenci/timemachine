@@ -30,19 +30,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/rowenci/timemachine/TimemachineApplicationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="141" column="41" lean-forward="true" selection-start-line="141" selection-start-column="41" selection-end-line="141" selection-end-column="41" />
+            <state relative-caret-position="270">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/AlipayConfig.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/Schedule/MessageScheduler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="-290">
+              <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -53,6 +62,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -71,9 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/entity/SendGoodList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/entity/Message.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/service/IPublicMessageService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/service/impl/PublicMessageServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/config/CustomRealm.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/entity/SendMessage.java" />
@@ -85,7 +92,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/TokenUtil/TokenUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/redis/RedisConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/redis/RedisUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/TimemachineApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/interceptor/RegistConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/interceptor/UserHandlerInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/service/impl/GoodListServiceImpl.java" />
@@ -102,7 +108,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/entity/PublicArea.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/FavoriteListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/GoodListController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/rowenci/timemachine/TimemachineApplicationTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/entity/MessageInBlack.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/MessageBlackListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/entity/ManagerUserList.java" />
@@ -113,15 +118,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/UserBlackListController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/VipUserController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/share.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/FileUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/ShareController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/QrCodeUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/MessageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/AlipayConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/TimemachineApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/PublicMessageController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/AlipayConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/service/MailService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/service/impl/MailServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/rowenci/timemachine/TimemachineApplicationTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/Schedule/MessageScheduler.java" />
       </list>
     </option>
   </component>
@@ -146,9 +156,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="256" />
+    <option name="x" value="255" />
     <option name="y" value="30" />
-    <option name="width" value="709" />
+    <option name="width" value="710" />
     <option name="height" value="990" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -158,6 +168,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -219,7 +230,53 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="rowenci" type="462c0819:PsiDirectoryNode" />
               <item name="timemachine" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="timemachine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="timemachine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="rowenci" type="462c0819:PsiDirectoryNode" />
+              <item name="timemachine" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="timemachine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="timemachine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="rowenci" type="462c0819:PsiDirectoryNode" />
+              <item name="timemachine" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="timemachine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="timemachine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="rowenci" type="462c0819:PsiDirectoryNode" />
+              <item name="timemachine" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="timemachine" type="b2602c69:ProjectViewProjectNode" />
+              <item name="timemachine" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="rowenci" type="462c0819:PsiDirectoryNode" />
+              <item name="timemachine" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="Schedule" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="timemachine" type="b2602c69:ProjectViewProjectNode" />
@@ -233,7 +290,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -249,7 +305,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../alipay.trade.wap.pay-java-utf-8" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -273,7 +330,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.TimemachineApplication">
+  <component name="RunManager" selected="JUnit.TimemachineApplicationTests.email">
     <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.rowenci.timemachine.util.CodeGenerator" />
       <module name="timemachine" />
@@ -298,6 +355,38 @@
       <option name="PACKAGE_NAME" value="com.rowenci.timemachine" />
       <option name="MAIN_CLASS_NAME" value="com.rowenci.timemachine.TimemachineApplicationTests" />
       <option name="METHOD_NAME" value="dataBaseTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TimemachineApplicationTests.email" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="timemachine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rowenci.timemachine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rowenci.timemachine" />
+      <option name="MAIN_CLASS_NAME" value="com.rowenci.timemachine.TimemachineApplicationTests" />
+      <option name="METHOD_NAME" value="email" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TimemachineApplicationTests.sendmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="timemachine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rowenci.timemachine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.rowenci.timemachine" />
+      <option name="MAIN_CLASS_NAME" value="com.rowenci.timemachine.TimemachineApplicationTests" />
+      <option name="METHOD_NAME" value="sendmail" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -328,6 +417,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TimemachineApplicationTests.email" />
+        <item itemvalue="JUnit.TimemachineApplicationTests.sendmail" />
         <item itemvalue="Application.CodeGenerator" />
         <item itemvalue="JUnit.TimemachineApplicationTests.ttt" />
         <item itemvalue="JUnit.TimemachineApplicationTests.dataBaseTest" />
@@ -369,34 +460,44 @@
       <workItem from="1581163025939" duration="249000" />
       <workItem from="1581230908858" duration="21304000" />
       <workItem from="1581309969730" duration="15905000" />
+      <workItem from="1581399835993" duration="6483000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TimemachineApplicationTests_dataBaseTest - 2020.01.17 at 21h 03m 40s.xml">
-      <configuration name="TimemachineApplicationTests.dataBaseTest" configurationId="JUnit" />
+    <history-entry file="TimemachineApplicationTests_email - 2020.02.11 at 15h 17m 53s.xml">
+      <configuration name="TimemachineApplicationTests.email" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TimemachineApplicationTests_dataBaseTest - 2020.01.17 at 21h 08m 05s.xml">
-      <configuration name="TimemachineApplicationTests.dataBaseTest" configurationId="JUnit" />
+    <history-entry file="TimemachineApplicationTests_email - 2020.02.11 at 15h 22m 45s.xml">
+      <configuration name="TimemachineApplicationTests.email" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TimemachineApplicationTests_ttt - 2020.02.06 at 20h 45m 08s.xml">
-      <configuration name="TimemachineApplicationTests.ttt" configurationId="JUnit" />
+    <history-entry file="TimemachineApplicationTests_email - 2020.02.11 at 15h 26m 28s.xml">
+      <configuration name="TimemachineApplicationTests.email" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TimemachineApplicationTests_ttt - 2020.02.06 at 20h 46m 24s.xml">
-      <configuration name="TimemachineApplicationTests.ttt" configurationId="JUnit" />
+    <history-entry file="TimemachineApplicationTests_email - 2020.02.11 at 15h 27m 26s.xml">
+      <configuration name="TimemachineApplicationTests.email" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TimemachineApplicationTests_ttt - 2020.02.06 at 20h 47m 33s.xml">
-      <configuration name="TimemachineApplicationTests.ttt" configurationId="JUnit" />
+    <history-entry file="TimemachineApplicationTests_sendmail - 2020.02.11 at 15h 29m 02s.xml">
+      <configuration name="TimemachineApplicationTests.sendmail" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TimemachineApplicationTests_ttt - 2020.02.09 at 17h 17m 19s.xml">
-      <configuration name="TimemachineApplicationTests.ttt" configurationId="JUnit" />
+    <history-entry file="TimemachineApplicationTests_sendmail - 2020.02.11 at 15h 32m 00s.xml">
+      <configuration name="TimemachineApplicationTests.sendmail" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TimemachineApplicationTests_ttt - 2020.02.09 at 17h 17m 52s.xml">
-      <configuration name="TimemachineApplicationTests.ttt" configurationId="JUnit" />
+    <history-entry file="TimemachineApplicationTests_email - 2020.02.11 at 15h 32m 29s.xml">
+      <configuration name="TimemachineApplicationTests.email" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TimemachineApplicationTests_email - 2020.02.11 at 15h 36m 10s.xml">
+      <configuration name="TimemachineApplicationTests.email" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TimemachineApplicationTests_email - 2020.02.11 at 15h 40m 52s.xml">
+      <configuration name="TimemachineApplicationTests.email" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TimemachineApplicationTests_email - 2020.02.11 at 15h 42m 42s.xml">
+      <configuration name="TimemachineApplicationTests.email" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165654000" />
+    <option name="totallyTimeSpent" value="172137000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -409,8 +510,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26340482" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26675603" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -418,7 +520,7 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32931727" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.35341364" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" visible="true" weight="0.35341364" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39892906" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -452,38 +554,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/TimemachineApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="11" selection-start-line="11" selection-end-line="11" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/CreateUUID.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="25" lean-forward="true" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/MinioUtil.java" />
-    <entry file="jar://D:/apache-maven-3.6.1/repository/io/minio/minio/6.0.12/minio-6.0.12.jar!/io/minio/MinioClient.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="1887" column="170" selection-start-line="1887" selection-start-column="48" selection-end-line="1887" selection-end-column="170" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="32">
-            <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/CodeInfo/CRUDCodeInfo.java" />
     <entry file="jar://D:/jdk/src.zip!/java/sql/Blob.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -566,13 +636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/rowenci/timemachine/TimemachineApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
@@ -711,13 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/VipUserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="141" column="24" selection-start-line="141" selection-start-column="24" selection-end-line="141" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/entity/PublicArea.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -736,13 +792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/apache-maven-3.6.1/repository/org/springframework/spring-web/5.2.2.RELEASE/spring-web-5.2.2.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -757,16 +806,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/uploadImg/9507501861414983984200.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/PublicMessageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="303" column="31" lean-forward="true" selection-start-line="303" selection-start-column="31" selection-end-line="303" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/uploadImg/9507501861414983984200.jpg" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/ShareController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
@@ -774,13 +814,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/MessageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
         </state>
       </provider>
     </entry>
@@ -805,13 +838,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/entity/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/share.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
@@ -826,17 +852,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/AlipayConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="141" column="41" lean-forward="true" selection-start-line="141" selection-start-column="41" selection-end-line="141" selection-end-column="41" />
+        <state relative-caret-position="464">
+          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/AlipayConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/MessageController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="-1936">
+          <caret line="108" column="61" lean-forward="true" selection-start-line="108" selection-start-column="61" selection-end-line="108" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/service/impl/GoodListServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/entity/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="33" column="26" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="156" lean-forward="true" selection-start-line="156" selection-end-line="156" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/service/MailService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/PublicMessageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3952">
+          <caret line="299" column="45" lean-forward="true" selection-start-line="299" selection-start-column="45" selection-end-line="299" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/TimemachineApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/controller/VipUserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="127" column="12" selection-start-line="127" selection-start-column="12" selection-end-line="127" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/rowenci/timemachine/TimemachineApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/service/impl/MailServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rowenci/timemachine/util/Schedule/MessageScheduler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-290">
+          <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
         </state>
       </provider>
     </entry>
