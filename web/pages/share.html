@@ -5,6 +5,7 @@
     <meta charset='utf-8'>
     <title>信件</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" href="../images/20200212055840833_easyicon_net_32.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -33,7 +34,7 @@
             //获取信件内容
             $.ajax({
                 type: "GET",
-                url: "http://localhost:8080/timemachine/message/findById/",
+                url: "http://182.61.18.240:8080/timemachine/message/findById/",
                 data: {
                     "token": token,
                     "messageId": messageId
@@ -51,7 +52,7 @@
             //获取点赞数
             $.ajax({
                 type: "GET",
-                url: "http://localhost:8080/timemachine/public-message/getGoodNumber",
+                url: "http://182.61.18.240:8080/timemachine/public-message/getGoodNumber",
                 data: {
                     "token": token,
                     "messageId": messageId
@@ -68,7 +69,7 @@
             //获取收藏数
             $.ajax({
                 type: "GET",
-                url: "http://localhost:8080/timemachine/public-message/getFavoriteNumber",
+                url: "http://182.61.18.240:8080/timemachine/public-message/getFavoriteNumber",
                 data: {
                     "token": token,
                     "messageId": messageId
@@ -85,7 +86,7 @@
             //获取作者名称
             $.ajax({
                 type: "GET",
-                url: "http://localhost:8080/timemachine/user/" + message.userId,
+                url: "http://182.61.18.240:8080/timemachine/user/" + message.userId,
                 data: {
                     "token": token,
                     "messageId": messageId

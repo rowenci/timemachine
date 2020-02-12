@@ -6,6 +6,7 @@
   <title>注册</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="../js/layui/css/layui.css">
+  <link rel="icon" href="../images/20200212055840833_easyicon_net_32.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -112,7 +113,7 @@
 
       var uploadInst = upload.render({
         elem: '#image_btn'
-        , url: 'http://localhost:8080/timemachine/message/uploadImage' //改成您自己的上传接口
+        , url: 'http://182.61.18.240:8080/timemachine/message/uploadImage' //改成您自己的上传接口
         , done: function (res) {
           //如果上传失败
           if (res.code < 0) {
@@ -165,7 +166,7 @@
       } else {
         $.ajax({
           type: "POST",
-          url: "http://localhost:8080/timemachine/user/",
+          url: "http://182.61.18.240:8080/timemachine/user/",
           data: {
             "account": user.account,
             "password": user.password,

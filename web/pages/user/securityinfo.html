@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>TimeMachine - Rowenci</title>
     <link rel="stylesheet" href="../../js/layui/css/layui.css">
+    <link rel="icon" href="../../images/20200212055840833_easyicon_net_32.ico" type="image/x-icon">
 </head>
 
 <body class="layui-layout-body">
@@ -134,7 +135,7 @@
                 } else {
                     $.ajax({
                         type: "PUT",
-                        url: "http://localhost:8080/timemachine/user/password",
+                        url: "http://182.61.18.240:8080/timemachine/user/password",
                         data: {
                             "token": token,
                             "userId": userId,
@@ -161,7 +162,7 @@
             //获取信息
             $.ajax({
                 type: "GET",
-                url: "http://localhost:8080/timemachine/user/" + userId,
+                url: "http://182.61.18.240:8080/timemachine/user/" + userId,
                 data: {
                     "token": token
                 },
@@ -192,7 +193,7 @@
                 if (conf) {
                     $.ajax({
                         type: "GET",
-                        url: "http://localhost:8080/timemachine/user/logOut/",
+                        url: "http://182.61.18.240:8080/timemachine/user/logOut/",
                         data: {
                             "token": token
                         },
@@ -202,10 +203,10 @@
                             if (JSON.parse(data).result == "success") {
                                 storage.clear();
                                 alert("退出成功");
-                                window.location.href = "";
+                                window.location.href = "http://182.61.18.240/";
                             } else {
                                 alert(JSON.parse(data).description);
-                                window.location.href = "";
+                                window.location.href = "http://182.61.18.240/";
                             }
                         },
                         error: function () {

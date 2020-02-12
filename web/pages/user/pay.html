@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../js/layui/css/layui.css">
     <link rel="stylesheet" type="text/css" href="../../css/amazeui.min.css" />
     <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+    <link rel="icon" href="../../images/20200212055840833_easyicon_net_32.ico" type="image/x-icon">
 </head>
 
 <body id="clear" class="layui-layout-body">
@@ -96,7 +97,7 @@
             //获取信息
             $.ajax({
                 type: "GET",
-                url: "http://localhost:8080/timemachine/user/" + userId,
+                url: "http://182.61.18.240:8080/timemachine/user/" + userId,
                 data: {
                     "token": token
                 },
@@ -184,7 +185,7 @@
                 }
                 $.ajax({
                     type: "GET",
-                    url: "http://localhost:8080/timemachine/vip-user/aliPay/",
+                    url: "http://182.61.18.240:8080/timemachine/vip-user/aliPay/",
                     data: {
                         "token": token,
                         "userId": userId,

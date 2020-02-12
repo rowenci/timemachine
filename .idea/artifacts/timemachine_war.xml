@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="timemachine:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>timemachine</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="timemachine-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="timemachine:war exploded" />
+    </root>
+  </artifact>
+</component>

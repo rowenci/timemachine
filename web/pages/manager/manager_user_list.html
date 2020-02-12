@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>TimeMachine - Rowenci</title>
     <link rel="stylesheet" href="../../js/layui/css/layui.css">
+    <link rel="icon" href="../../images/20200212055840833_easyicon_net_32.ico" type="image/x-icon">
 </head>
 
 <body class="layui-layout-body">
@@ -82,7 +83,7 @@
 
                 table.render({
                     elem: '#public_message'
-                    , url: 'http://localhost:8080/timemachine/user/user_list/'
+                    , url: 'http://182.61.18.240:8080/timemachine/user/user_list/'
                     , page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
                         layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
                         //,curr: 5 //设定初始在第 5 页
@@ -129,7 +130,7 @@
                             //封禁
                             $.ajax({
                                 type: "POST",
-                                url: "http://localhost:8080/timemachine/user-black-list/",
+                                url: "http://182.61.18.240:8080/timemachine/user-black-list/",
                                 data: {
                                     "token": token,
                                     "banUserId": data.id,
@@ -165,7 +166,7 @@
             //获取信息
             $.ajax({
                 type: "GET",
-                url: "http://localhost:8080/timemachine/manager/" + managerId,
+                url: "http://182.61.18.240:8080/timemachine/manager/" + managerId,
                 data: {
                     "token": token
                 },
@@ -187,7 +188,7 @@
                 if (conf) {
                     $.ajax({
                         type: "GET",
-                        url: "http://localhost:8080/timemachine/manager/managerLogout/",
+                        url: "http://182.61.18.240:8080/timemachine/manager/managerLogout/",
                         data: {
                             "token": token
                         },
@@ -197,7 +198,7 @@
                             if (JSON.parse(data).result == "success") {
                                 alert("退出成功")
                                 storage.clear();
-                                window.location.href = "../index.html";
+                                window.location.href = "http://182.61.18.240/";
                             } else {
                                 alert(JSON.parse(data).description);
                             }

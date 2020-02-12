@@ -33,7 +33,7 @@ spring:
     properties.mail.smtp.ssl.enable: true
     default-encoding: utf-8
   minio:
-    url: http://192.168.1.21:9001
+    url: http://47.107.32.4:9001
     accessKey: minio
     secretKey: minio123
 alipay:

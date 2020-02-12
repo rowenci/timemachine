@@ -12,6 +12,7 @@
     <link rel="shortcut icon" href="./images/bg.png" type="image/x-icon" />
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/weadmin.css">
+    <link rel="icon" href="./images/20200212055840833_easyicon_net_32.ico" type="image/x-icon">
     <script src="./js/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="./js/jquery-3.4.0.js"></script>
 
@@ -70,7 +71,7 @@
             } else {
                 $.ajax({
                     type: "GET",
-                    url: "http://localhost:8080/timemachine/user/",
+                    url: "http://182.61.18.240:8080/timemachine/user/",
                     data: {
                         "account": account,
                         "password": password
@@ -127,7 +128,7 @@
             } else {
                 $.ajax({
                     type: "GET",
-                    url: "http://localhost:8080/timemachine/manager/",
+                    url: "http://182.61.18.240:8080/timemachine/manager/",
                     data: {
                         "account": account,
                         "password": password
