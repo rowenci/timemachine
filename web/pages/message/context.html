@@ -79,8 +79,7 @@
     <script>
         var storage = window.sessionStorage;
         var token = storage.getItem("token");
-        var userId = 1;
-        //var userId = storage.getItem("userId") + "";
+        var userId = storage.getItem("userId") + "";
         var messageId = window.localStorage.getItem("messageId") + "";
         window.localStorage.removeItem("messageId");
         var message;

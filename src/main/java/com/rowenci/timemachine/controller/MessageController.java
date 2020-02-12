@@ -6,7 +6,9 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.rowenci.timemachine.entity.Message;
+import com.rowenci.timemachine.entity.PublicMessage;
 import com.rowenci.timemachine.service.IMessageService;
+import com.rowenci.timemachine.service.IPublicMessageService;
 import com.rowenci.timemachine.util.CodeInfo.ServiceCodeInfo;
 import com.rowenci.timemachine.util.CreateUUID;
 import io.minio.MinioClient;
@@ -52,6 +54,9 @@ public class MessageController {
     @Resource
     private ServiceCodeInfo serviceCodeInfo;
 
+    @Resource
+    private IPublicMessageService iPublicMessageService;
+
     @Value("${spring.minio.url}")
     private String minioUrl;
 
@@ -73,23 +78,41 @@ public class MessageController {
         //获取uuid
         CreateUUID createUUID = new CreateUUID();
         String messageId = createUUID.create();
+        String publicMessageId = createUUID.create();
         message.setMessageId(messageId);
         boolean res = iMessageService.save(message);
 
         if (res){
-            model.addAttribute("code", serviceCodeInfo.SUCCESS);
-            Map<String, String> infoMap = new HashMap<>();
-            infoMap.put("messageId", messageId);
-            model.addAttribute("data", infoMap);
-            model.addAttribute("result", "success");
-            model.addAttribute("description", "添加信件成功");
+            if (message.getIsPublic() == 1){
+                //添加公共信件
+                PublicMessage publicMessage = new PublicMessage();
+                publicMessage.setUserId(message.getUserId());
+                publicMessage.setMessageId(message.getMessageId());
+                publicMessage.setPublicMessageId(publicMessageId);
+                boolean res1 = iPublicMessageService.save(publicMessage);
+                if (res1){
+                    model.addAttribute("code", serviceCodeInfo.SUCCESS);
+                    model.addAttribute("data", "");
+                    model.addAttribute("result", "success");
+                    model.addAttribute("description", "添加信件成功");
+                }else {
+                    model.addAttribute("code", serviceCodeInfo.ADD_MESSAGE_ERROR);
+                    model.addAttribute("data", "");
+                    model.addAttribute("result", "error");
+                    model.addAttribute("description", "添加信件失败");
+                }
+            }else {
+                model.addAttribute("code", serviceCodeInfo.SUCCESS);
+                model.addAttribute("data", "");
+                model.addAttribute("result", "success");
+                model.addAttribute("description", "添加信件成功");
+            }
         }else {
             model.addAttribute("code", serviceCodeInfo.ADD_MESSAGE_ERROR);
             model.addAttribute("data", "");
             model.addAttribute("result", "error");
             model.addAttribute("description", "添加信件失败");
         }
-
         return JSON.toJSONString(model);
     }
 

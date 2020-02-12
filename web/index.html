@@ -88,7 +88,7 @@
                                 storage.setItem("token", JSON.parse(data).data.token);
                                 storage.setItem("userId", JSON.parse(data).data.userId);
                             }
-                            window.location.href = "../pages/public_area.html";
+                            window.location.href = "./pages/public_area.html";
                         } else {
                             alert(JSON.parse(data).description);
                         }
@@ -105,7 +105,7 @@
                 type: 2,
                 content: './pages/regist.html', //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
                 title: ['用户注册', 'font-size:18px;'],
-                area: ['500px', '800px']
+                area: ['500px', '750px']
             });
         }
 

@@ -75,8 +75,7 @@
             //获取token  根据token向服务器请求数据
             var storage = window.sessionStorage;
             var token = storage.getItem("token");
-            var userId = 1;
-            //var userId = storage.getItem("userId") + "";
+            var userId = storage.getItem("userId") + "";
 
             layui.use('table', function () {
                 var table = layui.table;
@@ -93,7 +92,7 @@
                     , cols: [[
                         { field: 'id', width: 80, title: 'ID' }
                         , { field: 'title', minWidth: 150, title: '信件标题' }
-                        , { field: 'writeTime', width: 150, title: '撰写时间' }
+                        , { field: 'writeTime', width: 180, title: '撰写时间' }
                         , { field: 'sendTime', width: 150, title: '发送时间' }
                         , { field: 'means', width: 135, title: '发送方式' }
                         , { field: 'target', width: 180, title: '发送地址' }
@@ -158,26 +157,31 @@
                 }
             });
             function logout() {
-                $.ajax({
-                    type: "GET",
-                    url: "http://localhost:8080/timemachine/user/logOut/",
-                    data: {
-                        "token": token
-                    },
-                    async: false,
-                    cache: false,
-                    success: function (data) {
-                        if (JSON.parse(data).result == "success") {
-                            storage.clear();
-                            window.location.href = "../index.html";
-                        } else {
-                            alert(JSON.parse(data).description);
+                var conf = confirm("请问您确定要退出吗");
+                if (conf) {
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost:8080/timemachine/user/logOut/",
+                        data: {
+                            "token": token
+                        },
+                        async: false,
+                        cache: false,
+                        success: function (data) {
+                            if (JSON.parse(data).result == "success") {
+                                storage.clear();
+                                alert("退出成功");
+                                window.location.href = "";
+                            } else {
+                                alert(JSON.parse(data).description);
+                                window.location.href = "";
+                            }
+                        },
+                        error: function () {
+                            alert("系统错误");
                         }
-                    },
-                    error: function () {
-                        alert("系统错误");
-                    }
-                });
+                    });
+                }
             }
         </script>
 </body>

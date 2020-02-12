@@ -15,13 +15,23 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 //@Configuration
 public class RegistConfig implements WebMvcConfigurer {
+
+    @Bean
+    public UserHandlerInterceptor getInterceptor(){
+        return new UserHandlerInterceptor();
+    }
+
     @Bean
     public WebMvcConfigurer webMvcConfigurerAdapter(){
         return new WebMvcConfigurer() {
             @Override
             public void addInterceptors(InterceptorRegistry registry) {
-                registry.addInterceptor(new UserHandlerInterceptor())
+                registry.addInterceptor(getInterceptor())
                         .addPathPatterns("/**")
+                        .excludePathPatterns("/timemachine/vip-user/**")
+                        .excludePathPatterns("/timemachine/manager/**")
+                        .excludePathPatterns("/timemachine/message/uploadImage")
+                        .excludePathPatterns("/timemachine/share/**")
                         .excludePathPatterns("/timemachine/user/**");
             }
         };

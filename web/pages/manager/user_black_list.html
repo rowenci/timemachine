@@ -43,6 +43,13 @@
                             <dd class="layui-this"><a href="javascript:;">用户黑名单</a></dd>
                         </dl>
                     </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">订单管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="./order/vip_order.html">订单列表</a></dd>
+                            <dd><a href="./order/vip_order_success.html">成功订单</a></dd>
+                        </dl>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -68,8 +75,7 @@
         <script>
             var storage = window.sessionStorage;
             var token = storage.getItem("token");
-            var managerId = 1;
-            //var managerId = storage.getItem("managerId") + "";
+            var managerId = storage.getItem("managerId") + "";
 
             layui.use('table', function () {
                 var table = layui.table;
@@ -173,26 +179,30 @@
                 }
             });
             function logout() {
-                $.ajax({
-                    type: "GET",
-                    url: "http://localhost:8080/timemachine/manager/managerLogout/",
-                    data: {
-                        "token": token
-                    },
-                    async: false,
-                    cache: false,
-                    success: function (data) {
-                        if (JSON.parse(data).result == "success") {
-                            storage.clear();
-                            window.location.href = "../index.html";
-                        } else {
-                            alert(JSON.parse(data).description);
+                var conf = confirm("您确定要退出吗？");
+                if (conf) {
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost:8080/timemachine/manager/managerLogout/",
+                        data: {
+                            "token": token
+                        },
+                        async: false,
+                        cache: false,
+                        success: function (data) {
+                            if (JSON.parse(data).result == "success") {
+                                alert("退出成功")
+                                storage.clear();
+                                window.location.href = "../index.html";
+                            } else {
+                                alert(JSON.parse(data).description);
+                            }
+                        },
+                        error: function () {
+                            alert("系统错误");
                         }
-                    },
-                    error: function () {
-                        alert("系统错误");
-                    }
-                });
+                    });
+                }
             }
         </script>
 </body>

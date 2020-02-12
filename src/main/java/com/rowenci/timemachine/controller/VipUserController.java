@@ -234,36 +234,42 @@ public class VipUserController {
                 QueryWrapper vipQW = new QueryWrapper();
                 vipQW.eq("user_id", vipOrder.getUserId());
                 VipUser vipUser = iVipUserService.getOne(vipQW);
-                if (vipOrder == null) {
+                if (vipUser == null) {
                     //第一次充值
+                    vipUser = new VipUser();
                     vipUser.setUserId(vipOrder.getUserId());
 
                     Date date = new Date();
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                     String dateNow = sdf.format(date);
                     vipUser.setStartTime(dateNow);
+                    Date date1 = new Date();
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.setTime(date1);
                     switch (vipOrder.getVipMode()) {
                         case 1: {
                             //一个月
-                            vipUser.setEndTime(sdf.format(new Date(date.getTime() + 30 * 24 * 60 * 60 * 1000)));
+                            calendar.add(Calendar.DATE, 30);
                             break;
                         }
                         case 2: {
                             //两个月
-                            vipUser.setEndTime(sdf.format(new Date(date.getTime() + 60 * 24 * 60 * 60 * 1000)));
+                            calendar.add(Calendar.DATE, 60);
                             break;
                         }
                         case 3: {
                             //三个月
-                            vipUser.setEndTime(sdf.format(new Date(date.getTime() + 90 * 24 * 60 * 60 * 1000)));
+                            calendar.add(Calendar.DATE, 90);
                             break;
                         }
                         case 4: {
                             //半年
-                            vipUser.setEndTime(sdf.format(new Date(date.getTime() + 180 * 24 * 60 * 60 * 1000)));
+                            calendar.add(Calendar.DATE, 180);
                             break;
                         }
                     }
+                    Date newEndTimeDate = calendar.getTime();
+                    vipUser.setEndTime(sdf.format(newEndTimeDate));
                     vipUser.setStatus(1);
                     iVipUserService.save(vipUser);
                 } else {
@@ -398,36 +404,42 @@ public class VipUserController {
                 QueryWrapper vipQW = new QueryWrapper();
                 vipQW.eq("user_id", vipOrder.getUserId());
                 VipUser vipUser = iVipUserService.getOne(vipQW);
-                if (vipOrder == null) {
+                if (vipUser == null) {
                     //第一次充值
+                    vipUser = new VipUser();
                     vipUser.setUserId(vipOrder.getUserId());
 
                     Date date = new Date();
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                     String dateNow = sdf.format(date);
                     vipUser.setStartTime(dateNow);
+                    Date date1 = new Date();
+                    Calendar calendar = Calendar.getInstance();
+                    calendar.setTime(date1);
                     switch (vipOrder.getVipMode()) {
                         case 1: {
                             //一个月
-                            vipUser.setEndTime(sdf.format(new Date(date.getTime() + 30 * 24 * 60 * 60 * 1000)));
+                            calendar.add(Calendar.DATE, 30);
                             break;
                         }
                         case 2: {
                             //两个月
-                            vipUser.setEndTime(sdf.format(new Date(date.getTime() + 60 * 24 * 60 * 60 * 1000)));
+                            calendar.add(Calendar.DATE, 60);
                             break;
                         }
                         case 3: {
                             //三个月
-                            vipUser.setEndTime(sdf.format(new Date(date.getTime() + 90 * 24 * 60 * 60 * 1000)));
+                            calendar.add(Calendar.DATE, 90);
                             break;
                         }
                         case 4: {
                             //半年
-                            vipUser.setEndTime(sdf.format(new Date(date.getTime() + 180 * 24 * 60 * 60 * 1000)));
+                            calendar.add(Calendar.DATE, 180);
                             break;
                         }
                     }
+                    Date newEndTimeDate = calendar.getTime();
+                    vipUser.setEndTime(sdf.format(newEndTimeDate));
                     vipUser.setStatus(1);
                     iVipUserService.save(vipUser);
                 } else {

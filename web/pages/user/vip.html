@@ -96,8 +96,7 @@
 			//获取token  根据token向服务器请求数据
 			var storage = window.sessionStorage;
 			var token = storage.getItem("token");
-			var userId = 1;
-			//var userId = storage.getItem("userId") + "";
+			var userId = storage.getItem("userId") + "";
 
 			//JavaScript代码区域
 			layui.use('element', function () {
@@ -171,27 +170,32 @@
 			}
 
 			function logout() {
-				$.ajax({
-					type: "GET",
-					url: "http://localhost:8080/timemachine/user/logOut/",
-					data: {
-						"token": token
-					},
-					async: false,
-					cache: false,
-					success: function (data) {
-						if (JSON.parse(data).result == "success") {
-							storage.clear();
-							window.location.href = "../index.html";
-						} else {
-							alert(JSON.parse(data).description);
-						}
-					},
-					error: function () {
-						alert("系统错误");
-					}
-				});
-			}
+                var conf = confirm("请问您确定要退出吗");
+                if (conf) {
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost:8080/timemachine/user/logOut/",
+                        data: {
+                            "token": token
+                        },
+                        async: false,
+                        cache: false,
+                        success: function (data) {
+                            if (JSON.parse(data).result == "success") {
+                                storage.clear();
+                                alert("退出成功");
+                                window.location.href = "";
+                            } else {
+                                alert(JSON.parse(data).description);
+                                window.location.href = "";
+                            }
+                        },
+                        error: function () {
+                            alert("系统错误");
+                        }
+                    });
+                }
+            }
 		</script>
 </body>
 

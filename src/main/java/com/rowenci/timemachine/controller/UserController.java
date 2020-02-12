@@ -168,6 +168,13 @@ public class UserController {
     @GetMapping("/logOut")
     public String logOut(String token) {
         ModelMap modelMap = new ModelMap();
+        if (token == null){
+            modelMap.addAttribute("code", serviceCodeInfo.UNKNOWN_ERROR);
+            modelMap.addAttribute("data", "");
+            modelMap.addAttribute("result", "error");
+            modelMap.addAttribute("description", "token不存在");
+            return JSON.toJSONString(modelMap);
+        }
         //消除token缓存
         if (!redisUtil.hasKey(token)) {
             modelMap.addAttribute("code", serviceCodeInfo.UNKNOWN_ERROR);
